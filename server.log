@@ -228,3 +228,6 @@
 <tr><th><label for="id_password">Mot de Passe :</label></th><td><input class="validate" id="id_password" length="100" maxlength="100" name="password" type="password" /></td></tr>
 <tr><th><label for="id_confirm_password">Confirmez le mot de passe :</label></th><td><input class="validate" id="id_confirm_password" length="100" maxlength="100" name="confirm_password" type="password" /></td></tr>
 [29/Oct/2015 16:55:46] ERROR	- forum.connection:66	: Passwords does not match
+[03/Nov/2015 11:20:03] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted
+[03/Nov/2015 11:20:05] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted
+[03/Nov/2015 11:20:13] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted

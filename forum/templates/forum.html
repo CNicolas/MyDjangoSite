@@ -31,17 +31,10 @@
 									<div class="collapsible-body">
 										<div class="collection">
 											{% for subject in subtheme.subjects %}
-												{% if subject.posts|length > 0 %}
-													<a href="/forum/subject/{{ subject.id }}" class="collection-item">
-														{{ subject.title }}
-														<span class="badge black white-text">{{ subject.posts|length }}</span>
-													</a>
-												{% else %}
-													<div class="collection-item">
-														{{ subject.title }}
-														<span class="badge black white-text">{{ subject.posts|length }}</span>
-													</div>
-												{% endif %}
+												<a href="/forum/subject/{{ subject.id }}" class="collection-item">
+													{{ subject.title }}
+													<span class="badge black white-text">{{ subject.posts|length }}</span>
+												</a>
 											{% empty %}
 												<div class="collection-item center">
 													<i class="material-icons">mood_bad</i>Aucun sujet dans ce sous-theme
