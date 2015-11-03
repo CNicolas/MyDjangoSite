@@ -16,11 +16,12 @@
 	<section class="section">
 		<form action="/forum/addsubject/{{ subtheme.id }}/" method="POST" class="container">
 			{% csrf_token %}
+			<h5 class="center">Indiquez le titre du nouveau sujet</h5>
 			<div class="input-field">
-	   			<label for="{{ form.title.auto_id }}">{{ form.title.label }}</label>
-	   			{{ form.title }}
-	   		</div>
-	   		<div class="center">
+				<label for="{{ form.title.auto_id }}">{{ form.title.label }}</label>
+				{{ form.title }}
+			</div>
+			<div class="center">
 				<button class=" btn-large waves-effect waves-light light-green accent-4" type="submit">Créer un sujet</button>
 			</div>
 		</form>

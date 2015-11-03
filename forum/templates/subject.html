@@ -3,6 +3,8 @@
 {% block content %}
 
 {% load staticfiles %}
+{% load wysiwyg %}
+{% wysiwyg_setup %}
 
 {% if error %}
 	<span class="hidden error-toast">{{ error }}</span>
@@ -43,6 +45,25 @@
 				</div>
 			{% endfor %}
 		</ul>
+		<br/>
+		{% if user.is_authenticated %}
+			<section class="container">
+				<form action="/forum/subject/{{ subject.id }}/" method="POST">
+					{% csrf_token %}
+					<div class="input-field">
+						<label for="{{ form.title.auto_id }}">{{ form.title.label }}</label>
+						{{ form.title }}
+					</div>
+					<div class="input-field">
+						{{ form.content }}
+						{% wysiwyg_editor "id_content" %} <!-- I didn't found the way to include the auto_id -->
+					</div>
+					<div class="center row">
+						<button class="btn-large waves-effect waves-light green col s12" type="submit">Répondre</button>
+					</div>
+				</form>
+			</section>
+		{% endif %}
 	</section>
 </main>
 

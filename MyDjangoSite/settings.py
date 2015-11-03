@@ -42,6 +42,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap3',
     'widget_tweaks',
+    'django_wysiwyg',
+    'ckeditor',
+    'tinymce',
     'forum',
 )
 
@@ -115,10 +118,26 @@ STATIC_URL = '/static/'
 
 ################################################################
 
+STATIC_ROOT = '/static/'
+
 FORUM_UPLOAD_URL = 'forum/profiles/'
 FORUM_UPLOAD_ROOT = os.path.join(BASE_DIR, "forum/profiles")
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
+
+DJANGO_WYSIWYG_FLAVOR = "ckeditor" # tinymce, tinymce_advanced or ckeditor
 
 LOGGING = {
     'version': 1,

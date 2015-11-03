@@ -231,3 +231,16 @@
 [03/Nov/2015 11:20:03] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted
 [03/Nov/2015 11:20:05] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted
 [03/Nov/2015 11:20:13] WARNING	- django.security.SuspiciousSession:108	: Session data corrupted
+[03/Nov/2015 16:11:03] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:20:23] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:20:25] INFO	- forum.forum:42	: <QueryDict: {'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC']}>
+[03/Nov/2015 16:22:16] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:22:34] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:22:44] INFO	- forum.forum:42	: <QueryDict: {'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC']}>
+[03/Nov/2015 16:24:27] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:24:44] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:24:55] INFO	- forum.forum:42	: <QueryDict: {}>
+[03/Nov/2015 16:25:01] INFO	- forum.forum:42	: <QueryDict: {'content': ['<p>salut</p>\r\n'], 'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC']}>
+[03/Nov/2015 16:34:29] INFO	- forum.forum:42	: <QueryDict: {'content': ['<p>salut</p>\r\n'], 'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC'], 'title': ['']}>
+[03/Nov/2015 16:34:39] INFO	- forum.forum:42	: <QueryDict: {'content': ['<p>salut lol</p>\r\n'], 'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC'], 'title': ['']}>
+[03/Nov/2015 16:40:42] INFO	- forum.forum:42	: <QueryDict: {'title': ['maieuh'], 'csrfmiddlewaretoken': ['ECArP1Lk6dnIS6YXsv3zfaBh6S568DiC'], 'content': ['<p>maieuh</p>\r\n']}>
