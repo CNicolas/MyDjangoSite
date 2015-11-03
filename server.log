@@ -1,0 +1,230 @@
+[28/Oct/2015 11:10:51] INFO	- forum.views:35	: <QueryDict: {'csrfmiddlewaretoken': ['UqJWBSV0ZQrnHToCtiUaLPUDdaCbUTTo']}>
+[28/Oct/2015 11:11:04] INFO	- forum.views:35	: <QueryDict: {'csrfmiddlewaretoken': ['UqJWBSV0ZQrnHToCtiUaLPUDdaCbUTTo']}>
+[28/Oct/2015 12:04:01] INFO	- forum.views:95	: <tr><th><label for="id_your_name">Your name :</label></th><td><input class="validate" id="id_your_name" length="100" maxlength="100" name="your_name" required="required" type="text" value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" /></td></tr>
+[28/Oct/2015 12:04:44] INFO	- forum.views:95	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[28/Oct/2015 12:04:46] INFO	- forum.views:95	: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[28/Oct/2015 12:04:59] INFO	- forum.views:95	: toto
+[28/Oct/2015 13:38:06] INFO	- forum.views:95	: Toto
+[28/Oct/2015 13:38:06] INFO	- forum.views:96	: Nom
+[28/Oct/2015 13:43:50] INFO	- forum.views:95	: Toto Prénom Nom 2015-10-14
+[28/Oct/2015 14:14:51] ERROR	- forum.profile:70	: <ul class="errorlist"><li>image<ul class="errorlist"><li>Ce champ est obligatoire.</li></ul></li></ul>
+[28/Oct/2015 14:15:24] ERROR	- forum.profile:70	: <ul class="errorlist"><li>image<ul class="errorlist"><li>Ce champ est obligatoire.</li></ul></li></ul>
+[28/Oct/2015 14:28:26] DEBUG	- forum.profile:52	: <tr><th><label for="id_pseudo">Pseudo :</label></th><td><input class="validate" id="id_pseudo" length="100" maxlength="100" name="pseudo" required="required" type="text" value="ToTo" /></td></tr>
+<tr><th><label for="id_firstname">Prénom :</label></th><td><input class="validate" id="id_firstname" length="100" maxlength="100" name="firstname" required="required" type="text" value="PrénomTo" /></td></tr>
+<tr><th><label for="id_lastname">Nom :</label></th><td><input class="validate" id="id_lastname" length="100" maxlength="100" name="lastname" required="required" type="text" value="NomToto" /></td></tr>
+<tr><th><label for="id_birthdate">Birthdate :</label></th><td><input class="datepicker" id="id_birthdate" length="100" name="birthdate" placeholder="Date de naissance" required="required" type="text" value="28/10/2015" /></td></tr>
+<tr><th><label for="id_image">Image :</label></th><td><input id="id_image" name="image" type="file" /></td></tr>
+[28/Oct/2015 14:32:15] DEBUG	- forum.profile:52	: <tr><th><label for="id_pseudo">Pseudo :</label></th><td><input class="validate" id="id_pseudo" length="100" maxlength="100" name="pseudo" required="required" type="text" value="ToTo" /></td></tr>
+<tr><th><label for="id_firstname">Prénom :</label></th><td><input class="validate" id="id_firstname" length="100" maxlength="100" name="firstname" required="required" type="text" value="PrénomTo" /></td></tr>
+<tr><th><label for="id_lastname">Nom :</label></th><td><input class="validate" id="id_lastname" length="100" maxlength="100" name="lastname" required="required" type="text" value="NomToto" /></td></tr>
+<tr><th><label for="id_birthdate">Birthdate :</label></th><td><input class="datepicker" id="id_birthdate" length="100" name="birthdate" placeholder="Date de naissance" required="required" type="text" value="28/10/2015" /></td></tr>
+<tr><th><label for="id_image">Image :</label></th><td><input id="id_image" name="image" type="file" /></td></tr>
+[28/Oct/2015 14:32:40] DEBUG	- forum.profile:52	: <tr><th><label for="id_pseudo">Pseudo :</label></th><td><input class="validate" id="id_pseudo" length="100" maxlength="100" name="pseudo" required="required" type="text" value="ToTo" /></td></tr>
+<tr><th><label for="id_firstname">Prénom :</label></th><td><input class="validate" id="id_firstname" length="100" maxlength="100" name="firstname" required="required" type="text" value="PrénomTo" /></td></tr>
+<tr><th><label for="id_lastname">Nom :</label></th><td><input class="validate" id="id_lastname" length="100" maxlength="100" name="lastname" required="required" type="text" value="NomToto" /></td></tr>
+<tr><th><label for="id_birthdate">Birthdate :</label></th><td><input class="datepicker" id="id_birthdate" length="100" name="birthdate" placeholder="Date de naissance" required="required" type="text" value="28/10/2015" /></td></tr>
+<tr><th><label for="id_image">Image :</label></th><td><input id="id_image" name="image" type="file" /></td></tr>
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sBIT' 41 3
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:511	: b'sBIT' 41 3 (unknown)
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 56 1
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 56 1 (unknown)
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 69 4
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 85 9
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'zTXt' 106 98
+[28/Oct/2015 14:35:52] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 216 37933
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sBIT' 41 3
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:511	: b'sBIT' 41 3 (unknown)
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 56 1
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 56 1 (unknown)
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 69 4
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 85 9
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'zTXt' 106 98
+[28/Oct/2015 14:43:10] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 216 37933
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sBIT' 41 3
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:511	: b'sBIT' 41 3 (unknown)
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 56 1
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 56 1 (unknown)
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 69 4
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 85 9
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'zTXt' 106 98
+[28/Oct/2015 14:44:13] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 216 37933
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sBIT' 41 3
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:511	: b'sBIT' 41 3 (unknown)
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 56 1
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 56 1 (unknown)
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 69 4
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 85 9
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'zTXt' 106 98
+[28/Oct/2015 14:45:18] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 216 37933
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sBIT' 41 3
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:511	: b'sBIT' 41 3 (unknown)
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 56 1
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 56 1 (unknown)
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 69 4
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 85 9
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'zTXt' 106 98
+[28/Oct/2015 15:58:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 216 37933
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[28/Oct/2015 16:09:06] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[28/Oct/2015 16:09:06] DEBUG	- forum.profile:60	: profjava.png
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[28/Oct/2015 16:10:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[28/Oct/2015 16:10:11] DEBUG	- forum.profile:60	: profjava.png
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[28/Oct/2015 16:37:24] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[28/Oct/2015 16:37:59] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[28/Oct/2015 16:37:59] INFO	- forum.profile:60	: png
+[28/Oct/2015 16:48:05] DEBUG	- forum.profile:54	: ToTo.gif
+[28/Oct/2015 16:52:43] DEBUG	- forum.profile:54	: ToTo.gif
+[28/Oct/2015 16:52:47] DEBUG	- forum.profile:54	: ToTo.gif
+[28/Oct/2015 16:52:56] DEBUG	- forum.profile:54	: ToTo.gif
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[28/Oct/2015 16:53:03] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[28/Oct/2015 16:53:03] DEBUG	- forum.profile:54	: ToTo.png
+[28/Oct/2015 16:53:07] DEBUG	- forum.profile:54	: ToTo.gif
+[29/Oct/2015 10:09:45] DEBUG	- forum.forum:41	: <forum.dto.PostDto object at 0x039DD1D0>
+[29/Oct/2015 10:10:08] DEBUG	- forum.forum:41	: Profile(pseudo=ToTo, firstname=PrénomToto, lastname=NomToto, birthdate=2015-10-28, image=forum/profiles/ToTo.gif)
+[29/Oct/2015 10:10:26] DEBUG	- forum.forum:41	: forum/profiles/ToTo.gif
+[29/Oct/2015 10:16:15] DEBUG	- forum.forum:38	: forum/profiles/ToTo.gif
+[29/Oct/2015 10:16:49] DEBUG	- forum.forum:38	: forum/profiles/ToTo.gif
+[29/Oct/2015 10:17:42] DEBUG	- forum.forum:38	: forum/profiles/ToTo.gif
+[29/Oct/2015 10:17:51] DEBUG	- forum.profile:54	: ToTo.gif
+[29/Oct/2015 10:17:51] ERROR	- django.security.SuspiciousFileOperation:204	: The joined path (D:\forum\profiles\ToTo.gif) is located outside of the base path component (D:\Users\cnicolas\PROJETS\MyDjangoSite)
+[29/Oct/2015 10:18:46] DEBUG	- forum.forum:38	: forum/profiles/ToTo.gif
+[29/Oct/2015 10:22:02] DEBUG	- forum.profile:52	: None
+[29/Oct/2015 10:23:17] DEBUG	- forum.profile:52	: None
+[29/Oct/2015 10:23:32] DEBUG	- forum.profile:52	: None
+[29/Oct/2015 10:24:57] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 10:25:22] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 10:30:22] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:30:28] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:31:18] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:31:18] DEBUG	- forum.profile:65	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:31:31] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:31:31] DEBUG	- forum.profile:65	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:32:18] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:32:18] DEBUG	- forum.profile:65	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:32:30] DEBUG	- forum.profile:54	: None
+[29/Oct/2015 10:32:30] DEBUG	- forum.profile:65	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:46:46] DEBUG	- forum.profile:57	: None
+[29/Oct/2015 10:46:46] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[29/Oct/2015 10:46:49] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[29/Oct/2015 10:46:49] DEBUG	- forum.profile:57	: profjava.png
+[29/Oct/2015 10:46:50] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 10:48:07] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 14:03:17] INFO	- forum.forum:41	: 1
+[29/Oct/2015 14:04:21] INFO	- forum.forum:41	: 1
+[29/Oct/2015 14:04:22] INFO	- forum.forum:41	: 1
+[29/Oct/2015 15:09:15] DEBUG	- forum.profile:57	: None
+[29/Oct/2015 15:09:15] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 15:09:21] DEBUG	- forum.profile:57	: lin_logo.gif
+[29/Oct/2015 15:09:21] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 15:09:57] DEBUG	- forum.profile:57	: None
+[29/Oct/2015 15:09:57] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 15:10:04] DEBUG	- forum.profile:57	: None
+[29/Oct/2015 15:10:04] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 15:10:04] DEBUG	- forum.profile:57	: None
+[29/Oct/2015 15:10:05] DEBUG	- forum.profile:68	: <class 'django.db.models.fields.files.ImageFieldFile'>
+[29/Oct/2015 15:14:27] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:14:39] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:15:07] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:15:16] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:15:25] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:17:22] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:17:23] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:17:29] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:17:31] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:17:36] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:18:28] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:18:39] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:18:47] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:18:49] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:20:30] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:20:41] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:22:41] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:26:48] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:27:45] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:28:05] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:28:11] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:28:40] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:28:49] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:29:21] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:29:40] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:29:44] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:29:58] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:07] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:20] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:29] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:37] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:40] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:30:43] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:31:20] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:31:41] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:31:52] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:32:04] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:32:18] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:33:03] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:33:31] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:33:37] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:33:40] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:33:57] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:35:54] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:36:19] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:36:25] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:37:23] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:37:44] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:38:01] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:39:15] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:39:20] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:40:02] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:41:07] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:41:13] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:41:17] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:41:22] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:42:24] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:43:06] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:43:14] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:44:21] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:46:00] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:46:05] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:47:13] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:47:38] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 15:49:25] ERROR	- forum.views:28	: Pas de profile
+[29/Oct/2015 16:54:39] ERROR	- forum.connection:62	: Passwords does not match
+[29/Oct/2015 16:55:25] ERROR	- forum.connection:65	: Passwords does not match
+[29/Oct/2015 16:55:46] DEBUG	- forum.connection:51	: <tr><th><label for="id_username">Nom d&#39;utilisateur :</label></th><td><input class="validate" id="id_username" length="100" maxlength="100" name="username" type="text" value="tata" /></td></tr>
+<tr><th><label for="id_email">E-Mail :</label></th><td><input class="validate" id="id_email" length="200" maxlength="200" name="email" type="email" value="tata@tata.com" /></td></tr>
+<tr><th><label for="id_password">Mot de Passe :</label></th><td><input class="validate" id="id_password" length="100" maxlength="100" name="password" type="password" /></td></tr>
+<tr><th><label for="id_confirm_password">Confirmez le mot de passe :</label></th><td><input class="validate" id="id_confirm_password" length="100" maxlength="100" name="confirm_password" type="password" /></td></tr>
+[29/Oct/2015 16:55:46] ERROR	- forum.connection:66	: Passwords does not match

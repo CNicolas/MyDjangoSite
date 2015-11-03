@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<ul class="collapsible popout" data-collapsible="accordion">
+			{% for theme in themes %}
+				<li>
+					<div class="collapsible-header center brown white-text">{{ theme.title }}</div>
+					<div class="collapsible-body">
+						<ul class="collapsible popout section" data-collapsible="accordion">
+							{% for subtheme in theme.subthemes %}
+								<li>
+									<div class="collapsible-header center blue-grey lighten-2 black-text">
+										{{ subtheme.title }}
+										<a href="/forum/addsubject/{{ subtheme.id }}" class="add-subject-button btn-floating waves-effect waves-light green right">
+											<i class="material-icons">add</i>
+										</a>
+									</div>
+									<div class="collapsible-body">
+										<div class="collection">
+											{% for subject in subtheme.subjects %}
+												{% if subject.posts|length > 0 %}
+													<a href="/forum/subject/{{ subject.id }}" class="collection-item">
+														{{ subject.title }}
+														<span class="badge black white-text">{{ subject.posts|length }}</span>
+													</a>
+												{% else %}
+													<div class="collection-item">
+														{{ subject.title }}
+														<span class="badge black white-text">{{ subject.posts|length }}</span>
+													</div>
+												{% endif %}
+											{% empty %}
+												<div class="collection-item center">
+													<i class="material-icons">mood_bad</i>Aucun sujet dans ce sous-theme
+												</div>
+											{% endfor %}
+										</div>
+									</div>
+								</li>
+							{% empty %}
+								<div class="center black-text">
+									<i class="material-icons">mood_bad</i>Aucun sous-thème
+								</div>
+							{% endfor %}
+						</ul>
+					</div>
+				</li>
+			{% empty %}
+				<li>
+					<div class="collapsible-header">
+						<i class="material-icons">mood_bad</i>Aucun thème
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+</main>
+
+{% endblock content %}

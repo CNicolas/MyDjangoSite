@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<h3>{{ referer }}</h3>
+		<h1>{{ message }}</h1>
+	</section>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+	{% load staticfiles %}
+
+	<head>
+		<meta charset="utf-8">
+		<title>{{ pagetitle }}</title>
+
+		<!-- CSS Framework -->
+		<link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
+
+		<!-- FONTS -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" >
+		
+		<!-- Personal CSS -->
+		<link href="{% static 'css/forum.css' %}" rel="stylesheet">
+	</head>
+    <body class="{{ background_color }}">
+    	<!-- Navbar -->
+		{% include "fragments/navbar.html" %}
+		<!-- End of Navbar -->
+		
+		<!-- Main content -->
+		{% block content %}{% endblock content %}
+		<!-- End of main -->
+
+		<!-- Footer -->
+		{% include "fragments/footer.html" %}
+		<!-- End of Footer -->
+
+		<!-- Modals -->
+		{% include "fragments/modal-connection.html" %}
+		<!-- End of Modals -->
+    </body>
+
+	<!-- JavaScript Frameworks/Libraries -->
+	<script src="{% static 'js/jquery-2.1.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
+	<script src="{% static 'js/materialize.min.js' %}" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Personnal JavaScript -->
+	<script src="{% static 'js/forum.js' %}" type="text/javascript" charset="utf-8"></script>
+</html>

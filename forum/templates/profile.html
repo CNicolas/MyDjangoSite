@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<div class="center">
+			<img class="responsive-img profile-img" src="/{{ imageurl }}" alt="Image" >
+		</div>
+		<form action="/forum/profile" method="POST" class="container" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="file-field input-field">
+				<div class="btn black white-text">
+					<span>Image</span>
+					{{ form.image }}
+				</div>
+				<div class="file-path-wrapper">
+					<input class="file-path validate" type="text">
+				</div>
+			</div>
+			<div class="input-field">
+	   			<label for="{{ form.pseudo.auto_id }}">{{ form.pseudo.label }}</label>
+	   			{{ form.pseudo }}
+	   		</div>
+		    <div class="input-field">
+	   			<label for="{{ form.firstname.auto_id }}">{{ form.firstname.label }}</label>
+	   			{{ form.firstname }}
+	   		</div>
+		    <div class="input-field">
+	   			<label for="{{ form.lastname.auto_id }}">{{ form.lastname.label }}</label>
+	   			{{ form.lastname }}
+	   		</div>
+	   		<div class="input-field">
+	   			{{ form.birthdate }}
+	   		</div>
+
+		    <div class="center">
+				<button class=" btn-large waves-effect waves-light light-green accent-4" type="submit">Mettre à jour</button>
+			</div>
+		</form>
+	</section>
+</main>
+
+{% endblock content %}

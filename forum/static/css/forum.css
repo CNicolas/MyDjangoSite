@@ -1,0 +1,95 @@
+/* 
+* @Author: cnicolas
+* @Date:   2015-10-20 14:20:24
+* @Last Modified by:   cnicolas
+* @Last Modified time: 2015-10-29 16:39:19
+*/
+
+html {
+	font-family: GillSans, Calibri, Trebuchet, sans-serif;
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+
+/* HELPERS */
+.hidden {
+	display: none;
+}
+.justify {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.bold {
+	font-weight: bold;
+}
+.opacity-5 {
+	opacity: .5;
+}
+
+/* SURCHARGE MATERIALIZE */
+.valign-wrapper div {
+	width: 100%;
+}
+.icon-block p {
+	font-size: 18px;
+}
+footer {
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* MODAL */
+#modal-connection .modal-footer {
+	height: 120px;
+}
+#modal-connection .modal-footer .btn,
+#modal-connection .modal-footer .btn-flat,
+#modal-connection .modal-footer .btn-large {
+	margin-bottom: 0px;
+}
+.modal .modal-header {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	text-align: center;
+	height: 56px;
+}
+.modal.modal-fixed-footer.modal-fixed-header .modal-content {
+	height: calc(100% - 112px);
+}
+
+/* NAVBAR */
+nav {
+	/*box-shadow: none;*/
+}
+nav ul.dropdown-content.icons-only {
+	min-width: 0px;
+}
+nav ul.dropdown-content {
+	top: auto !important;
+}
+
+/* IMAGES */
+.profile-img {
+	max-height: 100px;
+}
+
+/* FORUM */
+.add-subject-button i {
+	width: 100%;
+	line-height: 2.5rem;
+}
+
+/* POSTS */
+.post-content {
+	margin-top: 5px;
+}
+

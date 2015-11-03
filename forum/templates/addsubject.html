@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<form action="/forum/addsubject/{{ subtheme.id }}/" method="POST" class="container">
+			{% csrf_token %}
+			<div class="input-field">
+	   			<label for="{{ form.title.auto_id }}">{{ form.title.label }}</label>
+	   			{{ form.title }}
+	   		</div>
+	   		<div class="center">
+				<button class=" btn-large waves-effect waves-light light-green accent-4" type="submit">Créer un sujet</button>
+			</div>
+		</form>
+	</section>
+</main>
+
+{% endblock content %}

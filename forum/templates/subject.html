@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<ul class="collapsible" data-collapsible="expandable">
+			{% for post in posts %}
+				<li>
+					<div class="collapsible-header active grey lighten-4">
+						{{ post.title }}
+						<div class="right">
+							<span class="date-modif">{{ post.date_modification }}</span>
+						</div>
+					</div>
+					<div class="collapsible-body white">
+						<div class="row">
+							<div class="col s1 profil-infos center">
+								{{ post.profile.pseudo }}
+								<img src="{{ post.imageurl }}" alt="<Image de profil>" class="responsive-img col s12">
+							</div>
+							<div class="col s11 justify post-content">
+								{{ post.content }}
+							</div>
+						</div>
+					</div>
+				</li>
+			{% empty %}
+				<div class="collection">
+					<li class="collection-item">
+						<i class="material-icons">mood_bad</i>Aucun post
+					</li>
+				</div>
+			{% endfor %}
+		</ul>
+	</section>
+</main>
+
+{% endblock content %}
