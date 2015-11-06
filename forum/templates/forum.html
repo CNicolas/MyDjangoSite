@@ -17,18 +17,18 @@
 		<ul class="collapsible popout" data-collapsible="accordion">
 			{% for theme in themes %}
 				<li>
-					<div class="collapsible-header center brown white-text">{{ theme.title }}</div>
+					<div id="theme{{ theme.id }}" class="theme collapsible-header center brown white-text">{{ theme.title }}</div>
 					<div class="collapsible-body">
 						<ul class="collapsible popout section" data-collapsible="accordion">
 							{% for subtheme in theme.subthemes %}
 								<li>
-									<div class="collapsible-header center blue-grey lighten-2 black-text">
+									<div id="subtheme{{ subtheme.id }}" class="subtheme collapsible-header center blue-grey lighten-2 black-text">
 										{{ subtheme.title }}
 									</div>
 									<div class="collapsible-body">
 										<div class="collection">
 											{% for subject in subtheme.subjects %}
-												<a href="{% url 'subject' subject.id %}" class="collection-item center">
+												<a href="{% url 'subject' subject.id %}" class="subject collection-item center">
 													{{ subject.title }}
 													<span class="badge black white-text">{{ subject.posts|length }}
 														{% if subject.newpost > 0 %}

@@ -18,7 +18,7 @@
 	<section class="section">
 		<ul class="collapsible" data-collapsible="expandable">
 			{% for post in posts %}
-				<li>
+				<li id="post{{ post.id }}">
 					<div class="collapsible-header active grey lighten-4">
 						{{ post.title }}
 						<div class="right">
@@ -26,11 +26,18 @@
 						</div>
 					</div>
 					<div class="collapsible-body white">
-						<div class="row">
-							<div class="col s1 profil-infos center">
-								{{ post.profile.pseudo }}
-								<img src="{{ post.imageurl }}" alt="<Image de profil>" class="responsive-img col s12">
-							</div>
+						<div class="row post">
+							{% if user.is_authenticated %}
+								<a href="{% url 'profileinfos' post.profile.id %}" class="col s1 profil-infos center">
+									{{ post.profile.pseudo }}
+									<img src="/{{ post.profile.image }}" alt="<Image de profil>" class="responsive-img col s12">
+								</a>
+							{% else %}
+								<div class="col s1 profil-infos center">
+									{{ post.profile.pseudo }}
+									<img src="/{{ post.profile.image }}" alt="<Image de profil>" class="responsive-img col s12">
+								</div>
+							{% endif %}
 							<div class="col s11 justify post-content">
 								{{ post.content|safe }}
 							</div>
@@ -50,7 +57,7 @@
 				<button id="answer" class="btn-large waves-effect waves-light green col s12">Répondre</button>
 			</div>
 			<section id="section_answer" class="section container hidden">
-				<form action="/forum/subject/{{ subject.id }}/" method="POST">
+				<form action="{% url 'subject' subject.id %}" method="POST">
 					{% csrf_token %}
 					<div class="input-field">
 						<label for="{{ form.title.auto_id }}">{{ form.title.label }}</label>

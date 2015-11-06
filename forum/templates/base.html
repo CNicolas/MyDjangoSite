@@ -43,4 +43,8 @@
 	{% if '/forum/subject/' in request.get_full_path %}
 		<script src="{% static 'js/subject.js' %}" type="text/javascript" charset="utf-8"></script>
 	{% endif %}
+
+	{% if 'forum/forum' in request.get_full_path %}
+		<script src="{% static 'js/forumforum.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% endif %}
 </html>

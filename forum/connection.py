@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 10:16:35
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:56:05
+# @Last Modified time: 2015-11-06 13:58:50
 
 import logging
 
@@ -124,7 +124,7 @@ def connect(request, ref):
 		return redirect("index")
 
 def indexError(request):
-	context = {'pagetitle': 'Accueil', 'background_color': 'white', 'error': "Mauvais nom d'utilisateur ou mauvais mot de passe"}
+	context = {'pagetitle': 'Accueil', 'error': "Mauvais nom d'utilisateur ou mauvais mot de passe"}
 	if request.user.is_authenticated():
 		profiles = Profile.objects.filter(user=request.user)
 		if profiles.exists():

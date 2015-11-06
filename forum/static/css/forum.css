@@ -2,7 +2,7 @@
 * @Author: cnicolas
 * @Date:   2015-10-20 14:20:24
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-10-29 16:39:19
+* @Last Modified time: 2015-11-06 16:12:59
 */
 
 html {
@@ -93,3 +93,7 @@ nav ul.dropdown-content {
 	margin-top: 5px;
 }
 
+/* PROFILE INFORMATIONS */
+#profile-infos-table > tbody > tr > td:first-child {
+	font-weight: bold;
+}

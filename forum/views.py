@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:21:25
+# @Last Modified time: 2015-11-06 14:50:36
 
 import logging
 import os
@@ -18,7 +18,7 @@ from forum.forms import ProfileForm
 logger = logging.getLogger(__name__)
 
 def index(request):
-	context = {'pagetitle': 'Accueil', 'background_color': 'white'}
+	context = {'pagetitle': 'Accueil'}
 	if request.user.is_authenticated():
 		profiles = Profile.objects.filter(user=request.user)
 		if profiles.exists():
@@ -83,4 +83,4 @@ def deleteForum(request):
 	# Theme.objects.all().delete()
 	# Profile.objects.all().delete()
 	# UnreadPost.objects.all().delete()
-	return HttpResponse(UnreadPost.objects)
+	return HttpResponse(Profile.objects.get(pseudo='Toto').user.email)

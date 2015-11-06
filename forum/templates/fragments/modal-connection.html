@@ -1,5 +1,4 @@
 <div id="modal-connection" class="modal modal-fixed-footer modal-fixed-header">
-	<!-- <form action="/forum/connect/{{ request.get_full_path }}" method="POST"> -->
 	<form action="{% url 'connect' request.get_full_path %}" method="POST">
 		{% csrf_token %}
 		<div class="modal-header">

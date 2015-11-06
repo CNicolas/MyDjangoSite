@@ -3,9 +3,28 @@
 # @Author: cnicolas
 # @Date:   2015-10-27 15:30:06
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 09:57:53
+# @Last Modified time: 2015-11-06 14:56:28
 
 from forum.models import Profile, Theme, SubTheme, Subject, Post
+
+class ProfileDto:
+	def __init__(self, profile):
+		self.profile = profile
+		self.id = profile.id
+		self.pseudo = profile.pseudo
+		self.firstname = profile.firstname
+		self.lastname = profile.lastname
+		self.birthdate = profile.birthdate
+		self.image = profile.image
+		self.email = profile.user.email
+
+		self.creation = profile.user.date_joined
+		self.last_login = profile.user.last_login
+		self.logged = profile.user.is_authenticated()
+
+		posts = Post.objects.filter(profile=profile)
+		self.posts_number = len(posts)
+		self.last_posts = list(posts)[:3]
 
 class ThemeDto:
 	def __init__(self, theme, subthemes=None):

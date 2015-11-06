@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 11:41:58
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:58:07
+# @Last Modified time: 2015-11-06 14:19:43
 
 import dateutil.parser
 import hashlib
@@ -15,9 +15,11 @@ from django.utils import timezone
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 
 from forum.models import Profile
 from forum.forms import ProfileForm
+from forum.dto import ProfileDto
 
 logger = logging.getLogger(__name__)
 
@@ -56,7 +58,7 @@ def profilePost(request):
 
 	if form.is_valid():
 		profiles = Profile.objects.filter(user=user)
-		context = {'pagetitle': 'Profil', 'success': "Votre profil a bien été mis à jour !", 'form': form, 'background_color': 'white'}
+		context = {'pagetitle': 'Profil', 'success': "Votre profil a bien été mis à jour !", 'form': form}
 
 		if profiles.exists():
 			profile = profiles[0]
@@ -92,3 +94,12 @@ def profilePost(request):
 	else:
 
 		return redirect("profile")
+
+def profile_infos(request, profile_id):
+	try:
+		profile = ProfileDto(Profile.objects.get(id=profile_id))
+		context = {'pagetitle': 'Informations de ' + profile.pseudo, 'profile': profile}
+		return render(request, 'profileinfos.html', context)
+
+	except ObjectDoesNotExist:
+		return redirect('forum')

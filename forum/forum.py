@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:55:30
+# @Last Modified time: 2015-11-06 13:58:51
 
 import logging
 
@@ -19,7 +19,7 @@ from forum.forms import AddSubjectForm, AddPostForm
 logger = logging.getLogger(__name__)
 
 def forum(request):
-	context = {'pagetitle': "Forum", 'background_color': 'white'}
+	context = {'pagetitle': "Forum"}
 
 	themes = Theme.objects.all()
 	theme_dtos = []
@@ -75,8 +75,12 @@ def subject(request, subject_id):
 				context['error'] = '\n'.join(error_list)
 
 		else:
-			UnreadPost.objects.filter(subject=subject).delete()
-			logger.debug('UnreadPosts of ' + subject.title + ' deleted for ' + profile.pseudo)
+			
+			if request.user.is_authenticated():
+				profile = Profile.objects.get(user=request.user)
+				UnreadPost.objects.filter(profile=profile, subject=subject).delete()
+				logger.debug('UnreadPosts of ' + subject.title + ' deleted for ' + profile.pseudo)
+
 			form = AddPostForm()
 
 		posts = Post.objects.filter(subject=subject)

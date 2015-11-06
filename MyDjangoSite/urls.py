@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^forum/logout/(?P<ref>.{0,50})/$', connection.disconnect, name='logout'),
 
     url(r'^forum/profile/$', profile.profile, name='profile'),
+    url(r'^forum/profileinfos/(?P<profile_id>[0-9]+)/$', profile.profile_infos, name='profileinfos'),
 
     url(r'^forum/forum/$', forum.forum, name='forum'),
     url(r'^forum/subject/(?P<subject_id>[0-9]+)/$', forum.subject, name='subject'),
