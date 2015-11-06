@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 {% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
 
 <main>
 	<section class="section">

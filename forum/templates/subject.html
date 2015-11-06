@@ -32,7 +32,7 @@
 								<img src="{{ post.imageurl }}" alt="<Image de profil>" class="responsive-img col s12">
 							</div>
 							<div class="col s11 justify post-content">
-								{{ post.content }}
+								{{ post.content|safe }}
 							</div>
 						</div>
 					</div>
@@ -45,9 +45,11 @@
 				</div>
 			{% endfor %}
 		</ul>
-		<br/>
 		{% if user.is_authenticated %}
-			<section class="container">
+			<div class="center row">
+				<button id="answer" class="btn-large waves-effect waves-light green col s12">Répondre</button>
+			</div>
+			<section id="section_answer" class="section container hidden">
 				<form action="/forum/subject/{{ subject.id }}/" method="POST">
 					{% csrf_token %}
 					<div class="input-field">
@@ -62,6 +64,9 @@
 						<button class="btn-large waves-effect waves-light green col s12" type="submit">Répondre</button>
 					</div>
 				</form>
+				<div class="center row">
+					<button id="answer_hide" class="btn-large waves-effect waves-light red col s12">Cancel</button>
+				</div>
 			</section>
 		{% endif %}
 	</section>

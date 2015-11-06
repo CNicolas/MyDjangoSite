@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-27 15:30:06
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-03 10:30:58
+# @Last Modified time: 2015-11-05 09:57:53
 
 from forum.models import Profile, Theme, SubTheme, Subject, Post
 
@@ -16,6 +16,8 @@ class ThemeDto:
 			self.subthemes = subthemes
 		else:
 			self.subthemes = SubTheme.objects.filter(theme=theme)
+	def __str__(self):
+		return str(self.theme)
 
 class SubThemeDto:
 	def __init__(self, subtheme, subjects=None):
@@ -27,6 +29,8 @@ class SubThemeDto:
 			self.subjects = subjects
 		else:
 			self.subjects = Subject.objects.filter(subtheme=subtheme)
+	def __str__(self):
+		return str(self.subtheme)
 
 class SubjectDto:
 	def __init__(self, subject):
@@ -36,6 +40,9 @@ class SubjectDto:
 		self.theme = subject.theme
 		self.subtheme = subject.subtheme
 		self.posts = Post.objects.filter(subject=subject)
+		self.newpost = 0
+	def __str__(self):
+		return str(self.subject)
 
 class PostDto:
 	def __init__(self, post):
@@ -50,3 +57,5 @@ class PostDto:
 		self.subject = post.subject
 		self.profile = post.profile
 		self.imageurl = '/' + post.profile.image.url
+	def __str__(self):
+		return str(self.post)

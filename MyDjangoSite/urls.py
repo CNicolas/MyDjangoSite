@@ -27,10 +27,11 @@ urlpatterns = [
 
     # FORUM APPLI URLS 
     url(r'^forum/$', views.index, name='index'),
+    url(r'^forumError/$', connection.indexError, name='indexError'),
     
     url(r'^forum/subscribe/$', connection.subscribe, name='subscribe'),
-    url(r'^forum/connect/$', connection.connect, name='connect'),
-    url(r'^forum/logout/$', connection.disconnect, name='logout'),
+    url(r'^forum/connect/(?P<ref>.{0,50})/$', connection.connect, name='connect'),
+    url(r'^forum/logout/(?P<ref>.{0,50})/$', connection.disconnect, name='logout'),
 
     url(r'^forum/profile/$', profile.profile, name='profile'),
 

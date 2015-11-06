@@ -2,12 +2,12 @@
 * @Author: cnicolas
 * @Date:   2015-10-20 14:43:50
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-10-29 16:11:10
+* @Last Modified time: 2015-11-04 11:59:35
 */
 
 'use strict';
 
-$(document).ready(function(){
+$(document).ready(function() {
 	// Init the mobile navbar
 	$(".button-collapse").sideNav();
 	// Init the parallax

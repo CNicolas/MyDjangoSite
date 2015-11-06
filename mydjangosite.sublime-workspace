@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"sub",
+				"subtheme"
+			],
+			[
+				"subj",
+				"subjects"
+			],
+			[
+				"crea",
+				"create_subject"
+			],
+			[
+				"Unread",
+				"UnreadPostManager"
+			],
+			[
+				"Sub",
+				"SubTheme〔module〕"
+			],
+			[
+				"eror",
+				"error_list〔variable〕"
+			],
+			[
+				"error",
+				"error_string〔variable〕"
+			],
+			[
+				"Subject",
+				"SubjectDto〔module〕"
+			],
+			[
+				"subth",
+				"subtheme"
+			],
+			[
 				"Subjec",
 				"SubjectForm"
 			],
@@ -14,10 +50,6 @@
 			[
 				"su",
 				"subtheme〔variable〕"
-			],
-			[
-				"sub",
-				"subject_id"
 			],
 			[
 				"pa",
@@ -482,64 +514,32 @@
 			[
 				"if",
 				"ife	if … else"
-			],
-			[
-				"text",
-				"text-align"
-			],
-			[
-				"serv",
-				"serverURL  (function)"
-			],
-			[
-				"fun",
-				"fun	Function"
-			],
-			[
-				"lin",
-				"link	link - icon"
-			],
-			[
-				"proj",
-				"project"
-			],
-			[
-				"them",
-				"themAsked"
-			],
-			[
-				"the",
-				"themAsked"
-			],
-			[
-				"cat",
-				"categories"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "MyDjangoSite/urls.py",
+			"file": "forum/connection.py",
 			"settings":
 			{
-				"buffer_size": 1827,
-				"line_ending": "Unix"
+				"buffer_size": 4634,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "forum/forum.py",
 			"settings":
 			{
-				"buffer_size": 2068,
+				"buffer_size": 3795,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "forum/templates/forum.html",
+			"file": "forum/profile.py",
 			"settings":
 			{
-				"buffer_size": 2228,
+				"buffer_size": 2991,
 				"line_ending": "Windows"
 			}
 		}
@@ -642,38 +642,45 @@
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/__pycache__",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static/js",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite"
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/static"
 	],
 	"file_history":
 	[
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/addsubject.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/profile.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/profile.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/forum.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/dto.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/forms.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/navbar.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/connection.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/base.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite/views.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite/urls.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static/css/forum.css",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/README.md",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/views.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/subscribe.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/forum.py",
-		"/D/Users/cnicolas/PROJETS/www/index.php",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/modal-connection.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite/urls.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/forum.html",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/index.html",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/footer.html",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/subject.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/modal-connection.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/navbar.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/forum.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/managers.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/models.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/dto.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/connection.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/subscribe.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/profile.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/forms.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/migrations/0012_profile_previous_login.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/base.html",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static/js/forum.js",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static/js/subject.js",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/profile.html",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite/settings.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/addsubject.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/fragments/footer.html",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/static/materialize/README.md",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/MyDjangoSite/views.py",
+		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/static/css/forum.css",
+		"/D/Users/cnicolas/PROJETS/www/index.php",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/error.html",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/template.py",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/errors.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/models.py",
-		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/managers.py",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/urls.py",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/storage.py",
 		"/D/Users/cnicolas/PROJETS/MyDjangoSite/forum/templates/testform.html",
@@ -770,11 +777,7 @@
 		"/D/TMA_EIPDV/EIPDV_master/app/common/refresher.js",
 		"/D/TMA_EIPDV/EIPDV_master/test/data/EIPDV-497_2013-10-09_Home_BtnProgramme/notifications.json",
 		"/D/TMA_EIPDV/EIPDV_master/app/common/notification-listener.js",
-		"/D/TMA_EIPDV/EIPDV_master/app/views/course/ticker-view.js",
-		"/D/TMA_EIPDV/EIPDV_master/app/templates/course/ticker-view.html",
-		"/D/TMA_EIPDV/EIPDV_master/app/templates/course/race-view.html",
-		"/D/TMA_EIPDV/EIPDV_master/app/router.js",
-		"/D/TMA_EIPDV/EIPDV_master/app/common/app-configuration.js"
+		"/D/TMA_EIPDV/EIPDV_master/app/views/course/ticker-view.js"
 	],
 	"find":
 	{
@@ -785,6 +788,8 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"<open folders>, -*/*.min.*, -*/bootstrap*, -*/fonts/*, -*/materialize*",
+			"<open folders>, -*/*.min.*, -*/bootstrap*, -*/fonts/*, -*/materialize*, *.py",
 			"<open folders>, -*/*.min.*, -*/bootstrap*, -*/fonts/*, -*/materialize*",
 			"<open folders>, -*/*.min.*, -*/bootstrap*",
 			"<open folders>, -*/*.min.*",
@@ -838,6 +843,51 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			": subtheme",
+			"'Edition du sujet'",
+			"'",
+			"<section",
+			"<section>",
+			"section>",
+			"\"",
+			"user + ",
+			"logger.",
+			"logger",
+			"/$",
+			"/",
+			"UnreadSubject",
+			"subject",
+			"Subject",
+			"subject",
+			"UnreadSubjectManager",
+			"suibject",
+			"post",
+			"last",
+			"t2",
+			"t5",
+			"t2",
+			"diff",
+			"now",
+			"noqw",
+			"\"",
+			"cleaned_data",
+			"request.POST.get(",
+			"\"",
+			"href=\"/",
+			"href",
+			"request.get",
+			"<",
+			"safe",
+			"title",
+			"cle",
+			"cleaned",
+			"error_string",
+			"title",
+			"   	",
+			"span",
+			"1",
+			"posts",
+			"SubjectForm",
 			"editsubject",
 			"@login_required(login_url=\"/\")",
 			"pseudo",
@@ -920,52 +970,7 @@
 			"format",
 			"subtheme",
 			"subjects",
-			"theme",
-			"subtheme_id",
-			"subtheme",
-			"SubTheme",
-			"subtheme",
-			"li",
-			"theme",
-			"subthemes",
-			"theme",
-			"theme_dtos",
-			"theme",
-			"subtheme",
-			"theme",
-			"a",
-			"li",
-			"ul",
-			"4",
-			"5",
-			"themedtos",
-			"subject",
-			"Theme.objects.get(id=2)",
-			"Theme.objects.get(id=1)",
-			"2",
-			"create_subject",
-			"theme",
-			"Theme",
-			"do_not_disturb",
-			"50",
-			"theme",
-			"    ",
-			"   ",
-			"      ",
-			"subject",
-			"Subject",
-			"theme",
-			"profile",
-			"theme",
-			"profiles",
-			"'",
-			"      ",
-			"\"/",
-			"\"/l",
-			"=\"/",
-			"center",
-			"-profile",
-			"Accueil"
+			"theme"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1053,19 +1058,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "MyDjangoSite/urls.py",
+					"file": "forum/connection.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1827,
+						"buffer_size": 4634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1536,
-								1536
+								4313,
+								4313
 							]
 						],
 						"settings":
@@ -1074,26 +1079,16 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -1104,6 +1099,21 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1114,21 +1124,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"c_time":
 							[
@@ -1159,11 +1164,11 @@
 								10,
 								7,
 								223,
-								10,
-								20,
-								10,
-								35,
-								29,
+								11,
+								3,
+								11,
+								13,
+								21,
 								0,
 								0,
 								0,
@@ -1179,11 +1184,10 @@
 							],
 							"side_bar_folders_auto_load_folder": 1,
 							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1440.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1195,15 +1199,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2068,
+						"buffer_size": 3795,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1842,
-								1842
+								3498,
+								3498
 							]
 						],
 						"settings":
@@ -1212,26 +1216,16 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -1242,6 +1236,21 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1252,21 +1261,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"c_time":
 							[
@@ -1297,11 +1301,11 @@
 								10,
 								7,
 								223,
-								10,
-								23,
-								14,
-								31,
 								11,
+								3,
+								11,
+								13,
+								21,
 								0,
 								0,
 								0,
@@ -1320,7 +1324,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 226.0,
+						"translation.y": 1035.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1328,19 +1332,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "forum/templates/forum.html",
+					"file": "forum/profile.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2228,
+						"buffer_size": 2991,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								71,
-								71
+								2319,
+								2319
 							]
 						],
 						"settings":
@@ -1349,61 +1353,61 @@
 							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
 							"c_time":
 							[
@@ -1434,11 +1438,11 @@
 								10,
 								7,
 								223,
-								10,
-								23,
-								14,
-								18,
-								2,
+								11,
+								3,
+								11,
+								13,
+								21,
 								0,
 								0,
 								0,
@@ -1453,11 +1457,11 @@
 								46
 							],
 							"side_bar_folders_auto_load_folder": 1,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 649.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1515,48 +1519,152 @@
 		"selected_items":
 		[
 			[
-				"forum",
-				"forum\\templates\\forum.html"
+				"url",
+				"MyDjangoSite\\urls.py"
 			],
 			[
-				"propf",
-				"forum\\profile.py"
-			],
-			[
-				"prof",
-				"forum\\templates\\profile.html"
+				"moda",
+				"forum\\templates\\fragments\\modal-connection.html"
 			],
 			[
 				"navb",
 				"forum\\templates\\fragments\\navbar.html"
 			],
 			[
-				"base",
-				"forum\\templates\\base.html"
+				"for",
+				"forum\\templates\\forum.html"
 			],
 			[
-				"views",
+				"ind",
+				"forum\\templates\\index.html"
+			],
+			[
+				"vi",
 				"forum\\views.py"
 			],
 			[
-				"sub",
-				"forum\\templates\\subscribe.html"
+				"inde",
+				"forum\\templates\\index.html"
+			],
+			[
+				"c",
+				"forum\\connection.py"
+			],
+			[
+				"view",
+				"forum\\views.py"
+			],
+			[
+				"dto",
+				"forum\\dto.py"
+			],
+			[
+				"forum",
+				"forum\\templates\\forum.html"
 			],
 			[
 				"conn",
 				"forum\\connection.py"
 			],
 			[
-				"profi",
-				"forum\\profile.py"
+				"manag",
+				"forum\\managers.py"
+			],
+			[
+				"model",
+				"forum\\models.py"
+			],
+			[
+				"subj",
+				"forum\\templates\\subject.html"
 			],
 			[
 				"forms",
 				"forum\\forms.py"
 			],
 			[
-				"for",
-				"forum\\forum.py"
+				"profil",
+				"forum\\profile.py"
+			],
+			[
+				"sub",
+				"forum\\templates\\subscribe.html"
+			],
+			[
+				"con",
+				"forum\\connection.py"
+			],
+			[
+				"manager",
+				"forum\\managers.py"
+			],
+			[
+				"base",
+				"forum\\templates\\base.html"
+			],
+			[
+				"subje",
+				"forum\\templates\\subject.html"
+			],
+			[
+				"prof",
+				"forum\\templates\\profile.html"
+			],
+			[
+				"modal",
+				"forum\\templates\\fragments\\modal-connection.html"
+			],
+			[
+				"nav",
+				"forum\\templates\\fragments\\navbar.html"
+			],
+			[
+				"add",
+				"forum\\templates\\addsubject.html"
+			],
+			[
+				"setti",
+				"MyDjangoSite\\settings.py"
+			],
+			[
+				"profi",
+				"forum\\profile.py"
+			],
+			[
+				"sett",
+				"MyDjangoSite\\settings.py"
+			],
+			[
+				"ffoo",
+				"forum\\templates\\fragments\\footer.html"
+			],
+			[
+				"nava",
+				"forum\\templates\\fragments\\navbar.html"
+			],
+			[
+				"mana",
+				"forum\\managers.py"
+			],
+			[
+				"dt",
+				"forum\\dto.py"
+			],
+			[
+				"rea",
+				"static\\materialize\\README.md"
+			],
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"propf",
+				"forum\\profile.py"
+			],
+			[
+				"views",
+				"forum\\views.py"
 			],
 			[
 				"foru",
@@ -1565,14 +1673,6 @@
 			[
 				"foote",
 				"forum\\templates\\fragments\\footer.html"
-			],
-			[
-				"profil",
-				"forum\\profile.py"
-			],
-			[
-				"view",
-				"forum\\views.py"
 			],
 			[
 				"forum.css",
@@ -1599,14 +1699,6 @@
 				"forum\\templates\\forum.html"
 			],
 			[
-				"sett",
-				"MyDjangoSite\\settings.py"
-			],
-			[
-				"subj",
-				"forum\\templates\\subject.html"
-			],
-			[
 				"forum.",
 				"forum\\static\\css\\forum.css"
 			],
@@ -1615,16 +1707,8 @@
 				"forum\\templates\\profile.html"
 			],
 			[
-				"vi",
-				"forum\\views.py"
-			],
-			[
 				"maan",
 				"forum\\managers.py"
-			],
-			[
-				"model",
-				"forum\\models.py"
 			],
 			[
 				"mode",
@@ -1633,18 +1717,6 @@
 			[
 				"pr",
 				"forum\\profile.py"
-			],
-			[
-				"url",
-				"MyDjangoSite\\urls.py"
-			],
-			[
-				"inde",
-				"forum\\templates\\index.html"
-			],
-			[
-				"setti",
-				"MyDjangoSite\\settings.py"
 			],
 			[
 				"in",
@@ -1663,20 +1735,12 @@
 				"forum\\templates\\profile.html"
 			],
 			[
-				"nav",
-				"forum\\templates\\fragments\\navbar.html"
-			],
-			[
 				"settig",
 				"MyDjangoSite\\settings.py"
 			],
 			[
 				"forum.js",
 				"forum\\static\\js\\forum.js"
-			],
-			[
-				"manager",
-				"forum\\managers.py"
 			],
 			[
 				"setting",
@@ -1965,66 +2029,6 @@
 			[
 				"enjeutotvi",
 				"app\\templates\\course\\partant\\raceinfo\\enjeux-totaux-view.html"
-			],
-			[
-				"programme.json",
-				"test\\data\\EIPDV-1_2015-08-18_Combinaisons-Vide\\programme.json"
-			],
-			[
-				"progr",
-				"test\\data\\EIPDV-1_2015-08-18_Combinaisons-Vide\\programme.json"
-			],
-			[
-				"combinais",
-				"app\\models\\combinaisons.js"
-			],
-			[
-				"enjeuxot",
-				"app\\views\\course\\partant\\raceinfo\\enjeux-totaux-view.js"
-			],
-			[
-				"combitabl",
-				"app\\views\\course\\partant\\raceinfo\\combinaison-table-view.js"
-			],
-			[
-				"combipi",
-				"app\\views\\course\\partant\\raceinfo\\combinaison-picker-view.js"
-			],
-			[
-				"combinpic",
-				"app\\templates\\course\\partant\\raceinfo\\combinaison-picker-view.html"
-			],
-			[
-				"combinta",
-				"app\\templates\\course\\partant\\raceinfo\\combinaison-table-view.html"
-			],
-			[
-				"enjeuxsi",
-				"app\\views\\course\\partant\\enjeux-simple-view.js"
-			],
-			[
-				"cours",
-				"app\\models\\course.js"
-			],
-			[
-				"_scree",
-				"assets\\sass\\_screen.scss"
-			],
-			[
-				"combivie",
-				"app\\views\\course\\partant\\raceinfo\\combinaison-picker-view.js"
-			],
-			[
-				"partanvi",
-				"app\\views\\course\\partant\\partants-view.js"
-			],
-			[
-				"enjeux",
-				"app\\models\\enjeux.js"
-			],
-			[
-				"enjeu.js",
-				"app\\models\\enjeu.js"
 			]
 		],
 		"width": 0.0

@@ -1,18 +1,23 @@
 <nav class="white" role="navigation">
 	<div class="nav-wrapper container">
+		{% if not noprofile %}
 		<ul class="left hide-on-med-and-down">
 			<li>
-				<a href="/forum" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Accueil">
+				<a href="{% url 'index' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Accueil">
 					<i class="material-icons black-text">home</i>
 				</a>
 			</li>
 			<li>
-				<a href="/forum/forum" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Forum">
+				<a href="{% url 'forum' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Forum">
 					<i class="material-icons black-text">language</i>
 				</a>
 			</li>
 		</ul>
+		{% endif %}
+
 		<span class="center brand-logo black-text">{{ pagetitle }}</span>
+
+		{% if not noprofile %}
 		<ul class="right">
 			<li>
 				{% if user.is_authenticated %}
@@ -21,12 +26,12 @@
 					</a>
 					<ul id="dropdown-connected" class="dropdown-content icons-only white">
 						<li>
-							<a href="/forum/logout" class="tooltipped waves-effect waves-light center" data-position="left" data-tooltip="Déconnexion">
+							<a href="{% url 'logout' request.get_full_path %}" class="tooltipped waves-effect waves-light center" data-position="left" data-tooltip="Déconnexion">
 								<i class="material-icons black-text">cancel</i>
 							</a>
 						</li>
 						<li>
-							<a href="/forum/profile" class="tooltipped waves-effect waves-light center" data-position="left" data-tooltip="Profil">
+							<a href="{% url 'profile' %}" class="tooltipped waves-effect waves-light center" data-position="left" data-tooltip="Profil">
 								<i class="material-icons black-text">face</i>
 							</a>
 						</li>
@@ -49,18 +54,24 @@
 				</form>
 			</li> -->
 		</ul>
+		{% endif %}
+
+		{% if not noprofile %}
 		<ul id="nav-mobile" class="side-nav center">
 			<li>
-				<a href="/forum" class="tooltipped waves-effect" data-position="right" data-tooltip="Accueil">
+				<a href="{% url 'index' %}" class="tooltipped waves-effect" data-position="right" data-tooltip="Accueil">
 					<i class="material-icons">home</i>
 				</a>
 			</li>
 			<li>
-				<a href="/forum/forum" class="tooltipped waves-effect" data-position="right" data-tooltip="Forum">
+				<a href="{% url 'forum' %}" class="tooltipped waves-effect" data-position="right" data-tooltip="Forum">
 					<i class="material-icons">language</i>
 				</a>
 			</li>			
 		</ul>
+		
 		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons black-text">menu</i></a>
+		{% endif %}
+		
 	</div>
 </nav>

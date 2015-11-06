@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-28 11:40:47
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-03 16:38:49
+# @Last Modified time: 2015-11-04 15:55:13
 
 import logging
 
@@ -31,5 +31,5 @@ class AddSubjectForm(forms.Form):
 	title = forms.CharField(label='Titre', max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'validate', 'length': '100', 'required': 'required'}))
 
 class AddPostForm(forms.Form):
-	title = forms.CharField(label='Titre', max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'validate', 'length': '100', 'required': 'required'}))
+	title = forms.CharField(label='Titre', max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'validate', 'length': '100'}))
 	content = forms.CharField(label='Contenu', required=True, widget=forms.Textarea())

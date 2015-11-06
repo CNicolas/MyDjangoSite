@@ -1,5 +1,6 @@
 <div id="modal-connection" class="modal modal-fixed-footer modal-fixed-header">
-	<form action="{% url 'connect' %}" method="POST">
+	<!-- <form action="/forum/connect/{{ request.get_full_path }}" method="POST"> -->
+	<form action="{% url 'connect' request.get_full_path %}" method="POST">
 		{% csrf_token %}
 		<div class="modal-header">
 			<h5>Connexion</h5>
@@ -16,7 +17,7 @@
 		</div>
 		<div class="modal-footer row">
 			<button class="btn waves-effect col s12 light-green accent-4" type="submit">Connexion</button>
-			<a href="/forum/subscribe" class="btn modal-action modal-close waves-effect col s12 indigo">Inscription</a>
+			<a href="{% url 'subscribe' %}" class="btn modal-action modal-close waves-effect col s12 indigo">Inscription</a>
 			<a href="#" class="btn modal-action modal-close waves-effect col s12 red">Annuler</a>			
 		</div>
 	</form>
