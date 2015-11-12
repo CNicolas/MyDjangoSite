@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-06 14:50:36
+# @Last Modified time: 2015-11-12 16:57:53
 
 import logging
 import os
@@ -58,12 +58,13 @@ def fullDB(request):
 	# s6 = Subject.objects.create_subject(st5, "La glace du pôle nord")
 	# s7 = Subject.objects.create_subject(st5, "Eruption d'Eyjafjallajökull en 2010")
 	
-	# profile_toto = Profile.objects.get(pseudo='Toto')
-	# profile_titi = Profile.objects.get(pseudo='Titi')
-	# p1 = Post.objects.create_post(s1, profile_toto, "Sérieux", "Soyez respectueux vis-à-vis des autres, et tout ira bien !")
-	# p2 = Post.objects.create_post(s1, profile_titi, "", "Moi je veux pas, je fais comment ?")
-	# p3 = Post.objects.create_post(s1, profile_toto, "Réponse à l'autre utilisateur", "C'est la même chose, tu ne pourras plus poster !")
-	# p4 = Post.objects.create_post(s1, profile_titi, "Je veux pas mettre de titre", "Maieuh !")
+	profile_toto = Profile.objects.get(pseudo='Toto')
+	profile_titi = Profile.objects.get(pseudo='Titi')
+	s1 = Subject.objects.get(title='Vos devoirs pour chaque post')
+	p1 = Post.objects.create_post(s1, profile_toto, "Sérieux", "Soyez respectueux vis-à-vis des autres, et tout ira bien !")
+	p2 = Post.objects.create_post(s1, profile_titi, "", "Moi je veux pas, je fais comment ?")
+	p3 = Post.objects.create_post(s1, profile_toto, "Réponse à l'autre utilisateur", "C'est la même chose, tu ne pourras plus poster !")
+	p4 = Post.objects.create_post(s1, profile_titi, "Je veux pas mettre de titre", "Maieuh !")
 
 	return HttpResponse(Subject.objects)
 
@@ -83,4 +84,4 @@ def deleteForum(request):
 	# Theme.objects.all().delete()
 	# Profile.objects.all().delete()
 	# UnreadPost.objects.all().delete()
-	return HttpResponse(Profile.objects.get(pseudo='Toto').user.email)
+	return HttpResponse(Profile.objects)

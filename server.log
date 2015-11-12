@@ -262,3 +262,32 @@
 [06/Nov/2015 13:53:13] DEBUG	- forum.forum:82	: UnreadPosts of Mégastructure Extraterrestre ! deleted for Toto
 [06/Nov/2015 13:53:15] DEBUG	- forum.forum:82	: UnreadPosts of Mégastructure Extraterrestre ! deleted for Toto
 [06/Nov/2015 13:53:47] DEBUG	- forum.forum:82	: UnreadPosts of Mégastructure Extraterrestre ! deleted for Toto
+[12/Nov/2015 16:51:21] DEBUG	- forum.connection:82	: POST connect
+[12/Nov/2015 16:51:22] DEBUG	- forum.connection:120	: Bad authentication
+[12/Nov/2015 16:51:32] DEBUG	- forum.connection:55	: Subscription form is valid
+[12/Nov/2015 16:51:54] DEBUG	- forum.connection:55	: Subscription form is valid
+[12/Nov/2015 16:51:54] ERROR	- forum.connection:64	: Username already present in database
+[12/Nov/2015 16:51:59] DEBUG	- forum.connection:55	: Subscription form is valid
+[12/Nov/2015 16:51:59] ERROR	- forum.connection:64	: Username already present in database
+[12/Nov/2015 16:52:05] DEBUG	- forum.connection:82	: POST connect
+[12/Nov/2015 16:52:06] DEBUG	- forum.connection:91	: toto has logged in
+[12/Nov/2015 16:52:06] DEBUG	- forum.connection:112	: toto has no profile, redirecting...
+[12/Nov/2015 16:52:06] DEBUG	- forum.profile:29	: GET profile
+[12/Nov/2015 16:52:23] DEBUG	- forum.profile:32	: POST profile
+[12/Nov/2015 16:54:17] DEBUG	- forum.profile:32	: POST profile
+[12/Nov/2015 16:54:34] DEBUG	- forum.profile:32	: POST profile
+[12/Nov/2015 16:54:50] DEBUG	- forum.forum:82	: UnreadPosts of Vos devoirs pour chaque post deleted for ToTo
+[12/Nov/2015 16:55:50] DEBUG	- forum.connection:55	: Subscription form is valid
+[12/Nov/2015 16:55:51] INFO	- forum.connection:74	: New user created : titi
+[12/Nov/2015 16:55:56] DEBUG	- forum.connection:82	: POST connect
+[12/Nov/2015 16:55:56] DEBUG	- forum.connection:91	: titi has logged in
+[12/Nov/2015 16:55:56] DEBUG	- forum.connection:112	: titi has no profile, redirecting...
+[12/Nov/2015 16:55:57] DEBUG	- forum.profile:29	: GET profile
+[12/Nov/2015 16:56:11] DEBUG	- forum.profile:32	: POST profile
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IHDR' 16 13
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'sRGB' 41 1
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:511	: b'sRGB' 41 1 (unknown)
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'gAMA' 54 4
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
+[12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
+[12/Nov/2015 16:58:06] DEBUG	- forum.forum:82	: UnreadPosts of Vos devoirs pour chaque post deleted for Titi

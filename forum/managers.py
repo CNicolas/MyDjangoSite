@@ -3,9 +3,10 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:06:34
+# @Last Modified time: 2015-11-12 16:54:31
 
 from django.db import models
+from django.utils import timezone
 
 def managerToString(manager):
 	objects = manager.all()
@@ -19,6 +20,8 @@ def managerToString(manager):
 
 class ProfileManager(models.Manager):
 	def create_profile(self, user, pseudo, firstname, lastname, birthdate, image=None, previous_login=None):
+		if previous_login is None:
+			previous_login = timezone.now()
 		profile = self.create(user=user, pseudo=pseudo, firstname=firstname, lastname=lastname, birthdate=birthdate, image=image, previous_login=previous_login)
 		return profile
 

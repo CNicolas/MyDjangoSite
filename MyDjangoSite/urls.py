@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^forum/subject/(?P<subject_id>[0-9]+)/$', forum.subject, name='subject'),
     url(r'^forum/addsubject/(?P<subtheme_id>[0-9]+)/$', forum.addsubject, name='addsubject'),
 
-    url(r'^forum/test/$', views.test, name='test'),
+    url(r'^forum/test/$', views.fullDB, name='test'),
     url(r'^forum/deleteForum/$', views.deleteForum, name='delete'),
 
 ] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)
