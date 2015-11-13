@@ -291,3 +291,4 @@
 [12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'pHYs' 70 9
 [12/Nov/2015 16:56:11] DEBUG	- PIL.PngImagePlugin:135	: STREAM b'IDAT' 91 65445
 [12/Nov/2015 16:58:06] DEBUG	- forum.forum:82	: UnreadPosts of Vos devoirs pour chaque post deleted for Titi
+[13/Nov/2015 10:45:36] DEBUG	- forum.profile:29	: GET profile

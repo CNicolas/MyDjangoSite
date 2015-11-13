@@ -23,26 +23,9 @@ from MyDjangoSite.views import big_index
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^forum/', include('forum.urls')),
+
     url(r'^$', big_index, name='big_index'),
-
-    # FORUM APPLI URLS 
-    url(r'^forum/$', views.index, name='index'),
-    url(r'^forumError/$', connection.indexError, name='indexError'),
-    
-    url(r'^forum/subscribe/$', connection.subscribe, name='subscribe'),
-    url(r'^forum/connect/(?P<ref>.{0,50})/$', connection.connect, name='connect'),
-    url(r'^forum/logout/(?P<ref>.{0,50})/$', connection.disconnect, name='logout'),
-
-    url(r'^forum/profile/$', profile.profile, name='profile'),
-    url(r'^forum/profileinfos/(?P<profile_id>[0-9]+)/$', profile.profile_infos, name='profileinfos'),
-
-    url(r'^forum/forum/$', forum.forum, name='forum'),
-    url(r'^forum/subject/(?P<subject_id>[0-9]+)/$', forum.subject, name='subject'),
-    url(r'^forum/addsubject/(?P<subtheme_id>[0-9]+)/$', forum.addsubject, name='addsubject'),
-
-    url(r'^forum/test/$', views.fullDB, name='test'),
-    url(r'^forum/deleteForum/$', views.deleteForum, name='delete'),
-
 ] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)
 
 handler404 = errors.error_404
