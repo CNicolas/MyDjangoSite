@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
 
 FORUM_UPLOAD_URL = 'forum/profiles/'
-FORUM_UPLOAD_ROOT = os.path.join(BASE_DIR, "forum/profiles")
+FORUM_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forum/profiles')
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 

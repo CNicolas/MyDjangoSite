@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-10 16:55:44
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-12 14:27:31
+# @Last Modified time: 2015-11-13 11:36:40
 
 from django.conf import settings
 from django.conf.urls import url
@@ -28,7 +28,7 @@ urlpatterns = [
 
     url(r'^test/$', views.test, name='test'),
     url(r'^deleteForum/$', views.deleteForum, name='delete'),
-] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)
+]
 
 handler404 = errors.error_404
 handler500 = errors.error_500

@@ -25,4 +25,4 @@ urlpatterns = [
     url(r'^forum/', include('forum.urls')),
 
     url(r'^$', big_index, name='big_index'),
-]
+] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)
