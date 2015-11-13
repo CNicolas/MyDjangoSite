@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<section class="section">
+			<div class="center">
+				<img class="responsive-img profile-img" src="{{ profile.image }}" alt="Pas de photo de profil" >
+			</div>
+		</section>
+	
+		<section class="section">
+			<div class="container">
+				<table class="responsive-table bordered striped">
+					<caption>
+						<h4>Les informations de {{ profile.pseudo }}</h4>
+					</caption>
+
+					<thead>
+						<tr>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>Pseudo</td>
+							<td>{{ profile.pseudo }}</td>
+						</tr>
+						<tr>
+							<td>Prénom</td>
+							<td>{{ profile.firstname }}</td>
+						</tr>
+						<tr>
+							<td>Nom</td>
+							<td>{{ profile.lastname }}</td>
+						</tr>
+						<tr>
+							<td>Date de Naissance</td>
+							<td>{{ profile.birthdate }}</td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td>{{ profile.email }}</td>
+						</tr>
+						<tr>
+							<td>Création du compte</td>
+							<td>{{ profile.creation }}</td>
+						</tr>
+						<tr>
+							<td>Dernière connexion</td>
+							<td>{{ profile.last_login }}</td>
+						</tr>
+						<tr>
+							<td>Connecté</td>
+							<td>{% if profile.logged %}Oui{% else %}Non{% endif %}</td>
+						</tr>
+						<tr>
+							<td>Nombre de posts</td>
+							<td>{{ profile.posts_number }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		{% if profile.posts_number > 0 %}
+			<section class="section">
+				<div class="center">
+					<a href="#modal-last-posts" class="btn modal-trigger tooltipped waves-effect" data-position="bottom" data-tooltip="Derners posts">
+						Voir ses derniers posts
+					</a>
+				</div>
+			</section>
+		{% endif %}
+	</section>
+</main>
+
+{% endblock content %}

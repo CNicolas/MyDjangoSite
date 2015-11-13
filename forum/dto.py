@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-27 15:30:06
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-06 14:56:28
+# @Last Modified time: 2015-11-13 11:42:22
 
 from forum.models import Profile, Theme, SubTheme, Subject, Post
 
@@ -15,7 +15,7 @@ class ProfileDto:
 		self.firstname = profile.firstname
 		self.lastname = profile.lastname
 		self.birthdate = profile.birthdate
-		self.image = profile.image
+		self.image = '/' + profile.image.url
 		self.email = profile.user.email
 
 		self.creation = profile.user.date_joined

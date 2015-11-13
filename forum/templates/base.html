@@ -31,6 +31,9 @@
 
 		<!-- Modals -->
 		{% include "fragments/modal-connection.html" %}
+		{% if 'forum/profileinfos' in request.get_full_path %}
+			{% include "fragments/modal-last-posts.html" %}
+		{% endif %}
 		<!-- End of Modals -->
     </body>
 

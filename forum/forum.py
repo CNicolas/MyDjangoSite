@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-06 13:58:51
+# @Last Modified time: 2015-11-13 13:38:51
 
 import logging
 
@@ -60,7 +60,7 @@ def subject(request, subject_id):
 				profile = Profile.objects.get(user=request.user)
 				title = form.cleaned_data['title']
 				content = form.cleaned_data['content']
-				Post.objects.create_post(subject, profile, title, content)
+				post = Post.objects.create_post(subject, profile, title, content)
 				
 				logger.info(post.title + ' created')
 

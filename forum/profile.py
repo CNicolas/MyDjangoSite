@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 11:41:58
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-06 14:19:43
+# @Last Modified time: 2015-11-13 11:41:59
 
 import dateutil.parser
 import hashlib
@@ -70,7 +70,7 @@ def profilePost(request):
 			if form.cleaned_data['image'] is not None:
 				form.cleaned_data['image'].name = profile.pseudo + '.' + form.cleaned_data['image'].name.split('.')[1].lower()
 				profile.image = form.cleaned_data['image']
-				logger.debug('Image uploaded : ' + profile.image)
+				logger.debug('Image uploaded : ' + str(profile.image))
 
 			profile.save()
 			logger.debug(profile.pseudo + ' edited his/her profile')
@@ -84,10 +84,10 @@ def profilePost(request):
 				profile = Profile.objects.create_profile(user, form.cleaned_data['pseudo'], form.cleaned_data['firstname'], form.cleaned_data['lastname'], form.cleaned_data['birthdate'], form.cleaned_data['image'])
 
 		if profile.image:
-			context['imageurl'] = profile.image.url
+			context['imageurl'] = '/' + profile.image.url
 
 		else:
-			context['imageurl'] = 'forum/profiles/Profil.jpg'
+			context['imageurl'] = '/forum/profiles/Profil.jpg'
 
 		return render(request, "profile.html", context)
 		
