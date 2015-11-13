@@ -30,7 +30,10 @@
 		<!-- End of Footer -->
 
 		<!-- Modals -->
-		{% include "fragments/modal-connection.html" %}
+		{% if user.is_authenticated %}
+			{% include "fragments/modal-connection.html" %}
+		{% endif %}
+		
 		{% if 'forum/profileinfos' in request.get_full_path %}
 			{% include "fragments/modal-last-posts.html" %}
 		{% endif %}
@@ -43,11 +46,13 @@
 
 	<!-- Personnal JavaScript -->
 	<script src="{% static 'js/forum.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% if 'forum/forum' in request.get_full_path %}
+		<script src="{% static 'js/forumforum.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% endif %}
 	{% if '/forum/subject/' in request.get_full_path %}
 		<script src="{% static 'js/subject.js' %}" type="text/javascript" charset="utf-8"></script>
 	{% endif %}
-
-	{% if 'forum/forum' in request.get_full_path %}
-		<script src="{% static 'js/forumforum.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% if '/forum/profile/' in request.get_full_path %}
+		<script src="{% static 'js/profile.js' %}" type="text/javascript" charset="utf-8"></script>
 	{% endif %}
 </html>
