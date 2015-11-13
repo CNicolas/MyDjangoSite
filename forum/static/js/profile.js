@@ -2,7 +2,7 @@
 * @Author: cnicolas
 * @Date:   2015-11-13 15:35:27
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-13 15:44:13
+* @Last Modified time: 2015-11-13 15:54:41
 */
 
 'use strict';
@@ -19,7 +19,7 @@ $(document).ready(function() {
 		max: new Date,
 		format: "dd/mm/yyyy",
 		onClose: function() {
-		    $('.datepicker').hide();
+		    $(document.activeElement).blur();
 		}
 	});
 });
