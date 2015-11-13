@@ -18,7 +18,6 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from forum import views, connection, profile, forum, errors
 from MyDjangoSite.views import big_index
 
 urlpatterns = [
@@ -26,7 +25,4 @@ urlpatterns = [
     url(r'^forum/', include('forum.urls')),
 
     url(r'^$', big_index, name='big_index'),
-] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)
-
-handler404 = errors.error_404
-handler500 = errors.error_500
+]

@@ -2,3 +2,4 @@ __pycache__
 bootstrap-3.3.5-dist
 /static/font-awesome-4.4.0
 /static/materialize
+/server.log
