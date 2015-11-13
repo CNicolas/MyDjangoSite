@@ -3,11 +3,11 @@
 		<div class="row">
 
 			<nav>
-				<div class="nav-wrapper black">
-					<form method="GET" action="#">
+				<div class="nav-wrapper blue">
+					<form method="GET" action="{% url 'search' %}">
 						<div class="input-field">
-							<input id="search" type="search" required>
-							<label for="search">
+							<input id="search-input" type="search" name="search" placeholder="Faites une recherche !" required>
+							<label for="search-input">
 								<i class="material-icons">search</i>
 							</label>
 							<i class="material-icons">close</i>

@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-13 13:38:51
+# @Last Modified time: 2015-11-13 17:02:46
 
 import logging
 
@@ -11,6 +11,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.db.models import Q
 
 from forum.models import Profile, Theme, SubTheme, Subject, Post, UnreadPost
 from forum.dto import ThemeDto, SubThemeDto, SubjectDto, PostDto
@@ -126,3 +127,21 @@ def addsubject(request, subtheme_id):
 
 	except ObjectDoesNotExist:
 		return redirect('forum')
+
+def search(request):
+	search = request.GET.get('search')
+	context = {'pagetitle': 'Résultats', 'search': search}
+
+	profiles = Profile.objects.filter(Q(pseudo__contains=search) | Q(firstname__contains=search) | Q(lastname__contains=search))
+	themes = Theme.objects.filter(title__icontains=search)
+	subthemes = SubTheme.objects.filter(title__icontains=search)
+	subjects = Subject.objects.filter(title__icontains=search)
+	posts = Post.objects.filter(Q(title__icontains=search) | Q(content__icontains=search))
+
+	context['profiles'] = profiles
+	context['themes'] = list(themes)
+	context['subthemes'] = subthemes
+	context['subjects'] = subjects
+	context['posts'] = posts
+
+	return render(request, 'search.html', context)

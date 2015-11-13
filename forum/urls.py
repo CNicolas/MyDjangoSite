@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-10 16:55:44
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-13 11:36:40
+# @Last Modified time: 2015-11-13 16:14:59
 
 from django.conf import settings
 from django.conf.urls import url
@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^forum/$', forum.forum, name='forum'),
     url(r'^subject/(?P<subject_id>[0-9]+)/$', forum.subject, name='subject'),
     url(r'^addsubject/(?P<subtheme_id>[0-9]+)/$', forum.addsubject, name='addsubject'),
+    url(r'^search/$', forum.search, name='search'),
 
     url(r'^test/$', views.test, name='test'),
     url(r'^deleteForum/$', views.deleteForum, name='delete'),

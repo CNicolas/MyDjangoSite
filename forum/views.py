@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-12 16:57:53
+# @Last Modified time: 2015-11-13 16:59:27
 
 import logging
 import os
@@ -84,4 +84,4 @@ def deleteForum(request):
 	# Theme.objects.all().delete()
 	# Profile.objects.all().delete()
 	# UnreadPost.objects.all().delete()
-	return HttpResponse(Profile.objects)
+	return HttpResponse(Theme.objects)
