@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-12 16:54:31
+# @Last Modified time: 2015-11-16 11:13:32
 
 from django.db import models
 from django.utils import timezone

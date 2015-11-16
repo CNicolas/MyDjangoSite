@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-13 17:02:46
+# @Last Modified time: 2015-11-16 11:16:07
 
 import logging
 
@@ -60,6 +60,8 @@ def subject(request, subject_id):
 			if form.is_valid():
 				profile = Profile.objects.get(user=request.user)
 				title = form.cleaned_data['title']
+				if len(title) == 0:
+					title = subject.title
 				content = form.cleaned_data['content']
 				post = Post.objects.create_post(subject, profile, title, content)
 				
@@ -132,16 +134,20 @@ def search(request):
 	search = request.GET.get('search')
 	context = {'pagetitle': 'Résultats', 'search': search}
 
-	profiles = Profile.objects.filter(Q(pseudo__contains=search) | Q(firstname__contains=search) | Q(lastname__contains=search))
+	if request.user.is_authenticated():
+		profiles = Profile.objects.filter(Q(pseudo__contains=search) | Q(firstname__contains=search) | Q(lastname__contains=search))
+		context['profiles'] = profiles
+
 	themes = Theme.objects.filter(title__icontains=search)
+	context['themes'] = themes
+	
 	subthemes = SubTheme.objects.filter(title__icontains=search)
-	subjects = Subject.objects.filter(title__icontains=search)
-	posts = Post.objects.filter(Q(title__icontains=search) | Q(content__icontains=search))
-
-	context['profiles'] = profiles
-	context['themes'] = list(themes)
 	context['subthemes'] = subthemes
+	
+	subjects = Subject.objects.filter(title__icontains=search)
 	context['subjects'] = subjects
+	
+	posts = Post.objects.filter(Q(title__icontains=search) | Q(content__icontains=search))
 	context['posts'] = posts
-
+	
 	return render(request, 'search.html', context)

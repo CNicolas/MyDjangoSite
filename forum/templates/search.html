@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+{% if error %}
+	<span class="hidden error-toast">{{ error }}</span>
+{% endif %}
+
+{% if success %}
+	<span class="hidden success-toast">{{ success }}</span>
+{% endif %}
+
+<main class="container">
+	<section class="section">
+		<div class="center">
+			<h4>Vous cherchiez : "{{ search }}"</h4>
+		</div>
+		<section class="section">
+			{% if user.is_authenticated %}
+				<h4>Profils</h4>
+				<ul class="collection">
+				{% for profile in profiles %}
+					<li class="collection-item green lighten-2">
+						{{ profile.pseudo }}
+						<a href="{% url 'profileinfos' profile.id %}" class="secondary-content"><i class="material-icons">send</i></a>
+					</li>
+				{% empty %}
+					<li class="collection-item grey">
+						Aucun profil ne correspond
+					</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+
+			<h4>Thèmes</h4>
+			<ul class="collection">
+			{% for theme in themes %}
+				<li class="collection-item green lighten-2">
+					{{ theme.title }}
+					<a href="{% url 'forum' %}#theme{{ theme.id }}" class="secondary-content"><i class="material-icons">send</i></a>
+				</li>
+			{% empty %}
+				<li class="collection-item grey">
+					Aucun thème ne correspond
+				</li>
+			{% endfor %}
+			</ul>
+
+			<h4>Sous-thèmes</h4>
+			<ul class="collection">
+			{% for subtheme in subthemes %}
+				<li class="collection-item green lighten-2">
+					{{ subtheme.title }}
+					<a href="{% url 'forum' %}#subtheme{{ subtheme.id }}" class="secondary-content"><i class="material-icons">send</i></a>
+				</li>
+			{% empty %}
+				<li class="collection-item grey">
+					Aucun sous-thème ne correspond
+				</li>
+			{% endfor %}
+			</ul>
+
+			<h4>Sujets</h4>
+			<ul class="collection">
+			{% for subject in subjects %}
+				<li class="collection-item green lighten-2">
+					{{ subject.title }}
+					<a href="{% url 'subject' subject.id %}" class="secondary-content"><i class="material-icons">send</i></a>
+				</li>
+			{% empty %}
+				<li class="collection-item grey">
+					Aucun sujet ne correspond
+				</li>
+			{% endfor %}
+			</ul>
+
+			<h4>Posts</h4>
+			<ul class="collapsible">
+			{% for post in posts %}
+				<li>
+					<div class="collapsible-header green lighten-2">
+						{{ post.title }}
+						<a href="{% url 'subject' post.subject.id %}" class="secondary-content"><i class="material-icons">send</i></a>
+						<div class="right">
+							{% if user.is_authenticated %}
+								<a href="{% url 'profileinfos' post.profile.id %}">
+									{{ post.profile.pseudo }}
+								</a>
+							{% else %}
+								<span class="profile-infos">
+									{{ post.profile.pseudo }}
+								</span>
+							{% endif %}
+							, le
+							<span class="date-modif">{{ post.date_modification }}</span>
+						</div>
+					</div>
+					<div class="collapsible-body">
+						{{ post.content|safe }}
+					</div>
+				</li>
+			{% empty %}
+				<li>
+					<div class="collapsible-header grey">
+						Aucun post ne correspond
+					</div>
+				</li>
+			{% endfor %}
+			</ul>
+		</section>
+	</section>
+</main>
+
+{% endblock content %}
