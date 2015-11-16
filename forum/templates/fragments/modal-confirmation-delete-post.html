@@ -1,0 +1,13 @@
+<div id="modal-confirmation-delete-post" class="modal">
+	<form action="{% url 'deletesubject' %}" method="POST">
+		{% csrf_token %}
+		<div class="modal-content">
+			<p>Êtes-vous sûr de vouloir supprimer définitivement ce post ?</p>
+			<input id="postId" type="hidden" name="post_id"/>
+			<div class="center">
+				<button type="submit" class="btn modal-action modal-close waves-effect green">Oui</button>
+				<button class="btn modal-action modal-close waves-effect red">Fermer</button>
+			</div>
+		</div>
+	</form>
+</div>

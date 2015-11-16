@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-16 11:16:07
+# @Last Modified time: 2015-11-16 16:03:44
 
 import logging
 
@@ -129,6 +129,15 @@ def addsubject(request, subtheme_id):
 
 	except ObjectDoesNotExist:
 		return redirect('forum')
+
+@login_required(login_url="/forum")
+def deletesubject(request):
+	post_id = request.POST['post_id']
+	logger.info(post_id)
+	post = Post.objects.get(id=post_id)
+	subjectId = post.subject.id
+	post.delete()
+	return redirect('subject', subject_id=str(subjectId))
 
 def search(request):
 	search = request.GET.get('search')

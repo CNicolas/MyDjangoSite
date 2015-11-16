@@ -18,14 +18,14 @@
 	<section class="section">
 		<ul class="collapsible" data-collapsible="expandable">
 			{% for post in posts %}
-				<li id="post{{ post.id }}">
+				<li id="post{{ post.id }}" data-id="{{ post.id }}" class="li-post">
 					<div class="collapsible-header active grey lighten-4">
-						{{ post.title }}
+						<div class="post-title">{{ post.title }}</div>
 						<div class="right">
 							<span class="date-modif">{{ post.date_modification }}</span>
 						</div>
 					</div>
-					<div class="collapsible-body white">
+					<div class="collapsible-body col s11 white">
 						<div class="row post">
 							{% if user.is_authenticated %}
 								<a href="{% url 'profileinfos' post.profile.id %}" class="col s1 profil-infos center">
@@ -38,9 +38,19 @@
 									<img src="/{{ post.profile.image }}" alt="<Image de profil>" class="responsive-img col s12">
 								</div>
 							{% endif %}
-							<div class="col s11 justify post-content">
-								{{ post.content|safe }}
-							</div>
+							<div class="col s10 justify post-content">{{ post.content|safe }}</div>
+							{% if post.profile.user == user and user.is_authenticated %}
+								<div class="valign-wrapper right col s1 post-buttons">
+									<div class="valign">
+										<button class="editPost btn-floating waves-effect waves-light purple" data-postid="{{ post.id }}">
+											<i class="material-icons">mode_edit</i>
+										</button>
+										<a data-postid="{{ post.id }}" href="#modal-confirmation-delete-post" class="deletePost modal-trigger tooltiped btn-floating waves-effect waves-light red" data-position="bottom" data-tooltip="">
+											<i class="material-icons">delete</i>
+										</a>
+									</div>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</li>
@@ -52,6 +62,7 @@
 				</div>
 			{% endfor %}
 		</ul>
+
 		{% if user.is_authenticated %}
 			<div class="center row">
 				<button id="answer" class="btn-large waves-effect waves-light green col s12">Répondre</button>
@@ -68,11 +79,11 @@
 						{% wysiwyg_editor "id_content" %} <!-- I didn't found the way to include the auto_id -->
 					</div>
 					<div class="center row">
-						<button class="btn-large waves-effect waves-light green col s12" type="submit">Répondre</button>
+						<button id="answerSubmit" class="btn-large waves-effect waves-light green col s12" type="submit">Répondre</button>
 					</div>
 				</form>
 				<div class="center row">
-					<button id="answer_hide" class="btn-large waves-effect waves-light red col s12">Cancel</button>
+					<button id="answerHide" class="btn-large waves-effect waves-light red col s12">Cancel</button>
 				</div>
 			</section>
 		{% endif %}
