@@ -7,5 +7,5 @@ class IndexView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super(IndexView, self).get_context_data(**kwargs)
-		context['pagetitle'] = 'Battle For Midgard'
+		context['pagetitle'] = 'Bataille pour Eorzea'
 		return context

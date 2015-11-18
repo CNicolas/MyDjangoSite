@@ -1,0 +1,74 @@
+/* 
+* @Author: cnicolas
+* @Date:   2015-11-18 14:42:35
+* @Last Modified by:   cnicolas
+* @Last Modified time: 2015-11-18 15:52:24
+*/
+
+/* HTML */
+html {
+	font-family: fantasy;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+/* HELPERS */
+.hidden {
+	display: none;
+}
+.justify {
+	text-align: justify;
+	text-justify: inter-word;
+}
+.bold {
+	font-weight: bold;
+}
+.opacity-5 {
+	opacity: .5;
+}
+
+/* SURCHARGE MATERIALIZE */
+.valign-wrapper div {
+	width: 100%;
+}
+
+/* ACLONICA FONT */
+.aclonica {
+	font-family: Aclonica;
+	font-style: normal;
+	font-variant: normal;
+}
+
+h1.aclonica {
+	font-size: 70px;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h3.aclonica {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+p.aclonica {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+blockquote.aclonica {
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 30px;
+}
+pre.aclonica {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18.5667px;
+}
