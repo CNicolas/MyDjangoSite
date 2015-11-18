@@ -20,11 +20,11 @@ The first application is a simple forum.
  - If you're authenticated, create/edit a post, create a subject
  - If you're authenticated, see other's profile information.
 
- ## Battle
+## Battle
  I am trying to create a RPG based on the Final Fantasy universe.
 
- #### Application Design
-  - I will use class-based views from Django Framework. I've seen this as a best practice...
+#### Application Design
+ - I will use class-based views from Django Framework. I've seen this as a best practice...
 
- #### Features
+#### Features
  Coming soon...
