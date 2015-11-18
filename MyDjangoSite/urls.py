@@ -23,6 +23,7 @@ from MyDjangoSite.views import big_index
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^forum/', include('forum.urls')),
+    url(r'^battle/', include('battle.urls')),
 
     url(r'^$', big_index, name='big_index'),
 ] + static(settings.FORUM_UPLOAD_URL, document_root=settings.FORUM_UPLOAD_ROOT)

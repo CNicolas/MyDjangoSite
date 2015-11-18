@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-03 10:08:37
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-03 10:17:59
+# @Last Modified time: 2015-11-18 13:47:13
 
 import requests
 
@@ -29,8 +29,8 @@ def big_index(request):
 							</h4>
 						</div>
 						<div class='panel-body'>
-							<a href='forum/' class='btn-danger btn btn-block' role='button'>Forum</a>
-							<a href='#' class='btn-info btn btn-block' role='button'>Rien</a>
+							<a href='forum/' class='btn-success btn btn-block' role='button'>Forum</a>
+							<a href='battle/' class='btn-danger btn btn-block' role='button'>Battle</a>
 						</div>
 					</div>
 				</div>

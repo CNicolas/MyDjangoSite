@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'tinymce',
     'forum',
+    'battle',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -123,6 +124,7 @@ STATIC_ROOT = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     ('forum', os.path.join(BASE_DIR, 'forum', 'static')),
+    ('battle', os.path.join(BASE_DIR, 'battle', 'static')),
 )
 
 FORUM_UPLOAD_URL = 'forum/profiles/'
