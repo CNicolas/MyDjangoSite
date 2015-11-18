@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 10:16:35
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-12 16:51:51
+# @Last Modified time: 2015-11-18 14:19:11
 
 import logging
 
@@ -17,6 +17,7 @@ from django.db.models import Q
 
 from forum.models import Profile, Post, UnreadPost
 from forum.forms import SubscribeForm
+from forum.views import myRender
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +47,7 @@ def subscribe(request):
 	if request.method == "GET":
 		form = SubscribeForm()
 		context['form'] = form
-		return render(request, "subscribe.html", context)
+		return myRender(request, "subscribe.html", context)
 	else:
 		form = SubscribeForm(request.POST)
 		context['form'] = form
@@ -74,7 +75,7 @@ def subscribe(request):
 				logger.info("New user created : " + str(user))
 				return redirect("index")
 
-		return render(request, "subscribe.html", context)
+		return myRender(request, "subscribe.html", context)
 
 @anonymous_required
 def connect(request, ref):
@@ -131,7 +132,7 @@ def indexError(request):
 			context['profile'] = profiles[0]
 		else:
 			logger.warn("Pas de profil")
-	return render(request, 'index.html', context)
+	return myRender(request, 'index.html', context)
 
 @login_required(login_url="/forum")
 def disconnect(request, ref):

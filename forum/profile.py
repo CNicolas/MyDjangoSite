@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 11:41:58
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-13 11:41:59
+# @Last Modified time: 2015-11-18 14:12:34
 
 import dateutil.parser
 import hashlib
@@ -20,6 +20,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from forum.models import Profile
 from forum.forms import ProfileForm
 from forum.dto import ProfileDto
+from forum.views import myRender
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +51,7 @@ def profileGet(request):
 	context['form'] = form
 	context['background_color'] = 'white'
 
-	return render(request, "profile.html", context)
+	return myRender(request, "profile.html", context)
 
 def profilePost(request):
 	user = request.user
@@ -78,7 +79,7 @@ def profilePost(request):
 
 			if Profile.objects.filter(pseudo=form.cleaned_data['pseudo']).exists():
 				context = {'pagetitle': 'Première connexion', 'error': "Le pseudo est déjà utilisé", 'form': form}
-				return render(request, "profile.html", context)
+				return myRender(request, "profile.html", context)
 
 			else:
 				profile = Profile.objects.create_profile(user, form.cleaned_data['pseudo'], form.cleaned_data['firstname'], form.cleaned_data['lastname'], form.cleaned_data['birthdate'], form.cleaned_data['image'])
@@ -89,7 +90,7 @@ def profilePost(request):
 		else:
 			context['imageurl'] = '/forum/profiles/Profil.jpg'
 
-		return render(request, "profile.html", context)
+		return myRender(request, "profile.html", context)
 		
 	else:
 
@@ -99,7 +100,7 @@ def profile_infos(request, profile_id):
 	try:
 		profile = ProfileDto(Profile.objects.get(id=profile_id))
 		context = {'pagetitle': 'Informations de ' + profile.pseudo, 'profile': profile}
-		return render(request, 'profileinfos.html', context)
+		return myRender(request, 'profileinfos.html', context)
 
 	except ObjectDoesNotExist:
 		return redirect('forum')

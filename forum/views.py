@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-13 16:59:27
+# @Last Modified time: 2015-11-18 14:09:14
 
 import logging
 import os
@@ -17,6 +17,9 @@ from forum.forms import ProfileForm
 
 logger = logging.getLogger(__name__)
 
+def myRender(request, template, context):
+	return render(request, 'forum/' + template, context)
+
 def index(request):
 	context = {'pagetitle': 'Accueil'}
 	if request.user.is_authenticated():
@@ -25,7 +28,7 @@ def index(request):
 			context['profile'] = profiles[0]
 		else:
 			logger.error("Pas de profil")
-	return render(request, 'index.html', context)
+	return myRender(request, 'index.html', context)
 
 def fullDB(request):
 	# t1 = Theme.objects.create_theme("Informations Générales")

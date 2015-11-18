@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-18 11:20:01
+# @Last Modified time: 2015-11-18 14:14:54
 
 import logging
 
@@ -16,6 +16,7 @@ from django.db.models import Q
 from forum.models import Profile, Theme, SubTheme, Subject, Post, UnreadPost
 from forum.dto import ThemeDto, SubThemeDto, SubjectDto, PostDto
 from forum.forms import AddSubjectForm, AddPostForm
+from forum.views import myRender
 
 logger = logging.getLogger(__name__)
 
@@ -47,7 +48,7 @@ def forum(request):
 
 	context['themes'] = theme_dtos
 
-	return render(request, 'forum.html', context)
+	return myRender(request, 'forum.html', context)
 
 def subject(request, subject_id):
 	try:
@@ -99,7 +100,7 @@ def subject(request, subject_id):
 		context['posts'] = posts_dtos
 		context['form'] = form
 
-		return render(request, "subject.html", context)
+		return myRender(request, "subject.html", context)
 
 	except ObjectDoesNotExist:
 		return redirect('forum')
@@ -113,7 +114,7 @@ def addsubject(request, subtheme_id):
 			logger.debug("GET addsubject")
 			form = AddSubjectForm()
 			context = {'pagetitle': subtheme.title, 'subtheme': SubThemeDto(subtheme), 'form': form}
-			return render(request, 'addsubject.html', context)
+			return myRender(request, 'addsubject.html', context)
 
 		else:
 			logger.debug('POST addsubject')
@@ -133,7 +134,7 @@ def addsubject(request, subtheme_id):
 			else:
 				context = {'pagetitle': subtheme.title, 'subtheme': SubThemeDto(subtheme), 'form': form, 'error': "Le titre n'est pas valable"}
 
-			return render(request, 'addsubject.html', context)
+			return myRender(request, 'addsubject.html', context)
 
 	except ObjectDoesNotExist:
 		return redirect('forum')
@@ -167,4 +168,4 @@ def search(request):
 	posts = Post.objects.filter(Q(title__icontains=search) | Q(content__icontains=search))
 	context['posts'] = posts
 	
-	return render(request, 'search.html', context)
+	return myRender(request, 'search.html', context)

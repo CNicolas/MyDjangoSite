@@ -18,7 +18,7 @@
 	</head>
     <body class="{{ background_color }}">
     	<!-- Navbar -->
-		{% include "fragments/navbar.html" %}
+		{% include "forum/fragments/navbar.html" %}
 		<!-- End of Navbar -->
 		
 		<!-- Main content -->
@@ -26,20 +26,20 @@
 		<!-- End of main -->
 
 		<!-- Footer -->
-		{% include "fragments/footer.html" %}
+		{% include "forum/fragments/footer.html" %}
 		<!-- End of Footer -->
 
 		<!-- Modals -->
 		{% if not user.is_authenticated %}
-			{% include "fragments/modal-connection.html" %}
+			{% include "forum/fragments/modal-connection.html" %}
 		{% endif %}
 		
 		{% if 'forum/profileinfos' in request.get_full_path %}
-			{% include "fragments/modal-last-posts.html" %}
+			{% include "forum/fragments/modal-last-posts.html" %}
 		{% endif %}
 
 		{% if 'forum/subject' in request.get_full_path %}
-			{% include "fragments/modal-confirmation-delete-post.html" %}
+			{% include "forum/fragments/modal-confirmation-delete-post.html" %}
 		{% endif %}
 		<!-- End of Modals -->
     </body>

@@ -127,6 +127,12 @@ STATICFILES_DIRS = (
     ('battle', os.path.join(BASE_DIR, 'battle', 'static')),
 )
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+    ('forum', os.path.join(BASE_DIR, 'forum', 'templates')),
+    ('battle', os.path.join(BASE_DIR, 'battle', 'templates')),
+)
+
 FORUM_UPLOAD_URL = 'forum/profiles/'
 FORUM_UPLOAD_ROOT = os.path.join(BASE_DIR, 'forum/profiles')
 

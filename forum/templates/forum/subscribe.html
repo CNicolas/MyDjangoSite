@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "forum/base.html" %}
 
 {% block content %}
 
@@ -26,23 +26,6 @@
 	   			<label for="{{ form.confirm_password.auto_id }}">{{ form.confirm_password.label }}</label>
 	   			{{ form.confirm_password }}
 	   		</div>
-
-			<!-- <div class="input-field">
-				<label for="username">Nom d'utilisateur</label>
-				<input id="username" type="text" name="username" class="validate" required="required" />
-			</div>
-			<div class="input-field">
-				<label for="email">E-Mail</label>
-				<input id="email" type="email" name="email" class="validate" required="required" />
-			</div>
-			<div class="input-field">
-				<label for="password">Mot de passe</label>
-				<input id="password" type="password" name="password" class="validate" required="required" />
-			</div>
-			<div class="input-field">
-				<label for="confirm-password">Confirmez le mot de passe</label>
-				<input id="confirm-password" type="password" name="confirm-password" class="validate" required="required" />
-			</div> -->
 			<div class="center">
 				<button class=" btn-large waves-effect waves-light indigo" type="submit">Inscription</button>
 			</div>
