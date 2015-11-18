@@ -20,7 +20,7 @@
 			{% for post in posts %}
 				<li id="post{{ post.id }}" data-id="{{ post.id }}" class="li-post">
 					<div class="collapsible-header active grey lighten-4">
-						<div class="post-title">{{ post.title }}</div>
+						<div class="post-title left">{{ post.title }}</div>
 						<div class="right">
 							<span class="date-modif">{{ post.date_modification }}</span>
 						</div>
@@ -78,6 +78,7 @@
 						{{ form.content }}
 						{% wysiwyg_editor "id_content" %} <!-- I didn't found the way to include the auto_id -->
 					</div>
+					<input id="postIdInput" type="hidden" name="postId" value="-1" />
 					<div class="center row">
 						<button id="answerSubmit" class="btn-large waves-effect waves-light green col s12" type="submit">Répondre</button>
 					</div>

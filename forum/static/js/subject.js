@@ -2,7 +2,7 @@
 * @Author: cnicolas
 * @Date:   2015-11-04 11:59:14
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-16 16:57:21
+* @Last Modified time: 2015-11-18 11:21:48
 */
 
 'use strict';
@@ -29,7 +29,9 @@ $(document).ready(function() {
 		post['content'] = lipost.find('div.post-content').html();
 		console.log(post);
 
+		$("input#postIdInput").val(post.id);
 		$("input#id_title").val(post.title);
+		$('label[for="id_title"]').addClass("active");
 		CKEDITOR.instances.id_content.setData(post.content);
 
 		$("button#answer").click();

@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-23 14:31:11
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-16 16:03:44
+# @Last Modified time: 2015-11-18 11:20:01
 
 import logging
 
@@ -59,11 +59,19 @@ def subject(request, subject_id):
 
 			if form.is_valid():
 				profile = Profile.objects.get(user=request.user)
-				title = form.cleaned_data['title']
+				post_id = request.POST['postId']
+				title = form.cleaned_data['title']				
 				if len(title) == 0:
 					title = subject.title
 				content = form.cleaned_data['content']
-				post = Post.objects.create_post(subject, profile, title, content)
+
+				if post_id == -1:
+					post = Post.objects.create_post(subject, profile, title, content)
+				else:
+					post = Post.objects.filter(id=post_id, profile=profile)[0]
+					post.title = title
+					post.content = content
+					post.save()
 				
 				logger.info(post.title + ' created')
 
