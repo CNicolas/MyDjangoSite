@@ -3,11 +3,10 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-05 10:09:13
+# @Last Modified time: 2015-11-19 14:20:58
 
 from django.db import models
 from django.conf import settings
-from django.core.validators import MinValueValidator, MaxValueValidator
 
 from forum.storage import OverwriteStorage
 from forum.managers import ProfileManager, ThemeManager, SubThemeManager, SubjectManager, PostManager, UnreadPostManager

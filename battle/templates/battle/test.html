@@ -1,0 +1,64 @@
+{% extends "battle/base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<main>
+	<section class="section">
+		<div class="container">
+			<ul>
+				{% for c in classes %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas de classe
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in attacks %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas d'attaque
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in attacksbyclass %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas d'attaque par classe
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in armorcategories %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas de catégorie d'armure
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in armorpieces %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas de pièce d'armure
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in players %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas de joueurs
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in playerarmors %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas d'armure de joueur
+				{% endfor %}
+			</ul>
+
+		</div>
+	</section>
+</main>
+
+{% endblock content %}
