@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-19 13:29:32
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-19 16:30:03
+# @Last Modified time: 2015-11-19 16:51:27
 
 from django.db import models
 
@@ -51,24 +51,24 @@ class ArmorCategoryManager(models.Manager):
 		return manager_to_string(self)
 
 class ArmorPieceManager(models.Manager):
-	def create_armor_piece(self, name, price, defense, health, mana, strength, wisdom, intellect, spirit, category):
-		armor_piece = self.create(name=name, price=price, defense=defense, health=health, mana=mana, strength=strength, wisdom=wisdom, intellect=intellect, spirit=spirit, category=category)
+	def create_armor_piece(self, name, price, defense, health, mana, strength, agility, intellect, spirit, category):
+		armor_piece = self.create(name=name, price=price, defense=defense, health=health, mana=mana, strength=strength, agility=agility, intellect=intellect, spirit=spirit, category=category)
 		return armor_piece
 
 	def __str__(self):
 		return manager_to_string(self)
 
 class PlayerManager(models.Manager):
-	def create_player(self, pseudo, classe, level, experience, health, mana, strength, wisdom, intellect, spirit):
-		player = self.create(pseudo=pseudo, classe=classe, level=level, experience=experience, health=health, mana=mana, strength=strength, wisdom=wisdom, intellect=intellect, spirit=spirit)
+	def create_player(self, pseudo, classe, level, experience, health, mana, strength, agility, intellect, spirit):
+		player = self.create(pseudo=pseudo, classe=classe, level=level, experience=experience, health=health, mana=mana, strength=strength, agility=agility, intellect=intellect, spirit=spirit)
 		return player
 
 	def __str__(self):
 		return manager_to_string(self)
 
 class PlayerArmorManager(models.Manager):
-	def create_player_armor(self, player, piece):
-		player_armor = self.create(player=player, piece=piece)
+	def create_player_armor(self, player, armor):
+		player_armor = self.create(player=player, armor=armor)
 		return player_armor
 
 	def __str__(self):

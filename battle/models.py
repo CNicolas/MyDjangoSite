@@ -54,7 +54,7 @@ class ArmorPiece(models.Model):
 	health = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 	mana = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 	strength = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
-	wisdom = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
+	agility = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 	intellect = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 	spirit = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 
@@ -73,7 +73,7 @@ class Player(models.Model):
 	health = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
 	mana = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
 	strength = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
-	wisdom = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
+	agility = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
 	intellect = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
 	spirit = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
 
@@ -86,7 +86,7 @@ class Player(models.Model):
 
 class PlayerArmor(models.Model):
 	player = models.ForeignKey(Player)
-	piece = models.ForeignKey(ArmorPiece)
+	armor = models.ForeignKey(ArmorPiece)
 
 	objects = PlayerArmorManager()
 

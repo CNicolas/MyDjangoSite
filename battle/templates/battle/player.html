@@ -24,13 +24,37 @@
 						<td>Intelligence</td><td>{{ player.intellect }}</td>
 					</tr>
 					<tr>
-						<td>Sagesse</td><td>{{ player.wisdom }}</td>
+						<td>Agility</td><td>{{ player.agility }}</td>
 					</tr>
 					<tr>
 						<td>Esprit</td><td>{{ player.spirit }}</td>
 					</tr>
 				</tbody>
 			</table>
+
+			<ul>
+				{% for a in player.attacks %}
+					<li>{{ a.attack.name }}</li>
+				{% empty %}
+					Pas d'attaques
+				{% endfor %}
+			</ul>
+
+			<ul>
+				{% for a in player.armors %}
+					<li>
+						<table>
+							<tbody>
+								<tr>
+									<td>Nom</td><td>{{ a.armor.name }}</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				{% empty %}
+					Pas d'armure
+				{% endfor %}
+			</ul>
 		</div>
 	</section>
 </main>

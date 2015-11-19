@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 from battle.models import Classe, Attack, AttackByClasse, ArmorCategory, ArmorPiece, Player, PlayerArmor
+from battle.dtos import PlayerDto
 
 logger = logging.getLogger(__name__)
 
@@ -34,10 +35,20 @@ class PlayerView(TemplateView):
 def myRender(request, template, context):
 	return render(request, 'battle/' + template, context)
 
-def player_view_pseudo(request, player_pseudo):
+def player_view(request, player_pseudo):
 	player = Player.objects.get(pseudo=player_pseudo)
-	context = {'pagetitle': 'Joueur', 'player': player}
+	context = {'pagetitle': 'Joueur', 'player': PlayerDto(player)}
 	return myRender(request, 'player.html', context)
+
+
+
+
+
+
+
+
+
+
 
 def deleteContent():
 	Classe.objects.all().delete()
