@@ -101,4 +101,16 @@ def test(request):
 	return myRender(request, 'test.html', context)
 
 def show(request):
-	return HttpResponse(Classe.objects.all())
+	# return HttpResponse(Classe.objects.all())
+	context = {
+		'pagetitle': 'Show',
+		'classes': Classe.objects.all(),
+		'attacks': Attack.objects.all(),
+		'attacksbyclass': AttackByClasse.objects.all(),
+		'armorcategories': ArmorCategory.objects.all(),
+		'armorpieces': ArmorPiece.objects.all(),
+		'players': Player.objects.all(),
+		'playerarmors': PlayerArmor.objects.all(),
+
+	}
+	return myRender(request, 'test.html', context)
