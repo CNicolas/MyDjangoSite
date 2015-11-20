@@ -1,8 +1,8 @@
 /* 
 * @Author: cnicolas
 * @Date:   2015-11-18 14:42:35
-* @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-18 15:52:24
+* @Last Modified by:   Aku
+* @Last Modified time: 2015-11-20 12:02:23
 */
 
 /* HTML */
@@ -38,6 +38,27 @@ main {
 /* SURCHARGE MATERIALIZE */
 .valign-wrapper div {
 	width: 100%;
+}
+
+
+/* ARMOR STYLE */
+div.armors {
+	background: url("../img/rpg_icons.png") 0 0 no-repeat;
+	height: 50px;
+	width: 50px;
+	background-position: 0px -475px;
+}
+
+div.armor.filled {
+	background: url("../img/nice_armors.jpg") 0 0 no-repeat;
+	height: 50px;
+	width: 50px;
+}
+
+div.armor.filled.torso.robe {
+	/* 670*825 */
+	background-size: 536px 660px;
+	background-position: -340px -605px;
 }
 
 /* ACLONICA FONT */

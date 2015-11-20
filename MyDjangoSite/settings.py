@@ -65,9 +65,14 @@ ROOT_URLCONF = 'MyDjangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            ('forum', os.path.join(BASE_DIR, 'forum', 'templates')),
+            ('battle', os.path.join(BASE_DIR, 'battle', 'templates'))
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': True,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -125,12 +130,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     ('forum', os.path.join(BASE_DIR, 'forum', 'static')),
     ('battle', os.path.join(BASE_DIR, 'battle', 'static')),
-)
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-    ('forum', os.path.join(BASE_DIR, 'forum', 'templates')),
-    ('battle', os.path.join(BASE_DIR, 'battle', 'templates')),
 )
 
 FORUM_UPLOAD_URL = 'forum/profiles/'

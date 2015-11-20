@@ -7,54 +7,98 @@
 <main>
 	<section class="section">
 		<div class="container">
-			<h1>{{ player.pseudo }}</h1>
-			<h2>{{ player.classe }} niveau {{ player.level }}</h2>
-			<table>
-				<tbody>
-					<tr>
-						<td>Vie</td><td>{{ player.health }}</td>
-					</tr>
-					<tr>
-						<td>Mana</td><td>{{ player.mana }}</td>
-					</tr>
-					<tr>
-						<td>Force</td><td>{{ player.strength }}</td>
-					</tr>
-					<tr>
-						<td>Intelligence</td><td>{{ player.intellect }}</td>
-					</tr>
-					<tr>
-						<td>Agility</td><td>{{ player.agility }}</td>
-					</tr>
-					<tr>
-						<td>Esprit</td><td>{{ player.spirit }}</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="center">
+				<h1>{{ player.pseudo }}</h1>
+				<h2>{{ player.classe }} niveau {{ player.level }}</h2>
+			</div>
+			<div class="row">
+				<table class="col s4 table bordered">
+					<tbody>
+						<tr class="red-text">
+							<td>Vie</td>
+							<td><i class="ra ra-hearts ra-2x"></i></td>
+							<td>{{ player.health }}</td>
+						</tr>
+						<tr class="blue-text">
+							<td>Mana</td>
+							<td><i class="ra ra-crystals ra-2x"></i>
+							<td>{{ player.mana }}</td>
+						</tr>
+						<tr class="brown-text">
+							<td>Force</td>
+							<td><i class="ra ra-muscle-up ra-2x"></i>
+							<td>{{ player.strength }}</td>
+						</tr>
+						<tr class="orange-text">
+							<td>Intelligence</td>
+							<td><i class="ra ra-pawn ra-2x"></i>
+							<td>{{ player.intellect }}</td>
+						</tr>
+						<tr class="green-text">
+							<td>Agilité</td>
+							<td><i class="ra ra-player-dodge ra-2x"></i>
+							<td>{{ player.agility }}</td>
+						</tr>
+						<tr class="blue-grey-text">
+							<td>Esprit</td>
+							<td><i class="ra ra-aware ra-2x"></i>
+							<td>{{ player.spirit }}</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<ul>
-				{% for a in player.attacks %}
-					<li>{{ a.attack.name }}</li>
-				{% empty %}
-					Pas d'attaques
-				{% endfor %}
-			</ul>
+				<!-- ARMOR STYLE -->
+				<div class="col s8">
+					<div class="armor head">
+						<i class="ra ra-helmet ra-5x"></i>
+						</div>
+					<div class="armor torso">
+						<i class="ra ra-vest ra-5x"></i>
+					</div>
+					<div class="armor leg">
+						<i class="ra ra-helmet ra-5x"></i>
+					</div>
+					<div class="armor foot">
+						<i class="ra ra-helmet ra-5x"></i>
+					</div>
+					<div class="armors">
+						
+					</div>
+					<div class="armor head">
+						{{ player.armor_head }}
+					</div>
+					<div class="armor filled torso robe">
+						{{ player.armor_torso.name }}
+					</div>
+				</div>
+			</div>
 
-			<ul>
-				{% for a in player.armors %}
-					<li>
-						<table>
-							<tbody>
-								<tr>
-									<td>Nom</td><td>{{ a.armor.name }}</td>
-								</tr>
-							</tbody>
-						</table>
-					</li>
-				{% empty %}
-					Pas d'armure
-				{% endfor %}
-			</ul>
+			<div id="attacks" class="row">
+				<table class="col s6 offset-s3 table bordered">
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Dégâts</th>
+							<th>Soins</th>
+							<th>Coüt en mana</th>
+							<th>Nombre de cibles</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for a in player.attacks %}
+							<tr>
+								<td>{{ a.name }}</td>
+								<td>{{ a.damage }}</td>
+								<td>{{ a.heal }}</td>
+								<td>{{ a.mana }}</td>
+								<td>{{ a.target }}</td>
+							</tr>
+						{% empty %}
+							<tr>Pas d'attaques</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</section>
 </main>

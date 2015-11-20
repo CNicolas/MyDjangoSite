@@ -6,6 +6,7 @@ from battle.managers import ClasseManager, AttackManager, AttackByClasseManager,
 ##### CLASS & ATTACKS #####
 class Classe(models.Model):
 	name = models.CharField(max_length=100, default='', unique=True)
+	armor_type = models.SmallIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(3)])
 
 	objects = ClasseManager()
 
@@ -32,7 +33,7 @@ class AttackByClasse(models.Model):
 
 ##### ARMOR #####
 class ArmorCategory(models.Model):
-	name = models.CharField(max_length=100, unique=True)
+	place = models.CharField(max_length=100)
 	weight = models.SmallIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(3)])
 
 	objects = ArmorCategoryManager()
@@ -44,7 +45,7 @@ class ArmorCategory(models.Model):
 			weight = "Medium"
 		else:
 			weight = "Heavy"
-		return "{0} ({1})".format(self.name, weight)
+		return "{0} ({1})".format(self.place, weight)
 
 class ArmorPiece(models.Model):
 	name = models.CharField(max_length=100, unique=True)

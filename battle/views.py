@@ -60,12 +60,12 @@ def deleteContent():
 	PlayerArmor.objects.all().delete()
 
 def test(request):
-	# deleteContent()
+	deleteContent()
 	
-	warrior = Classe.objects.create_classe("Guerrier")
-	wizard = Classe.objects.create_classe("Mage")
-	healer = Classe.objects.create_classe("Prêtre")
-	thief = Classe.objects.create_classe("Assassin")
+	warrior = Classe.objects.create_classe("Guerrier", 3)
+	wizard = Classe.objects.create_classe("Mage", 1)
+	healer = Classe.objects.create_classe("Prêtre", 1)
+	thief = Classe.objects.create_classe("Assassin", 2)
 
 	cac = Attack.objects.create_attack("Attaque CaC", 10, 0, 0, 1)
 	fire = Attack.objects.create_attack("Feu", 20, 0, 10, 1)
@@ -77,12 +77,12 @@ def test(request):
 	AttackByClasse.objects.create_attack_by_classe(healer, heal)
 	AttackByClasse.objects.create_attack_by_classe(thief, arrow)
 	
-	light_hat = ArmorCategory.objects.create_armor_category("Chapeau", 1)
-	medium_hat = ArmorCategory.objects.create_armor_category("Casque", 2)
-	heavy_hat = ArmorCategory.objects.create_armor_category("Heaume", 3)
-	light_torso = ArmorCategory.objects.create_armor_category("Robe", 1)
-	medium_torso = ArmorCategory.objects.create_armor_category("Torse", 2)
-	heavy_torso = ArmorCategory.objects.create_armor_category("Plastron", 3)
+	light_hat = ArmorCategory.objects.create_armor_category("Head", 1)
+	medium_hat = ArmorCategory.objects.create_armor_category("Head", 2)
+	heavy_hat = ArmorCategory.objects.create_armor_category("Head", 3)
+	light_torso = ArmorCategory.objects.create_armor_category("Torso", 1)
+	medium_torso = ArmorCategory.objects.create_armor_category("Torso", 2)
+	heavy_torso = ArmorCategory.objects.create_armor_category("Torso", 3)
 
 	god_helmet = ArmorPiece.objects.create_armor_piece("Heaume des Dieux", 1000000000, 10, 10, 10, 5, 5, 5, 5, heavy_hat)
 	god_robe = ArmorPiece.objects.create_armor_piece("Robe des Dieux", 1000000000, 10, 10, 10, 5, 5, 5, 5, light_torso)

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # @Author: cnicolas
 # @Date:   2015-11-19 13:29:32
-# @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-19 16:51:27
+# @Last Modified by:   Aku
+# @Last Modified time: 2015-11-20 11:34:32
 
 from django.db import models
 
@@ -19,8 +19,8 @@ def manager_to_string(manager):
 
 
 class ClasseManager(models.Manager):
-	def create_classe(self, name):
-		classe = self.create(name=name)
+	def create_classe(self, name, armor_type):
+		classe = self.create(name=name, armor_type=armor_type)
 		return classe
 
 	def __str__(self):
@@ -43,8 +43,8 @@ class AttackByClasseManager(models.Manager):
 		return manager_to_string(self)
 
 class ArmorCategoryManager(models.Manager):
-	def create_armor_category(self, name, weight):
-		armor_category = self.create(name=name, weight=weight)
+	def create_armor_category(self, place, weight):
+		armor_category = self.create(place=place, weight=weight)
 		return armor_category
 
 	def __str__(self):
