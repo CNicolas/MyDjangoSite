@@ -51,7 +51,7 @@
 			</ul>
 			<ul>
 				{% for c in playerarmors %}
-					<li>{{ c }}</li>
+					<li>{{ c.player }}<br/>{{ c.armor }}</li>
 				{% empty %}
 					Pas d'armure de joueur
 				{% endfor %}

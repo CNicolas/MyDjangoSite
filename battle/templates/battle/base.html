@@ -38,4 +38,7 @@
 
 	<!-- Personnal JavaScript -->
 	<script src="{% static 'js/battle.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% if 'battle/player' in request.get_full_path %}
+		<script src="{% static 'js/player.js' %}" type="text/javascript" charset="utf-8"></script>
+	{% endif %}
 </html>

@@ -2,7 +2,7 @@
 * @Author: cnicolas
 * @Date:   2015-11-18 14:42:35
 * @Last Modified by:   Aku
-* @Last Modified time: 2015-11-20 12:02:23
+* @Last Modified time: 2015-11-20 14:24:24
 */
 
 /* HTML */
@@ -42,15 +42,66 @@ main {
 
 
 /* ARMOR STYLE */
-div.armors {
-	background: url("../img/rpg_icons.png") 0 0 no-repeat;
-	height: 50px;
-	width: 50px;
-	background-position: 0px -475px;
+div.armor-piece {
+	background: url("../img/rpg_icons.png") 0 0 no-repeat; 	/* 476*1020 */
+	background-size: 1050px 2200px;
+	height: 75px;
+	width: 75px;
 }
 
+div.armor-piece.head.weight1 {
+	background-position: -675px -952px;
+}
+div.armor-piece.head.weight2 {
+	background-position: -900px -952px;
+}
+div.armor-piece.head.weight3 {
+	background-position: -978px -952px;
+}
+
+div.armor-piece.torso.weight1 {
+	background-position: -375px -953px;
+}
+div.armor-piece.torso.weight2 {
+	background-position: -300px -953px;
+}
+div.armor-piece.torso.weight3 {
+	background-position: -450px -953px;
+}
+
+div.armor-piece.hand.weight1 {
+	background-position: -978px -1025px;
+}
+div.armor-piece.hand.weight2 {
+	background-position: -825px -1025px;
+}
+div.armor-piece.hand.weight3 {
+	background-position: -900px -1025px;
+}
+
+div.armor-piece.neck.weight1 {
+	background-position: -600px -1392px;
+}
+div.armor-piece.neck.weight2 {
+	background-position: -450px -1391px;
+}
+div.armor-piece.neck.weight3 {
+	background-position: -978px -1392px;
+}
+
+div.armor-piece.feet.weight1 {
+	background-position: -450px -1025px;
+}
+div.armor-piece.feet.weight2 {
+	background-position: -375px -1025px;
+}
+div.armor-piece.feet.weight3 {
+	background-position: -300px -1025px;
+}
+
+
 div.armor.filled {
-	background: url("../img/nice_armors.jpg") 0 0 no-repeat;
+	/*background: url("../img/nice_armors.jpg") 0 0 no-repeat;*/
 	height: 50px;
 	width: 50px;
 }
