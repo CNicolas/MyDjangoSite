@@ -1,5 +1,31 @@
+{% load staticfiles %}
+
 <nav class="black" role="navigation">
 	<div class="nav-wrapper container">
+		<ul class="left">
+			<li>
+				<a href="{% url 'battleindex' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Accueil">
+					<i class="material-icons">home</i>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'player' 'Aku_Guerrier' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Joueur">
+					<i class="ra ra-player"></i>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'shop' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Magasin">
+					<i class="ra ra-bell"></i>
+				</a>
+			</li>
+		</ul>
 		<span class="center brand-logo aclonica">{{ pagetitle }}</span>
+		<ul class="right">
+			<li>
+				<a href="{% url 'show' %}" class="tooltipped waves-effect" data-position="bottom" data-tooltip="Show DB">
+					<i class="ra ra-uncertainty"></i>
+				</a>
+			</li>
+		</ul>
 	</div>
 </nav>

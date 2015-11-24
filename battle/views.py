@@ -17,38 +17,10 @@ class IndexView(TemplateView):
 		context['pagetitle'] = 'Bataille pour Eorzea'
 		return context
 
-class PlayerView(TemplateView):
-	template_name = 'battle/player.html'
-
-	def get(self, request, *args, **kwargs):
-		logger.info(kwargs)
-		return super(PlayerView, self).get(request, *args, **kwargs)
-
-	def get_context_data(self, **kwargs):
-		context = super(TestView, self).get_context_data(**kwargs)
-		context['pagetitle'] = 'Test'
-		context['player'] = Player.objects.all()
-		return context
-
 #####################################################################################################
 
 def myRender(request, template, context):
 	return render(request, 'battle/' + template, context)
-
-def player_view(request, player_pseudo):
-	player = Player.objects.get(pseudo=player_pseudo)
-	context = {'pagetitle': 'Joueur', 'player': PlayerDto(player)}
-	return myRender(request, 'player.html', context)
-
-
-
-
-
-
-
-
-
-
 
 def deleteContent():
 	Classe.objects.all().delete()

@@ -1,8 +1,8 @@
 /* 
 * @Author: cnicolas
 * @Date:   2015-11-18 14:42:35
-* @Last Modified by:   Aku
-* @Last Modified time: 2015-11-20 14:24:24
+* @Last Modified by:   cnicolas
+* @Last Modified time: 2015-11-24 16:35:17
 */
 
 /* HTML */
@@ -99,19 +99,9 @@ div.armor-piece.feet.weight3 {
 	background-position: -300px -1025px;
 }
 
-
-div.armor.filled {
-	/*background: url("../img/nice_armors.jpg") 0 0 no-repeat;*/
-	height: 50px;
-	width: 50px;
+nav>div>ul>li>a>img {
+	max-height: 100%;
 }
-
-div.armor.filled.torso.robe {
-	/* 670*825 */
-	background-size: 536px 660px;
-	background-position: -340px -605px;
-}
-
 /* ACLONICA FONT */
 .aclonica {
 	font-family: Aclonica;
