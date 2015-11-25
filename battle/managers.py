@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-19 13:29:32
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-25 15:44:23
+# @Last Modified time: 2015-11-25 16:31:39
 
 import logging
 
@@ -37,11 +37,10 @@ class ClasseManager(models.Manager):
 class AttackManager(models.Manager):
 	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target):
 		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target)
-		# print(name, check)
 		if len(check) > 0:
 			return check[0]
 		else:
-			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, duration=duration, target=target)
+			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target)
 			return attack
 
 	def __str__(self):

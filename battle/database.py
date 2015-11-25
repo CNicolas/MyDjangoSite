@@ -3,7 +3,7 @@
 # @Author: Aku
 # @Date:   2015-11-20 14:32:30
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-25 15:45:21
+# @Last Modified time: 2015-11-25 16:38:56
 
 import logging
 import json
@@ -41,10 +41,8 @@ def fillDb(request):
 			for classname in data[weight]:
 				c = Classe.objects.create_classe(classname, weight, data[weight][classname]['health'])
 				for attack in data[weight][classname]['attacks']:
-					print(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'])
 					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'])
 					AttackByClasse.objects.create_attack_by_classe(c, a)
-
 
 	return HttpResponse()
 
@@ -55,4 +53,4 @@ def emptyDb(request):
 	ArmorPiece.objects.all().delete()
 	Player.objects.all().delete()
 	PlayerArmor.objects.all().delete()
-	return HttpResponse()
+	return HttpResponse("Everything has been deleted")
