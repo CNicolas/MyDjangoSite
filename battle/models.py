@@ -1,12 +1,13 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-from battle.managers import ClasseManager, AttackManager, AttackByClasseManager, ArmorCategoryManager, ArmorPieceManager, PlayerManager, PlayerArmorManager
+from battle.managers import ClasseManager, AttackManager, AttackByClasseManager, ArmorPieceManager, PlayerManager, PlayerArmorManager
+from battle.utils import armorWeightByWeight
 
 ##### CLASS & ATTACKS #####
 class Classe(models.Model):
 	name = models.CharField(max_length=100, default='', unique=True)
-	armor_type = models.SmallIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(3)])
+	weight = models.CharField(max_length=100)
 	health = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
 	objects = ClasseManager()
@@ -15,19 +16,19 @@ class Classe(models.Model):
 		return "{0}".format(self.name)
 
 class Attack(models.Model):
-	name = models.CharField(max_length=100, default='', unique=True)
+	name = models.CharField(max_length=100, default='')
 	damage = models.SmallIntegerField(default=0)
 	heal = models.SmallIntegerField(default=0)
 	mana = models.SmallIntegerField(default=0)
 	energy = models.SmallIntegerField(default=0)
-	critical = models.SmallIntegerField(default=10)
+	critical = models.SmallIntegerField(default=10, validators=[MinValueValidator(0), MaxValueValidator(100)])
 	duration = models.SmallIntegerField(default=1)
 	target = models.SmallIntegerField(default=1)
 
 	objects = AttackManager()
 
 	def __str__(self):
-		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, duration={5}, target={6})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.duration, self.target)
+		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, critical={5}, duration={6}, target={7})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.critical, self.duration, self.target)
 
 class AttackByClasse(models.Model):
 	classe = models.ForeignKey(Classe)
@@ -35,24 +36,14 @@ class AttackByClasse(models.Model):
 
 	objects = AttackByClasseManager()
 
-##### ARMOR #####
-class ArmorCategory(models.Model):
-	place = models.CharField(max_length=100)
-	weight = models.SmallIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(3)])
-
-	objects = ArmorCategoryManager()
-
 	def __str__(self):
-		if self.weight == 1:
-			weight = "Light"
-		elif self.weight == 2:
-			weight = "Medium"
-		else:
-			weight = "Heavy"
-		return "{0} ({1})".format(self.place, weight)
+		return "AttackByClasse(classe={0}, attack={1})".format(self.classe.name, self.attack.name)
 
+##### ARMOR #####
 class ArmorPiece(models.Model):
 	name = models.CharField(max_length=100, unique=True)
+	place = models.CharField(max_length=100)
+	weight = models.CharField(max_length=100)
 	price = models.SmallIntegerField(default=10, validators=[MinValueValidator(10)])
 
 	defense = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
@@ -64,12 +55,10 @@ class ArmorPiece(models.Model):
 	intellect = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 	spirit = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 
-	category = models.ForeignKey(ArmorCategory)
-
 	objects = ArmorPieceManager()
 
 	def __str__(self):
-		return "ArmorPiece(name={0}, category={1})".format(self.name, self.category)
+		return "ArmorPiece(name={0}, place={1}, weight={2}, price={3}, defense={4}, health={5}, mana={6}, energy={7}, strength={8}, agility={9}, intellect={10}, spirit={11})".format(self.name, self.place, self.weight, self.price, self.defense, self.health, self.mana, self.energy, self.strength, self.agility, self.intellect, self.spirit)
 
 ##### PLAYER #####
 class Player(models.Model):

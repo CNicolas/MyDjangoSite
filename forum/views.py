@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-21 09:40:15
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-18 14:09:14
+# @Last Modified time: 2015-11-25 16:23:04
 
 import logging
 import os
@@ -72,12 +72,7 @@ def fullDB(request):
 	return HttpResponse(Subject.objects)
 
 def test(request):
-	theme = Theme.objects.get(title="Extraterrestres et autres discussions peu conventionnelles")
-	SubTheme.objects.create_subtheme(theme, "Actualités")
-	SubTheme.objects.create_subtheme(theme, "Martiens")
-	SubTheme.objects.create_subtheme(theme, "Contacts")
-	SubTheme.objects.create_subtheme(theme, "Aliens en tout genre")
-	SubTheme.objects.create_subtheme(theme, "Preuves potentielles d'existence")
+	fullDB(request)
 	return HttpResponse(SubTheme.objects)
 
 def deleteForum(request):

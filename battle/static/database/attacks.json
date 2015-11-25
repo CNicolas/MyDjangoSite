@@ -1,5 +1,5 @@
 {
-	"Light": {
+	"light": {
 		"Mage": {
 			"health": 0,
 			"attacks": [
@@ -91,7 +91,7 @@
 			]
 		}
 	},
-	"Medium": {
+	"medium": {
 		"Assassin": {
 			"health": 0,
 			"attacks": [
@@ -216,7 +216,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 3
-				},
+				}
 			]
 		},
 		"One Punch Man": {

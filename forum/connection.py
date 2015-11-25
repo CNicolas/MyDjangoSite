@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-10-22 10:16:35
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-18 14:19:11
+# @Last Modified time: 2015-11-25 16:22:10
 
 import logging
 
@@ -73,7 +73,7 @@ def subscribe(request):
 				user = User.objects.create_user(username=username, email=email, password=password)
 				# login(request, user)
 				logger.info("New user created : " + str(user))
-				return redirect("index")
+				return redirect('forumindex')
 
 		return myRender(request, "subscribe.html", context)
 

@@ -99,9 +99,21 @@ DATABASES = {
         # 'PASSWORD': 'django_user',
         # 'HOST': 'localhost',
         # 'PORT': '3306',
+    },
+    'forum_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'forum', 'db.sqlite3'),
+    },
+    'battle_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'battle', 'db.sqlite3'),
     }
 }
 
+DATABASE_ROUTERS = [
+    'forum.databaseRouter.ForumRouter',
+    'battle.databaseRouter.BattleRouter',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
