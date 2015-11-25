@@ -7,6 +7,7 @@ from battle.managers import ClasseManager, AttackManager, AttackByClasseManager,
 class Classe(models.Model):
 	name = models.CharField(max_length=100, default='', unique=True)
 	armor_type = models.SmallIntegerField(default=2, validators=[MinValueValidator(1), MaxValueValidator(3)])
+	health = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
 	objects = ClasseManager()
 
@@ -18,12 +19,15 @@ class Attack(models.Model):
 	damage = models.SmallIntegerField(default=0)
 	heal = models.SmallIntegerField(default=0)
 	mana = models.SmallIntegerField(default=0)
+	energy = models.SmallIntegerField(default=0)
+	critical = models.SmallIntegerField(default=10)
+	duration = models.SmallIntegerField(default=1)
 	target = models.SmallIntegerField(default=1)
 
 	objects = AttackManager()
 
 	def __str__(self):
-		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, target={4})".format(self.name, self.damage, self.heal, self.mana, self.target)
+		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, duration={5}, target={6})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.duration, self.target)
 
 class AttackByClasse(models.Model):
 	classe = models.ForeignKey(Classe)
@@ -54,6 +58,7 @@ class ArmorPiece(models.Model):
 	defense = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 	health = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 	mana = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
+	energy = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
 	strength = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 	agility = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
 	intellect = models.SmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
@@ -73,6 +78,7 @@ class Player(models.Model):
 	experience = models.SmallIntegerField(default=0, validators=[MinValueValidator(0)])
 	health = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
 	mana = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
+	energy = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
 	strength = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
 	agility = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])
 	intellect = models.SmallIntegerField(default=10, validators=[MinValueValidator(8)])

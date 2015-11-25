@@ -1,0 +1,238 @@
+{
+	"Light": {
+		"Mage": {
+			"health": 0,
+			"attacks": [
+				{
+					"name": "Feu",
+					"damage": 20,
+					"heal": 0,
+					"mana": 10,
+					"energy": 0,
+					"critical": 15,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Extra Feu",
+					"damage": 20,
+					"heal": 0,
+					"mana": 20,
+					"energy": 0,
+					"critical": 15,
+					"duration": 1,
+					"target": 2
+				},
+				{
+					"name": "Méga Feu",
+					"damage": 30,
+					"heal": 0,
+					"mana": 45,
+					"energy": 0,
+					"critical": 15,
+					"duration": 1,
+					"target": 3
+				},
+				{
+					"name": "Foudre",
+					"damage": 10,
+					"heal": 0,
+					"mana": 10,
+					"energy": 0,
+					"critical": 15,
+					"duration": 3,
+					"target": 1
+				}
+			]
+		},
+		"Prêtre": {
+			"health": 25,
+			"attacks": [
+				{
+					"name": "Soin",
+					"damage": 0,
+					"heal": 20,
+					"mana": 10,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Extra Soin",
+					"damage": 0,
+					"heal": 20,
+					"mana": 20,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 2
+				},
+				{
+					"name": "Méga Soin",
+					"damage": 0,
+					"heal": 40,
+					"mana": 60,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 3
+				},
+				{
+					"name": "Récupération",
+					"damage": 0,
+					"heal": 10,
+					"mana": 10,
+					"energy": 0,
+					"critical": 10,
+					"duration": 3,
+					"target": 1
+				}
+			]
+		}
+	},
+	"Medium": {
+		"Assassin": {
+			"health": 0,
+			"attacks": [
+				{
+					"name": "Corps à Corps",
+					"damage": 20,
+					"heal": 0,
+					"mana": 0,
+					"energy": 10,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Shuriken",
+					"damage": 30,
+					"heal": 0,
+					"mana": 0,
+					"energy": 15,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Grenade",
+					"damage": 30,
+					"heal": 0,
+					"mana": 0,
+					"energy": 45,
+					"critical": 10,
+					"duration": 1,
+					"target": 3
+				},
+				{
+					"name": "Chute mortelle",
+					"damage": 50,
+					"heal": 0,
+					"mana": 0,
+					"energy": 35,
+					"critical": 20,
+					"duration": 1,
+					"target": 1
+				}
+			]
+		},
+		"Archer": {
+			"health": 10,
+			"attacks": [
+				{
+					"name": "Flèche",
+					"damage": 15,
+					"heal": 0,
+					"mana": 0,
+					"energy": 10,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Flèche Critique",
+					"damage": 15,
+					"heal": 0,
+					"mana": 0,
+					"energy": 15,
+					"critical": 100,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Tir Rapide",
+					"damage": 45,
+					"heal": 0,
+					"mana": 0,
+					"energy": 30,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Flèche Explosive",
+					"damage": 30,
+					"heal": 0,
+					"mana": 10,
+					"energy": 20,
+					"critical": 10,
+					"duration": 1,
+					"target": 3
+				}
+			]
+		}
+	},
+	"Heavy": {
+		"Guerrier": {
+			"health": 100,
+			"attacks": [
+				{
+					"name": "Corps à Corps",
+					"damage": 15,
+					"heal": 0,
+					"mana": 0,
+					"energy": 10,
+					"critical": 10,
+					"duration": 1,
+					"target": 1
+				},
+				{
+					"name": "Ruée",
+					"damage": 15,
+					"heal": 0,
+					"mana": 0,
+					"energy": 20,
+					"critical": 15,
+					"duration": 1,
+					"target": 2
+				},
+				{
+					"name": "Swing",
+					"damage": 30,
+					"heal": 0,
+					"mana": 0,
+					"energy": 50,
+					"critical": 15,
+					"duration": 1,
+					"target": 3
+				},
+			]
+		},
+		"One Punch Man": {
+			"health": 100,
+			"attacks": [
+				{
+					"name": "One Punch",
+					"damage": 1000000,
+					"heal": 0,
+					"mana": 0,
+					"energy": 1,
+					"critical": 100,
+					"duration": 1,
+					"target": 3
+				}
+			]
+		}
+	}
+}

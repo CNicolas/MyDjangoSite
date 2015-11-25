@@ -1,0 +1,203 @@
+{
+	"Light": {
+		"Head": [
+			{
+				"name": "Capuchon des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Torso": [
+			{
+				"name": "Robe des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Hand": [
+			{
+				"name": "Gants des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Neck": [
+			{
+				"name": "Collier des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Feet": [
+			{
+				"name": "Chaussons des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		]
+	},
+	"Medium": {
+		"Head": [
+			{
+				"name": "Chapeau des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Torso": [
+			{
+				"name": "Tunique des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Hand": [
+			{
+				"name": "Mitaines des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Neck": [
+			{
+				"name": "Chainette des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Feet": [
+			{
+				"name": "Bottes des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		]
+	},
+	"Heavy": {
+		"Head": [
+			{
+				"name": "Heaume des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Torso": [
+			{
+				"name": "Cuirasse des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Hand": [
+			{
+				"name": "Gantelets des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Neck": [
+			{
+				"name": "Gorgerin des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		],
+		"Feet": [
+			{
+				"name": "Cuissardes des Dieux",
+				"price": 100000000,
+				"defense": 10,
+				"health": 10,
+				"mana": 10,
+				"strength": 5,
+				"agility": 5,
+				"intellect": 5,
+				"spirit": 5
+			}
+		]
+	}
+}

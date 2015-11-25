@@ -3,11 +3,11 @@
 # @Author: cnicolas
 # @Date:   2015-11-10 16:55:44
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-24 16:45:17
+# @Last Modified time: 2015-11-25 10:39:42
 
 from django.conf.urls import url
 
-from battle import views, player, database_requests
+from battle import views, player, database
 
 urlpatterns = [
 	url(r'^$', views.IndexView.as_view(), name='battleindex'),
@@ -15,7 +15,8 @@ urlpatterns = [
 	url(r'^player/(?P<player_pseudo>\w{0,50})/$', player.player_view, name='player'),
 	url(r'^shop/$', player.shop, name='shop'),
 
-	url(r'^armor/(?P<piece_id>\d{0,50})/$', database_requests.armor, name='armor'),
+	url(r'^armor/(?P<piece_id>\d{0,50})/$', database.armor, name='armor'),
+	url(r'^fillDb/$', database.fillDb, name='fillDb'),
 
 	url(r'^test/$', views.test, name='test'),
 	url(r'^show/$', views.show, name='show'),

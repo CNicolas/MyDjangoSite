@@ -34,15 +34,15 @@ def deleteContent():
 def test(request):
 	deleteContent()
 	
-	warrior = Classe.objects.create_classe("Guerrier", 3)
-	wizard = Classe.objects.create_classe("Mage", 1)
-	healer = Classe.objects.create_classe("Prêtre", 1)
-	thief = Classe.objects.create_classe("Assassin", 2)
+	warrior = Classe.objects.create_classe("Guerrier", 3, 100)
+	wizard = Classe.objects.create_classe("Mage", 1, 0)
+	healer = Classe.objects.create_classe("Prêtre", 1, 20)
+	thief = Classe.objects.create_classe("Assassin", 2, 0)
 
-	cac = Attack.objects.create_attack("Attaque CaC", 10, 0, 0, 1)
-	fire = Attack.objects.create_attack("Feu", 20, 0, 10, 1)
-	heal = Attack.objects.create_attack("Soin", 0, 10, 10, 1)
-	arrow = Attack.objects.create_attack("Flêche", 15, 0, 0, 1)
+	cac = Attack.objects.create_attack("Attaque CaC", 10, 0, 0, 10, 1, 1)
+	fire = Attack.objects.create_attack("Feu", 20, 0, 10, 0, 1, 1)
+	heal = Attack.objects.create_attack("Soin", 0, 10, 10, 0, 1, 1)
+	arrow = Attack.objects.create_attack("Flêche", 15, 0, 0, 10, 1, 1)
 
 	AttackByClasse.objects.create_attack_by_classe(warrior, cac)
 	AttackByClasse.objects.create_attack_by_classe(wizard, fire)
