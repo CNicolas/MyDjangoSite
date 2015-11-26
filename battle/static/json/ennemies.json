@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Larve de monstre",
+        "level": "1",
+        "health": "5",
+        "attacks": [
+            {
+                "name": "Bave",
+                "damage": 1,
+                "heal": 0,
+                "critical": 0,
+                "duration": 1,
+                "cooldown": 1,
+                "target": 1
+            }
+        ]
+    },
+    {
+        "name": "Monstre",
+        "level": "1",
+        "health": "20",
+        "attacks": [
+            {
+                "name": "Griffe",
+                "damage": 5,
+                "heal": 0,
+                "critical": 10,
+                "duration": 1,
+                "cooldown": 1,
+                "target": 1
+            }
+        ]
+    },
+    {
+        "name": "Vampire",
+        "level": "3",
+        "health": "100",
+        "attacks": [
+            {
+                "name": "Griffe",
+                "damage": 10,
+                "heal": 1,
+                "critical": 10,
+                "duration": 1,
+                "cooldown": 1,
+                "target": 1
+            },
+            {
+                "name": "Aspiration",
+                "damage": 20,
+                "heal": 10,
+                "critical": 20,
+                "duration": 1,
+                "cooldown": 3,
+                "target": 1
+            }
+        ]
+    },
+    {
+        "name": "Sephiroth",
+        "level": "20",
+        "health": "1000",
+        "attacks": [
+            {
+                "name": "Estoc",
+                "damage": 25,
+                "heal": 0,
+                "critical": 10,
+                "duration": 1,
+                "cooldown": 2,
+                "target": 1
+            },
+            {
+                "name": "Taillades",
+                "damage": 15,
+                "heal": 0,
+                "critical": 10,
+                "duration": 3,
+                "cooldown": 2,
+                "target": 1
+            },
+            {
+                "name": "Matière noire",
+                "damage": 60,
+                "heal": 0,
+                "critical": 10,
+                "duration": 1,
+                "cooldown": 5,
+                "target": 3
+            }
+        ]
+    }
+]

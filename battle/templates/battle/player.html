@@ -24,12 +24,12 @@
 						</tr>
 						<tr class="color-mana-text">
 							<td>Mana</td>
-							<td><i class="ra ra-crystals ra-2x"></i>
+							<td><i class="ra ra-crystals ra-2x"></i></td>
 							<td>{{ player.full_mana }} <span class="grey-text text-lighten-1">({{ player.mana }} + {{ player.mana_bonus }})</span></td>
 						</tr>
 						<tr class="color-energy-text">
 							<td>Energie</td>
-							<td><i class="ra ra-lightning-bolt ra-2x"></i>
+							<td><i class="ra ra-lightning-bolt ra-2x"></i></td>
 							<td>{{ player.full_energy }} <span class="grey-text text-lighten-1">({{ player.energy }} + {{ player.energy_bonus }})</span></td>
 						</tr>
 						<tr class="color-defense-text">
@@ -39,22 +39,22 @@
 						</tr>
 						<tr class="color-strength-text">
 							<td>Force</td>
-							<td><i class="ra ra-muscle-up ra-2x"></i>
+							<td><i class="ra ra-muscle-up ra-2x"></i></td>
 							<td>{{ player.full_strength }} <span class="grey-text text-lighten-1">({{ player.strength }} + {{ player.strength_bonus }})</span></td>
 						</tr>
 						<tr class="color-agility-text">
 							<td>Agilité</td>
-							<td><i class="ra ra-player-dodge ra-2x"></i>
+							<td><i class="ra ra-player-dodge ra-2x"></i></td>
 							<td>{{ player.full_agility }} <span class="grey-text text-lighten-1">({{ player.agility }} + {{ player.agility_bonus }})</span></td>
 						</tr>
 						<tr class="color-intellect-text">
 							<td>Intelligence</td>
-							<td><i class="ra ra-pawn ra-2x"></i>
+							<td><i class="ra ra-pawn ra-2x"></i></td>
 							<td>{{ player.full_intellect }} <span class="grey-text text-lighten-1">({{ player.intellect }} + {{ player.intellect_bonus }})</span></td>
 						</tr>
 						<tr class="color-spirit-text">
 							<td>Esprit</td>
-							<td><i class="ra ra-aware ra-2x"></i>
+							<td><i class="ra ra-aware ra-2x"></i></td>
 							<td>{{ player.full_spirit }} <span class="grey-text text-lighten-1">({{ player.spirit }} + {{ player.spirit_bonus }})</span></td>
 						</tr>
 					</tbody>
@@ -154,32 +154,34 @@
 			<br />
 
 			<div id="attacks" class="row">
-				<table class="col s8 offset-s2 table bordered">
+				<table class="col s10 offset-s1 table bordered">
 					<thead>
 						<tr>
-							<th>Nom</th>
-							<th>Dégâts</th>
-							<th>Soins</th>
-							<th>Coût en mana</th>
-							<th>Coût en energie</th>
-							<th>Taux de coup critique</th>
-							<th>Durée</th>
-							<th>Nombre de cibles</th>
+							<th class="center">Nom</th>
+							<th class="center">Dégâts</th>
+							<th class="center">Soins</th>
+							<th class="center">Coût en mana</th>
+							<th class="center">Coût en energie</th>
+							<th class="center">Taux de coup critique</th>
+							<th class="center">Durée</th>
+							<th class="center">Délai de relance</th>
+							<th class="center">Nombre de cibles</th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for a in player.attacks %}
 							<tr>
-								<td>{{ a.name }}</td>
-								<td class="color-{{ a.stat }}-text">{{ a.full_damage }}
+								<td class="center">{{ a.name }}</td>
+								<td class="center color-{{ a.stat }}-text">{{ a.full_damage }}
 									<span class="grey-text text-lighten-2">{{ a.damage }} x {{ a.player_stat }}</span>
 								</td>
-								<td>{{ a.heal }}</td>
-								<td>{{ a.mana }}</td>
-								<td>{{ a.energy }}</td>
-								<td>{{ a.critical }} %</td>
-								<td>{{ a.duration }}</td>
-								<td>{{ a.target }}</td>
+								<td class="center color-health-text">{{ a.heal }}</td>
+								<td class="center color-mana-text">{{ a.mana }}</td>
+								<td class="center color-energy-text">{{ a.energy }}</td>
+								<td class="center">{{ a.critical }} %</td>
+								<td class="center">{{ a.duration }}</td>
+								<td class="center">{{ a.cooldown }}</td>
+								<td class="center">{{ a.target }}</td>
 							</tr>
 						{% empty %}
 							<tr>Pas d'attaques</tr>

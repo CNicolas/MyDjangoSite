@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
-from battle.models import Classe, Attack, AttackByClasse, ArmorPiece, Player, PlayerArmor
+from battle.models import Classe, Attack, AttackByClasse, ArmorPiece, Player, PlayerArmor, Ennemy, EnnemyAttack
 from battle.dtos import PlayerDto
 from battle.utils import myRender
 
@@ -44,6 +44,8 @@ def show(request):
 		'armorpieces': ArmorPiece.objects.all(),
 		'players': Player.objects.all(),
 		'playerarmors': PlayerArmor.objects.all(),
+		'ennemies': Ennemy.objects.all(),
+		'ennemyattacks': EnnemyAttack.objects.all()
 
 	}
 	return myRender(request, 'test.html', context)

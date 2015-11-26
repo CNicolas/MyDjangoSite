@@ -7,7 +7,7 @@
 
 import logging
 
-from battle.models import AttackByClasse, PlayerArmor, Player
+from battle.models import AttackByClasse, PlayerArmor, Player, Ennemy, EnnemyAttack
 from battle.utils import armorWeightByName
 
 logger = logging.getLogger(__name__)
@@ -22,6 +22,7 @@ class AttackDto:
 		self.energy = attack.energy
 		self.critical = attack.critical
 		self.duration = attack.duration
+		self.cooldown = attack.cooldown
 		self.target = attack.target
 		self.stat = attack.stat
 
@@ -42,6 +43,7 @@ class AttackDto:
 		res['energy'] = self.energy
 		res['critical'] = self.critical
 		res['duration'] = self.duration
+		res['cooldown'] = self.cooldown
 		res['target'] = self.target
 		return res
 
@@ -139,3 +141,12 @@ class PlayerDto:
 			if a.place == place:
 				return a
 		return False
+
+class EnnemyDto:
+	def __init__(self, ennemy):
+		self.id = ennemy.id
+		self.name = ennemy.name
+		self.health = ennemy.health
+		self.level = ennemy.level
+
+		self.attacks = list(EnnemyAttack.objects.filter(ennemy=ennemy))

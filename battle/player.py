@@ -7,14 +7,11 @@
 
 import logging
 
-from django.shortcuts import render
 from battle.models import Player
 from battle.dtos import PlayerDto
+from battle.utils import myRender
 
 logger = logging.getLogger(__name__)
-
-def myRender(request, template, context):
-	return render(request, 'battle/' + template, context)
 
 def player_view(request, player_pseudo):
 	player = Player.objects.get(pseudo=player_pseudo)

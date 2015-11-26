@@ -35,12 +35,12 @@ class ClasseManager(models.Manager):
 		return manager_to_string(self)
 
 class AttackManager(models.Manager):
-	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, stat):
-		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, stat=stat)
+	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, cooldown, stat):
+		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat)
 		if len(check) > 0:
 			return check[0]
 		else:
-			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, stat=stat)
+			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat)
 			return attack
 
 	def __str__(self):
@@ -90,6 +90,30 @@ class PlayerArmorManager(models.Manager):
 		else:
 			player_armor = self.create(player=player, armor=armor)
 			return player_armor
+
+	def __str__(self):
+		return manager_to_string(self)
+
+class EnnemyManager(models.Manager):
+	def create_ennemy(self, name, level, health):
+		check = self.filter(name=name, level=level, health=health)
+		if len(check) > 0:
+			return check[0]
+		else:
+			ennemy = self.create(name=name, level=level, health=health)
+			return ennemy
+
+	def __str__(self):
+		return manager_to_string(self)
+
+class EnnemyAttackManager(models.Manager):
+	def create_ennemy_attack(self, name, damage, heal, critical, duration, cooldown, target, ennemy):
+		check = self.filter(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, ennemy=ennemy)
+		if len(check) > 0:
+			return check[0]
+		else:
+			ennemy_attack = self.create(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, ennemy=ennemy)
+			return ennemy_attack
 
 	def __str__(self):
 		return manager_to_string(self)

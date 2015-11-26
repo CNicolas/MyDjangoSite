@@ -49,7 +49,20 @@
 					Pas d'armure de joueur
 				{% endfor %}
 			</ul>
-
+			<ul>
+				{% for c in ennemies %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas d'ennemis
+				{% endfor %}
+			</ul>
+			<ul>
+				{% for c in ennemyattacks %}
+					<li>{{ c }}</li>
+				{% empty %}
+					Pas d'attaques d'ennemis
+				{% endfor %}
+			</ul>
 		</div>
 	</section>
 </main>

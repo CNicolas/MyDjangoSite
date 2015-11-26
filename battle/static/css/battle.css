@@ -19,6 +19,13 @@ body {
 main {
 	flex: 1 0 auto;
 }
+/* END */
+
+/* SURCHARGE MATERIALIZE */
+.valign-wrapper div {
+	width: 100%;
+}
+/* END */
 
 /* HELPERS */
 .hidden {
@@ -34,7 +41,6 @@ main {
 .opacity-5 {
 	opacity: .5;
 }
-
 
 .color-price {
 	background-color: #ffc107;
@@ -91,12 +97,6 @@ main {
 	color: #607d8b;
 }
 /* END */
-
-/* SURCHARGE MATERIALIZE */
-.valign-wrapper div {
-	width: 100%;
-}
-
 
 /* ARMOR STYLE */
 div.armor-piece {
@@ -157,7 +157,11 @@ div.armor-piece.feet.weight3 {
 }
 /* END */
 
-
+/* FIGHT */
+div.ennemies, div.players {
+	min-height: 35vh;
+}
+/* END */
 
 
 

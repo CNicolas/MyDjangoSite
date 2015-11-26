@@ -12,7 +12,7 @@ from os import listdir
 from os.path import isfile, join
 from django.http import HttpResponse, JsonResponse
 
-from battle.models import Classe, Attack, AttackByClasse, ArmorPiece, Player, PlayerArmor
+from battle.models import Classe, Attack, AttackByClasse, ArmorPiece, Player, PlayerArmor, Ennemy, EnnemyAttack
 from battle.dtos import ArmorPieceDto
 from battle.utils import armorWeightByName
 
@@ -24,9 +24,10 @@ def armor(request, piece_id):
 	return JsonResponse(res)
 
 def fillDb(request):
-	database_path = join('.', 'battle', 'static', 'database')
+	database_path = join('.', 'battle', 'static', 'json')
 	items_file = join(database_path, 'items.json')
 	attacks_file = join(database_path, 'attacks.json')
+	ennemies_file = join(database_path, 'ennemies.json')
 
 	with open(items_file, 'r', encoding='utf-8') as f:
 		data = json.load(f)
@@ -42,8 +43,15 @@ def fillDb(request):
 				classe_content = data[weight][classname]
 				c = Classe.objects.create_classe(classname, weight, classe_content['health'])
 				for attack in classe_content['attacks']:
-					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['stat'])
+					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['cooldown'], attack['stat'])
 					AttackByClasse.objects.create_attack_by_classe(c, a)
+
+	with open(ennemies_file, 'r', encoding='utf-8') as f:
+		data = json.load(f)
+		for e in data:
+			ennemy = Ennemy.objects.create_ennemy(e['name'], e['level'], e['health'])
+			for a in e['attacks']:
+				attack = EnnemyAttack.objects.create_ennemy_attack(a['name'], a['damage'], a['heal'], a['critical'], a['duration'], a['cooldown'], a['target'], ennemy)
 
 	return HttpResponse()
 

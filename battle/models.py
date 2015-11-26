@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
-from battle.managers import ClasseManager, AttackManager, AttackByClasseManager, ArmorPieceManager, PlayerManager, PlayerArmorManager
+from battle.managers import ClasseManager, AttackManager, AttackByClasseManager, ArmorPieceManager, PlayerManager, PlayerArmorManager, EnnemyManager, EnnemyAttackManager
 from battle.utils import armorWeightByWeight
 
 ##### CLASS & ATTACKS #####
@@ -16,13 +16,14 @@ class Classe(models.Model):
 		return "{0}(weight={1}, health={2})".format(self.name, self.weight, self.health)
 
 class Attack(models.Model):
-	name = models.CharField(max_length=100, default='')
+	name = models.CharField(max_length=100, default='Corps à Corps')
 	damage = models.SmallIntegerField(default=0)
 	heal = models.SmallIntegerField(default=0)
 	mana = models.SmallIntegerField(default=0)
 	energy = models.SmallIntegerField(default=0)
 	critical = models.SmallIntegerField(default=10, validators=[MinValueValidator(0), MaxValueValidator(100)])
 	duration = models.SmallIntegerField(default=1)
+	cooldown = models.SmallIntegerField(default=1)
 	target = models.SmallIntegerField(default=1)
 	stat = models.CharField(max_length=100)
 
@@ -88,3 +89,28 @@ class PlayerArmor(models.Model):
 	objects = PlayerArmorManager()
 
 ##### ENNEMIES #####
+class Ennemy(models.Model):
+	name = models.CharField(max_length=100, default='Monstre', unique=True)
+	level = models.SmallIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(20)])
+	health = models.SmallIntegerField(default=100, validators=[MinValueValidator(0)])
+
+	objects = EnnemyManager()
+
+	def __str__(self):
+		return "Ennemy(name={0}, level={1}, health={2})".format(self.name, self.level, self.health)
+
+class EnnemyAttack(models.Model):
+	name = models.CharField(max_length=100, default='Attaque')
+	damage = models.SmallIntegerField(default=0)
+	heal = models.SmallIntegerField(default=0)
+	critical = models.SmallIntegerField(default=10, validators=[MinValueValidator(0), MaxValueValidator(100)])
+	duration = models.SmallIntegerField(default=1)
+	cooldown = models.SmallIntegerField(default=1)
+	target = models.SmallIntegerField(default=1)
+
+	ennemy = models.ForeignKey(Ennemy)
+
+	objects = EnnemyAttackManager()
+
+	def __str__(self):
+		return "EnnemyAttack(name={0}, critical={1}, duration={2}, target={3})".format(self.name, self.critical, self.duration, self.target)

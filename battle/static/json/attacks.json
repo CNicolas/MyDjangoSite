@@ -12,6 +12,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "intellect"
 				},
 				{
@@ -23,6 +24,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 2,
+					"cooldown": 1,
 					"stat": "intellect"
 				},
 				{
@@ -34,6 +36,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "intellect"
 				},
 				{
@@ -45,6 +48,7 @@
 					"critical": 15,
 					"duration": 3,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "intellect"
 				}
 			]
@@ -61,6 +65,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "intellect"
 				},
 				{
@@ -72,6 +77,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "spirit"
 				},
 				{
@@ -83,6 +89,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "spirit"
 				},
 				{
@@ -94,6 +101,7 @@
 					"critical": 10,
 					"duration": 3,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "spirit"
 				}
 			]
@@ -112,6 +120,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "strength"
 				},
 				{
@@ -123,6 +132,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "agility"
 				},
 				{
@@ -134,6 +144,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "agility"
 				},
 				{
@@ -145,6 +156,7 @@
 					"critical": 20,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "agility"
 				}
 			]
@@ -161,6 +173,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "agility"
 				},
 				{
@@ -172,6 +185,7 @@
 					"critical": 100,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "agility"
 				},
 				{
@@ -183,6 +197,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "agility"
 				},
 				{
@@ -194,6 +209,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "agility"
 				}
 			]
@@ -212,6 +228,7 @@
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
+					"cooldown": 1,
 					"stat": "strength"
 				},
 				{
@@ -223,6 +240,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 2,
+					"cooldown": 1,
 					"stat": "strength"
 				},
 				{
@@ -234,6 +252,7 @@
 					"critical": 15,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "strength"
 				}
 			]
@@ -250,6 +269,7 @@
 					"critical": 100,
 					"duration": 1,
 					"target": 3,
+					"cooldown": 1,
 					"stat": "strength"
 				}
 			]
