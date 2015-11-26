@@ -9,48 +9,53 @@
 		<div class="container">
 			<div class="center">
 				<h1>{{ player.pseudo }}</h1>
-				<h2>{{ player.classe }} niveau {{ player.level }}</h2>
+				<h2>{{ player.classe.name }} niveau {{ player.level }}</h2>
 			</div>
 
 			<br />
 
 			<div class="row">
-				<table class="col s4 table bordered">
+				<table id="playerStats" class="col s4 table bordered" data-health="{{ player.full_health }}" data-mana="{{ player.full_mana }}" data-energy="{{ player.full_energy }}" data-defense="{{ player.full_defense }}" data-strength="{{ player.full_strength }}" data-agility="{{ player.full_agility }}" data-intellect="{{ player.full_intellect }}" data-spirit="{{ player.full_spirit }}">
 					<tbody>
-						<tr class="red-text">
+						<tr class="color-health-text">
 							<td>Vie</td>
 							<td><i class="ra ra-hearts ra-2x"></i></td>
-							<td>{{ player.full_health }} <span class="grey-text">({{ player.health }} + {{ player.health_bonus }})</span></td>
+							<td>{{ player.full_health }} <span class="grey-text text-lighten-1">({{ player.health }} + {{ player.health_bonus }})</span></td>
 						</tr>
-						<tr class="blue-text">
+						<tr class="color-mana-text">
 							<td>Mana</td>
 							<td><i class="ra ra-crystals ra-2x"></i>
-							<td>{{ player.full_mana }} <span class="grey-text">({{ player.mana }} + {{ player.mana_bonus }})</span></td>
+							<td>{{ player.full_mana }} <span class="grey-text text-lighten-1">({{ player.mana }} + {{ player.mana_bonus }})</span></td>
 						</tr>
-						<tr class="lime-text">
+						<tr class="color-energy-text">
 							<td>Energie</td>
 							<td><i class="ra ra-lightning-bolt ra-2x"></i>
-							<td>{{ player.full_energy }} <span class="grey-text">({{ player.energy }} + {{ player.energy_bonus }})</span></td>
+							<td>{{ player.full_energy }} <span class="grey-text text-lighten-1">({{ player.energy }} + {{ player.energy_bonus }})</span></td>
 						</tr>
-						<tr class="brown-text">
+						<tr class="color-defense-text">
+							<td>Vie</td>
+							<td><i class="ra ra-shield ra-2x"></i></td>
+							<td>{{ player.full_defense }} <span class="grey-text text-lighten-1">({{ player.defense }} + {{ player.defense_bonus }})</span></td>
+						</tr>
+						<tr class="color-strength-text">
 							<td>Force</td>
 							<td><i class="ra ra-muscle-up ra-2x"></i>
-							<td>{{ player.full_strength }} <span class="grey-text">({{ player.strength }} + {{ player.strength_bonus }})</span></td>
+							<td>{{ player.full_strength }} <span class="grey-text text-lighten-1">({{ player.strength }} + {{ player.strength_bonus }})</span></td>
 						</tr>
-						<tr class="green-text">
+						<tr class="color-agility-text">
 							<td>Agilité</td>
 							<td><i class="ra ra-player-dodge ra-2x"></i>
-							<td>{{ player.full_agility }} <span class="grey-text">({{ player.agility }} + {{ player.agility_bonus }})</span></td>
+							<td>{{ player.full_agility }} <span class="grey-text text-lighten-1">({{ player.agility }} + {{ player.agility_bonus }})</span></td>
 						</tr>
-						<tr class="orange-text">
+						<tr class="color-intellect-text">
 							<td>Intelligence</td>
 							<td><i class="ra ra-pawn ra-2x"></i>
-							<td>{{ player.full_intellect }} <span class="grey-text">({{ player.intellect }} + {{ player.intellect_bonus }})</span></td>
+							<td>{{ player.full_intellect }} <span class="grey-text text-lighten-1">({{ player.intellect }} + {{ player.intellect_bonus }})</span></td>
 						</tr>
-						<tr class="blue-grey-text">
+						<tr class="color-spirit-text">
 							<td>Esprit</td>
 							<td><i class="ra ra-aware ra-2x"></i>
-							<td>{{ player.full_spirit }} <span class="grey-text">({{ player.spirit }} + {{ player.spirit_bonus }})</span></td>
+							<td>{{ player.full_spirit }} <span class="grey-text text-lighten-1">({{ player.spirit }} + {{ player.spirit_bonus }})</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -107,39 +112,39 @@
 					<li class="collection-item">
 						<span class="armor-name">?</span>
 					</li>
-					<li class="collection-item amber-text">
+					<li class="collection-item color-price-text">
 						<i class="ra ra-gold-bar ra-2x left"></i>
 						<span class="armor-price">?</span>
 					</li>
-					<li class="collection-item grey-text">
-						<i class="ra ra-shield ra-2x left"></i>
-						<span class="armor-defense">?</span>
-					</li>
-					<li class="collection-item red-text">
+					<li class="collection-item color-health-text">
 						<i class="ra ra-health ra-2x left"></i>
 						<span class="armor-health">?</span>
 					</li>
-					<li class="collection-item blue-text">
+					<li class="collection-item color-mana-text">
 						<i class="ra ra-crystals ra-2x left"></i>
 						<span class="armor-mana">?</span>
 					</li>
-					<li class="collection-item lime-text">
+					<li class="collection-item color-energy-text">
 						<i class="ra ra-lightning-bolt ra-2x left"></i>
 						<span class="armor-energy">?</span>
 					</li>
-					<li class="collection-item brown-text">
+					<li class="collection-item color-defense-text">
+						<i class="ra ra-shield ra-2x left"></i>
+						<span class="armor-defense">?</span>
+					</li>
+					<li class="collection-item color-strength-text">
 						<i class="ra ra-muscle-up ra-2x left"></i>
 						<span class="armor-strength">?</span>
 					</li>
-					<li class="collection-item green-text">
+					<li class="collection-item color-agility-text">
 						<i class="ra ra-player-dodge ra-2x left"></i>
 						<span class="armor-agility">?</span>
 					</li>
-					<li class="collection-item orange-text">
+					<li class="collection-item color-intellect-text">
 						<i class="ra ra-pawn ra-2x left"></i>
 						<span class="armor-intellect">?</span>
 					</li>
-					<li class="collection-item blue-grey-text">
+					<li class="collection-item color-spirit-text">
 						<i class="ra ra-aware ra-2x left"></i>
 						<span class="armor-spirit">?</span>
 					</li>
@@ -166,7 +171,9 @@
 						{% for a in player.attacks %}
 							<tr>
 								<td>{{ a.name }}</td>
-								<td>{{ a.damage }}</td>
+								<td class="color-{{ a.stat }}-text">{{ a.full_damage }} 
+									<span class="grey-text text-lighten-2">{{ a.damage }} x {{ a.player_stat }}</span>
+								</td>
 								<td>{{ a.heal }}</td>
 								<td>{{ a.mana }}</td>
 								<td>{{ a.energy }}</td>

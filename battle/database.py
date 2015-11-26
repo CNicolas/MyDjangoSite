@@ -3,7 +3,7 @@
 # @Author: Aku
 # @Date:   2015-11-20 14:32:30
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-25 16:38:56
+# @Last Modified time: 2015-11-26 11:37:25
 
 import logging
 import json
@@ -39,9 +39,10 @@ def fillDb(request):
 		data = json.load(f)
 		for weight in data:
 			for classname in data[weight]:
-				c = Classe.objects.create_classe(classname, weight, data[weight][classname]['health'])
-				for attack in data[weight][classname]['attacks']:
-					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'])
+				classe_content = data[weight][classname]
+				c = Classe.objects.create_classe(classname, weight, classe_content['health'])
+				for attack in classe_content['attacks']:
+					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['stat'])
 					AttackByClasse.objects.create_attack_by_classe(c, a)
 
 	return HttpResponse()
@@ -54,3 +55,8 @@ def emptyDb(request):
 	Player.objects.all().delete()
 	PlayerArmor.objects.all().delete()
 	return HttpResponse("Everything has been deleted")
+
+def reinitDb(request):
+	emptyDb(request)
+	fillDb(request)
+	return HttpResponse("Everything has been deleted AND re-created")

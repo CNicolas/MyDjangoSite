@@ -13,7 +13,7 @@ class Classe(models.Model):
 	objects = ClasseManager()
 
 	def __str__(self):
-		return "{0}".format(self.name)
+		return "{0}(weight={1}, health={2})".format(self.name, self.weight, self.health)
 
 class Attack(models.Model):
 	name = models.CharField(max_length=100, default='')
@@ -24,11 +24,12 @@ class Attack(models.Model):
 	critical = models.SmallIntegerField(default=10, validators=[MinValueValidator(0), MaxValueValidator(100)])
 	duration = models.SmallIntegerField(default=1)
 	target = models.SmallIntegerField(default=1)
+	stat = models.CharField(max_length=100)
 
 	objects = AttackManager()
 
 	def __str__(self):
-		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, critical={5}, duration={6}, target={7})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.critical, self.duration, self.target)
+		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, critical={5}, duration={6}, target={7}, stat={8})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.critical, self.duration, self.target, self.stat)
 
 class AttackByClasse(models.Model):
 	classe = models.ForeignKey(Classe)

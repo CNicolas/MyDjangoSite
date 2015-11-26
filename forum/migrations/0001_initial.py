@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
-                ('title', models.CharField(default='', max_length=100)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
+                ('title', models.CharField(max_length=100, default='')),
                 ('content', models.TextField()),
                 ('date_creation', models.DateTimeField(auto_now_add=True)),
                 ('date_modification', models.DateTimeField(auto_now=True)),
@@ -26,12 +26,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Profile',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('pseudo', models.CharField(unique=True, default='', max_length=100)),
-                ('firstname', models.CharField(default='', max_length=100)),
-                ('lastname', models.CharField(default='', max_length=100)),
+                ('firstname', models.CharField(max_length=100, default='')),
+                ('lastname', models.CharField(max_length=100, default='')),
                 ('birthdate', models.DateField(blank=True)),
-                ('image', models.ImageField(upload_to='forum/profiles/', default='profiles/Profil.jpg', storage=forum.storage.OverwriteStorage())),
+                ('image', models.ImageField(default='profiles/Profil.jpg', upload_to='forum/profiles/', storage=forum.storage.OverwriteStorage())),
                 ('previous_login', models.DateTimeField(blank=True)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
@@ -39,28 +39,28 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Subject',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('title', models.CharField(unique=True, max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='SubTheme',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('title', models.CharField(unique=True, max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Theme',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('title', models.CharField(unique=True, max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='UnreadPost',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('post', models.ForeignKey(to='forum.Post')),
                 ('profile', models.ForeignKey(to='forum.Profile')),
                 ('subject', models.ForeignKey(to='forum.Subject')),

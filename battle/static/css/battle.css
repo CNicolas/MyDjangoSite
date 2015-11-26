@@ -2,7 +2,7 @@
 * @Author: cnicolas
 * @Date:   2015-11-18 14:42:35
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-24 16:35:17
+* @Last Modified time: 2015-11-26 10:48:44
 */
 
 /* HTML */
@@ -34,6 +34,63 @@ main {
 .opacity-5 {
 	opacity: .5;
 }
+
+
+.color-price {
+	background-color: #ffc107;
+}
+.color-price-text {
+	color: #ffc107;
+}
+.color-defense {
+	background-color: #9e9e9e;
+}
+.color-defense-text {
+	color: #9e9e9e;
+}
+.color-health {
+	background-color: #f44336;
+}
+.color-health-text {
+	color: #f44336;
+}
+.color-mana {
+	background-color: #2196f3;
+}
+.color-mana-text {
+	color: #2196f3;
+}
+.color-energy {
+	background-color: #cddc39;
+}
+.color-energy-text {
+	color: #cddc39;
+}
+.color-strength {
+	background-color: #795548;
+}
+.color-strength-text {
+	color: #795548;
+}
+.color-agility {
+	background-color: #4caf50 ;
+}
+.color-agility-text {
+	color: #4caf50 ;
+}
+.color-intellect {
+	background-color: #ff9800;
+}
+.color-intellect-text {
+	color: #ff9800;
+}
+.color-spirit {
+	background-color: #607d8b;
+}
+.color-spirit-text {
+	color: #607d8b;
+}
+/* END */
 
 /* SURCHARGE MATERIALIZE */
 .valign-wrapper div {
@@ -98,10 +155,15 @@ div.armor-piece.feet.weight2 {
 div.armor-piece.feet.weight3 {
 	background-position: -300px -1025px;
 }
+/* END */
 
-nav>div>ul>li>a>img {
-	max-height: 100%;
-}
+
+
+
+
+
+
+
 /* ACLONICA FONT */
 .aclonica {
 	font-family: Aclonica;
