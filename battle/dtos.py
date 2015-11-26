@@ -25,6 +25,7 @@ class AttackDto:
 		self.cooldown = attack.cooldown
 		self.target = attack.target
 		self.stat = attack.stat
+		self.symbol = attack.symbol
 
 		if player:
 			self.player_stat = getattr(player, 'full_' + self.stat) / 10
@@ -45,6 +46,7 @@ class AttackDto:
 		res['duration'] = self.duration
 		res['cooldown'] = self.cooldown
 		res['target'] = self.target
+		res['symbol'] = self.symbol
 		return res
 
 

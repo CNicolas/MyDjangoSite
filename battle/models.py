@@ -26,11 +26,12 @@ class Attack(models.Model):
 	cooldown = models.SmallIntegerField(default=1)
 	target = models.SmallIntegerField(default=1)
 	stat = models.CharField(max_length=100)
+	symbol = models.CharField(max_length=100, default='ra ra-sword')
 
 	objects = AttackManager()
 
 	def __str__(self):
-		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, critical={5}, duration={6}, target={7}, stat={8})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.critical, self.duration, self.target, self.stat)
+		return "Attack(name={0}, damage={1}, heal={2}, mana={3}, energy={4}, critical={5}, duration={6}, target={7}, stat={8}, symbol={9})".format(self.name, self.damage, self.heal, self.mana, self.energy, self.critical, self.duration, self.target, self.stat, self.symbol)
 
 class AttackByClasse(models.Model):
 	classe = models.ForeignKey(Classe)

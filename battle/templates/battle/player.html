@@ -157,6 +157,7 @@
 				<table class="col s10 offset-s1 table bordered">
 					<thead>
 						<tr>
+							<th class="center">Symbole</th>
 							<th class="center">Nom</th>
 							<th class="center">Dégâts</th>
 							<th class="center">Soins</th>
@@ -171,6 +172,7 @@
 					<tbody>
 						{% for a in player.attacks %}
 							<tr>
+								<td class="center"><i class="{{ a.symbol }} ra-2x"></i></td>
 								<td class="center">{{ a.name }}</td>
 								<td class="center color-{{ a.stat }}-text">{{ a.full_damage }}
 									<span class="grey-text text-lighten-2">{{ a.damage }} x {{ a.player_stat }}</span>

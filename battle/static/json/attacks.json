@@ -13,7 +13,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "intellect"
+					"stat": "intellect",
+					"symbol": "ra ra-fire-symbol"
 				},
 				{
 					"name": "Extra Feu",
@@ -25,7 +26,8 @@
 					"duration": 1,
 					"target": 2,
 					"cooldown": 1,
-					"stat": "intellect"
+					"stat": "intellect",
+					"symbol": "small-fire"
 				},
 				{
 					"name": "Méga Feu",
@@ -37,7 +39,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "intellect"
+					"stat": "intellect",
+					"symbol": "fire"
 				},
 				{
 					"name": "Foudre",
@@ -49,7 +52,8 @@
 					"duration": 3,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "intellect"
+					"stat": "intellect",
+					"symbol": "ra ra-lightning-storm"
 				}
 			]
 		},
@@ -66,7 +70,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "intellect"
+					"stat": "intellect",
+					"symbol": "ra ra-montains"
 				},
 				{
 					"name": "Soin",
@@ -78,7 +83,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "spirit"
+					"stat": "spirit",
+					"symbol": "ra ra-health"
 				},
 				{
 					"name": "Méga Soin",
@@ -90,7 +96,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "spirit"
+					"stat": "spirit",
+					"symbol": "ra ra-gamepad-cross"
 				},
 				{
 					"name": "Récupération",
@@ -102,7 +109,8 @@
 					"duration": 3,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "spirit"
+					"stat": "spirit",
+					"symbol": "ra ra-health-increase"
 				}
 			]
 		}
@@ -121,10 +129,11 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "strength"
+					"stat": "strength",
+					"symbol": "ra ra-bowie-knife"
 				},
 				{
-					"name": "Shuriken",
+					"name": "Kunais",
 					"damage": 30,
 					"heal": 0,
 					"mana": 0,
@@ -133,7 +142,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-kunai"
 				},
 				{
 					"name": "Grenade",
@@ -145,7 +155,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-bomb-explosion"
 				},
 				{
 					"name": "Chute mortelle",
@@ -157,7 +168,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-death-skull"
 				}
 			]
 		},
@@ -174,7 +186,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-death-skull"
 				},
 				{
 					"name": "Flèche Critique",
@@ -186,7 +199,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-supersonic-arrow"
 				},
 				{
 					"name": "Tir Rapide",
@@ -198,7 +212,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-rrow-flights"
 				},
 				{
 					"name": "Flèche Explosive",
@@ -210,7 +225,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "agility"
+					"stat": "agility",
+					"symbol": "ra ra-chemical-arrow"
 				}
 			]
 		}
@@ -229,7 +245,8 @@
 					"duration": 1,
 					"target": 1,
 					"cooldown": 1,
-					"stat": "strength"
+					"stat": "strength",
+					"symbol": "ra ra-sword"
 				},
 				{
 					"name": "Ruée",
@@ -241,7 +258,8 @@
 					"duration": 1,
 					"target": 2,
 					"cooldown": 1,
-					"stat": "strength"
+					"stat": "strength",
+					"symbol": "ra ra-blast"
 				},
 				{
 					"name": "Swing",
@@ -253,7 +271,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "strength"
+					"stat": "strength",
+					"symbol": "ra ra-axe-swing"
 				}
 			]
 		},
@@ -270,7 +289,8 @@
 					"duration": 1,
 					"target": 3,
 					"cooldown": 1,
-					"stat": "strength"
+					"stat": "strength",
+					"symbol": "ra ra-decapitation"
 				}
 			]
 		}

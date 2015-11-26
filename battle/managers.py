@@ -35,12 +35,12 @@ class ClasseManager(models.Manager):
 		return manager_to_string(self)
 
 class AttackManager(models.Manager):
-	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, cooldown, stat):
-		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat)
+	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, cooldown, stat, symbol):
+		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol)
 		if len(check) > 0:
 			return check[0]
 		else:
-			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat)
+			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol)
 			return attack
 
 	def __str__(self):

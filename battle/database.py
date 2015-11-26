@@ -43,7 +43,7 @@ def fillDb(request):
 				classe_content = data[weight][classname]
 				c = Classe.objects.create_classe(classname, weight, classe_content['health'])
 				for attack in classe_content['attacks']:
-					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['cooldown'], attack['stat'])
+					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['cooldown'], attack['stat'], attack['symbol'])
 					AttackByClasse.objects.create_attack_by_classe(c, a)
 
 	with open(ennemies_file, 'r', encoding='utf-8') as f:
