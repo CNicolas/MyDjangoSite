@@ -183,7 +183,7 @@
 			]
 		}
 	},
-	"Heavy": {
+	"heavy": {
 		"Guerrier": {
 			"health": 100,
 			"attacks": [

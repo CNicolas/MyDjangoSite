@@ -56,7 +56,7 @@
 						<div class="row">
 							<div class="armor head col s1 offset-s4">
 								{% if player.armor_head %}
-									<div class="armor-piece head weight{{ player.armor_head.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_head.name }}" data-id="{{ player.armor_head.id }}" data-name="{{ player.armor_head.name }}" data-price="{{ player.armor_head.price }}" data-defense="{{ player.armor_head.defense }}" data-health="{{ player.armor_head.health }}" data-mana="{{ player.armor_head.mana }}" data-strength="{{ player.armor_head.strength }}" data-agility="{{ player.armor_head.agility }}" data-intellect="{{ player.armor_head.intellect }}" data-spirit="{{ player.armor_head.spirit }}"></div>
+									<div class="armor-piece head weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_head.name }}" data-id="{{ player.armor_head.id }}" data-name="{{ player.armor_head.name }}" data-price="{{ player.armor_head.price }}" data-defense="{{ player.armor_head.defense }}" data-health="{{ player.armor_head.health }}" data-mana="{{ player.armor_head.mana }}" data-strength="{{ player.armor_head.strength }}" data-agility="{{ player.armor_head.agility }}" data-intellect="{{ player.armor_head.intellect }}" data-spirit="{{ player.armor_head.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-helmet ra-5x tooltipped" data-position="top" data-tooltip="Tête"></i>
 								{% endif %}
@@ -65,21 +65,21 @@
 						<div class="row">
 							<div class="armor hand col s1">
 								{% if player.armor_hand %}
-									<div class="armor-piece hand weight{{ player.armor_hand.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_hand.name }}" data-id="{{ player.armor_heand.id }}" data-name="{{ player.armor_hand.name }}" data-price="{{ player.armor_hand.price }}" data-defense="{{ player.armor_hand.defense }}" data-health="{{ player.armor_hand.health }}" data-mana="{{ player.armor_hand.mana }}" data-strength="{{ player.armor_hand.strength }}" data-agility="{{ player.armor_hand.agility }}" data-intellect="{{ player.armor_hand.intellect }}" data-spirit="{{ player.armor_hand.spirit }}"></div>
+									<div class="armor-piece hand weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_hand.name }}" data-id="{{ player.armor_heand.id }}" data-name="{{ player.armor_hand.name }}" data-price="{{ player.armor_hand.price }}" data-defense="{{ player.armor_hand.defense }}" data-health="{{ player.armor_hand.health }}" data-mana="{{ player.armor_hand.mana }}" data-strength="{{ player.armor_hand.strength }}" data-agility="{{ player.armor_hand.agility }}" data-intellect="{{ player.armor_hand.intellect }}" data-spirit="{{ player.armor_hand.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-hand ra-5x tooltipped" data-position="left" data-tooltip="Mains"></i>
 								{% endif %}
 							</div>
 							<div class="armor torso col s1 offset-s3">
 								{% if player.armor_torso %}
-									<div class="armor-piece torso weight{{ player.armor_torso.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_torso.name }}" data-id="{{ player.armor_torso.id }}" data-name="{{ player.armor_torso.name }}" data-price="{{ player.armor_torso.price }}" data-defense="{{ player.armor_torso.defense }}" data-health="{{ player.armor_torso.health }}" data-mana="{{ player.armor_torso.mana }}" data-strength="{{ player.armor_torso.strength }}" data-agility="{{ player.armor_torso.agility }}" data-intellect="{{ player.armor_torso.intellect }}" data-spirit="{{ player.armor_torso.spirit }}"></div>
+									<div class="armor-piece torso weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_torso.name }}" data-id="{{ player.armor_torso.id }}" data-name="{{ player.armor_torso.name }}" data-price="{{ player.armor_torso.price }}" data-defense="{{ player.armor_torso.defense }}" data-health="{{ player.armor_torso.health }}" data-mana="{{ player.armor_torso.mana }}" data-strength="{{ player.armor_torso.strength }}" data-agility="{{ player.armor_torso.agility }}" data-intellect="{{ player.armor_torso.intellect }}" data-spirit="{{ player.armor_torso.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-vest ra-5x tooltipped" data-position="top" data-tooltip="Torse"></i>
 								{% endif %}
 							</div>
 							<div class="armor neck col s1 offset-s3">
 								{% if player.armor_neck %}
-									<div class="armor-piece neck weight{{ player.armor_neck.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_neck.name }}" data-id="{{ player.armor_neck.id }}" data-name="{{ player.armor_neck.name }}" data-price="{{ player.armor_neck.price }}" data-defense="{{ player.armor_neck.defense }}" data-health="{{ player.armor_neck.health }}" data-mana="{{ player.armor_neck.mana }}" data-strength="{{ player.armor_neck.strength }}" data-agility="{{ player.armor_neck.agility }}" data-intellect="{{ player.armor_neck.intellect }}" data-spirit="{{ player.armor_neck.spirit }}"></div>
+									<div class="armor-piece neck weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_neck.name }}" data-id="{{ player.armor_neck.id }}" data-name="{{ player.armor_neck.name }}" data-price="{{ player.armor_neck.price }}" data-defense="{{ player.armor_neck.defense }}" data-health="{{ player.armor_neck.health }}" data-mana="{{ player.armor_neck.mana }}" data-strength="{{ player.armor_neck.strength }}" data-agility="{{ player.armor_neck.agility }}" data-intellect="{{ player.armor_neck.intellect }}" data-spirit="{{ player.armor_neck.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-taurus ra-5x tooltipped" data-position="right" data-tooltip="Amulette"></i>
 								{% endif %}
@@ -88,7 +88,7 @@
 						<div class="row">
 							<div class="armor feet col s1 offset-s4">
 								{% if player.armor_feet %}
-									<div class="armor-piece feet weight{{ player.armor_feet.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_feet.name }}" data-id="{{ player.armor_feet.id }}" data-name="{{ player.armor_feet.name }}" data-price="{{ player.armor_feet.price }}" data-defense="{{ player.armor_feet.defense }}" data-health="{{ player.armor_feet.health }}" data-mana="{{ player.armor_feet.mana }}" data-strength="{{ player.armor_feet.strength }}" data-agility="{{ player.armor_feet.agility }}" data-intellect="{{ player.armor_feet.intellect }}" data-spirit="{{ player.armor_feet.spirit }}"></div>
+									<div class="armor-piece feet weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_feet.name }}" data-id="{{ player.armor_feet.id }}" data-name="{{ player.armor_feet.name }}" data-price="{{ player.armor_feet.price }}" data-defense="{{ player.armor_feet.defense }}" data-health="{{ player.armor_feet.health }}" data-mana="{{ player.armor_feet.mana }}" data-strength="{{ player.armor_feet.strength }}" data-agility="{{ player.armor_feet.agility }}" data-intellect="{{ player.armor_feet.intellect }}" data-spirit="{{ player.armor_feet.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-boot-stomp ra-5x tooltipped" data-position="bottom" data-tooltip="Pieds"></i>
 								{% endif %}
