@@ -20,32 +20,37 @@
 						<tr class="red-text">
 							<td>Vie</td>
 							<td><i class="ra ra-hearts ra-2x"></i></td>
-							<td>{{ player.health }}</td>
+							<td>{{ player.full_health }} <span class="grey-text">({{ player.health }} + {{ player.health_bonus }})</span></td>
 						</tr>
 						<tr class="blue-text">
 							<td>Mana</td>
 							<td><i class="ra ra-crystals ra-2x"></i>
-							<td>{{ player.mana }}</td>
+							<td>{{ player.full_mana }} <span class="grey-text">({{ player.mana }} + {{ player.mana_bonus }})</span></td>
+						</tr>
+						<tr class="lime-text">
+							<td>Energie</td>
+							<td><i class="ra ra-lightning-bolt ra-2x"></i>
+							<td>{{ player.full_energy }} <span class="grey-text">({{ player.energy }} + {{ player.energy_bonus }})</span></td>
 						</tr>
 						<tr class="brown-text">
 							<td>Force</td>
 							<td><i class="ra ra-muscle-up ra-2x"></i>
-							<td>{{ player.strength }}</td>
-						</tr>
-						<tr class="orange-text">
-							<td>Intelligence</td>
-							<td><i class="ra ra-pawn ra-2x"></i>
-							<td>{{ player.intellect }}</td>
+							<td>{{ player.full_strength }} <span class="grey-text">({{ player.strength }} + {{ player.strength_bonus }})</span></td>
 						</tr>
 						<tr class="green-text">
 							<td>Agilité</td>
 							<td><i class="ra ra-player-dodge ra-2x"></i>
-							<td>{{ player.agility }}</td>
+							<td>{{ player.full_agility }} <span class="grey-text">({{ player.agility }} + {{ player.agility_bonus }})</span></td>
+						</tr>
+						<tr class="orange-text">
+							<td>Intelligence</td>
+							<td><i class="ra ra-pawn ra-2x"></i>
+							<td>{{ player.full_intellect }} <span class="grey-text">({{ player.intellect }} + {{ player.intellect_bonus }})</span></td>
 						</tr>
 						<tr class="blue-grey-text">
 							<td>Esprit</td>
 							<td><i class="ra ra-aware ra-2x"></i>
-							<td>{{ player.spirit }}</td>
+							<td>{{ player.full_spirit }} <span class="grey-text">({{ player.spirit }} + {{ player.spirit_bonus }})</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -56,7 +61,7 @@
 						<div class="row">
 							<div class="armor head col s1 offset-s4">
 								{% if player.armor_head %}
-									<div class="armor-piece head weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_head.name }}" data-id="{{ player.armor_head.id }}" data-name="{{ player.armor_head.name }}" data-price="{{ player.armor_head.price }}" data-defense="{{ player.armor_head.defense }}" data-health="{{ player.armor_head.health }}" data-mana="{{ player.armor_head.mana }}" data-strength="{{ player.armor_head.strength }}" data-agility="{{ player.armor_head.agility }}" data-intellect="{{ player.armor_head.intellect }}" data-spirit="{{ player.armor_head.spirit }}"></div>
+									<div class="armor-piece head weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_head.name }}" data-id="{{ player.armor_head.id }}" data-name="{{ player.armor_head.name }}" data-price="{{ player.armor_head.price }}" data-defense="{{ player.armor_head.defense }}" data-health="{{ player.armor_head.health }}" data-mana="{{ player.armor_head.mana }}" data-energy="{{ player.armor_head.energy }}" data-strength="{{ player.armor_head.strength }}" data-agility="{{ player.armor_head.agility }}" data-intellect="{{ player.armor_head.intellect }}" data-spirit="{{ player.armor_head.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-helmet ra-5x tooltipped" data-position="top" data-tooltip="Tête"></i>
 								{% endif %}
@@ -65,21 +70,21 @@
 						<div class="row">
 							<div class="armor hand col s1">
 								{% if player.armor_hand %}
-									<div class="armor-piece hand weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_hand.name }}" data-id="{{ player.armor_heand.id }}" data-name="{{ player.armor_hand.name }}" data-price="{{ player.armor_hand.price }}" data-defense="{{ player.armor_hand.defense }}" data-health="{{ player.armor_hand.health }}" data-mana="{{ player.armor_hand.mana }}" data-strength="{{ player.armor_hand.strength }}" data-agility="{{ player.armor_hand.agility }}" data-intellect="{{ player.armor_hand.intellect }}" data-spirit="{{ player.armor_hand.spirit }}"></div>
+									<div class="armor-piece hand weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_hand.name }}" data-id="{{ player.armor_heand.id }}" data-name="{{ player.armor_hand.name }}" data-price="{{ player.armor_hand.price }}" data-defense="{{ player.armor_hand.defense }}" data-health="{{ player.armor_hand.health }}" data-mana="{{ player.armor_hand.mana }}" data-energy="{{ player.armor_hand.energy }}" data-strength="{{ player.armor_hand.strength }}" data-agility="{{ player.armor_hand.agility }}" data-intellect="{{ player.armor_hand.intellect }}" data-spirit="{{ player.armor_hand.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-hand ra-5x tooltipped" data-position="left" data-tooltip="Mains"></i>
 								{% endif %}
 							</div>
 							<div class="armor torso col s1 offset-s3">
 								{% if player.armor_torso %}
-									<div class="armor-piece torso weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_torso.name }}" data-id="{{ player.armor_torso.id }}" data-name="{{ player.armor_torso.name }}" data-price="{{ player.armor_torso.price }}" data-defense="{{ player.armor_torso.defense }}" data-health="{{ player.armor_torso.health }}" data-mana="{{ player.armor_torso.mana }}" data-strength="{{ player.armor_torso.strength }}" data-agility="{{ player.armor_torso.agility }}" data-intellect="{{ player.armor_torso.intellect }}" data-spirit="{{ player.armor_torso.spirit }}"></div>
+									<div class="armor-piece torso weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_torso.name }}" data-id="{{ player.armor_torso.id }}" data-name="{{ player.armor_torso.name }}" data-price="{{ player.armor_torso.price }}" data-defense="{{ player.armor_torso.defense }}" data-health="{{ player.armor_torso.health }}" data-mana="{{ player.armor_torso.mana }}" data-energy="{{ player.armor_torso.energy }}" data-strength="{{ player.armor_torso.strength }}" data-agility="{{ player.armor_torso.agility }}" data-intellect="{{ player.armor_torso.intellect }}" data-spirit="{{ player.armor_torso.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-vest ra-5x tooltipped" data-position="top" data-tooltip="Torse"></i>
 								{% endif %}
 							</div>
 							<div class="armor neck col s1 offset-s3">
 								{% if player.armor_neck %}
-									<div class="armor-piece neck weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_neck.name }}" data-id="{{ player.armor_neck.id }}" data-name="{{ player.armor_neck.name }}" data-price="{{ player.armor_neck.price }}" data-defense="{{ player.armor_neck.defense }}" data-health="{{ player.armor_neck.health }}" data-mana="{{ player.armor_neck.mana }}" data-strength="{{ player.armor_neck.strength }}" data-agility="{{ player.armor_neck.agility }}" data-intellect="{{ player.armor_neck.intellect }}" data-spirit="{{ player.armor_neck.spirit }}"></div>
+									<div class="armor-piece neck weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_neck.name }}" data-id="{{ player.armor_neck.id }}" data-name="{{ player.armor_neck.name }}" data-price="{{ player.armor_neck.price }}" data-defense="{{ player.armor_neck.defense }}" data-health="{{ player.armor_neck.health }}" data-mana="{{ player.armor_neck.mana }}" data-energy="{{ player.armor_neck.energy }}" data-strength="{{ player.armor_neck.strength }}" data-agility="{{ player.armor_neck.agility }}" data-intellect="{{ player.armor_neck.intellect }}" data-spirit="{{ player.armor_neck.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-taurus ra-5x tooltipped" data-position="right" data-tooltip="Amulette"></i>
 								{% endif %}
@@ -88,7 +93,7 @@
 						<div class="row">
 							<div class="armor feet col s1 offset-s4">
 								{% if player.armor_feet %}
-									<div class="armor-piece feet weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_feet.name }}" data-id="{{ player.armor_feet.id }}" data-name="{{ player.armor_feet.name }}" data-price="{{ player.armor_feet.price }}" data-defense="{{ player.armor_feet.defense }}" data-health="{{ player.armor_feet.health }}" data-mana="{{ player.armor_feet.mana }}" data-strength="{{ player.armor_feet.strength }}" data-agility="{{ player.armor_feet.agility }}" data-intellect="{{ player.armor_feet.intellect }}" data-spirit="{{ player.armor_feet.spirit }}"></div>
+									<div class="armor-piece feet weight{{ player.weight }} tooltipped" data-position="top" data-tooltip="{{ player.armor_feet.name }}" data-id="{{ player.armor_feet.id }}" data-name="{{ player.armor_feet.name }}" data-price="{{ player.armor_feet.price }}" data-defense="{{ player.armor_feet.defense }}" data-health="{{ player.armor_feet.health }}" data-mana="{{ player.armor_feet.mana }}" data-energy="{{ player.armor_feet.energy }}" data-strength="{{ player.armor_feet.strength }}" data-agility="{{ player.armor_feet.agility }}" data-intellect="{{ player.armor_feet.intellect }}" data-spirit="{{ player.armor_feet.spirit }}"></div>
 								{% else %}
 									<i class="ra ra-boot-stomp ra-5x tooltipped" data-position="bottom" data-tooltip="Pieds"></i>
 								{% endif %}
@@ -118,6 +123,10 @@
 						<i class="ra ra-crystals ra-2x left"></i>
 						<span class="armor-mana">?</span>
 					</li>
+					<li class="collection-item lime-text">
+						<i class="ra ra-lightning-bolt ra-2x left"></i>
+						<span class="armor-energy">?</span>
+					</li>
 					<li class="collection-item brown-text">
 						<i class="ra ra-muscle-up ra-2x left"></i>
 						<span class="armor-strength">?</span>
@@ -140,13 +149,16 @@
 			<br />
 
 			<div id="attacks" class="row">
-				<table class="col s6 offset-s3 table bordered">
+				<table class="col s8 offset-s2 table bordered">
 					<thead>
 						<tr>
 							<th>Nom</th>
 							<th>Dégâts</th>
 							<th>Soins</th>
-							<th>Coüt en mana</th>
+							<th>Coût en mana</th>
+							<th>Coût en energie</th>
+							<th>Taux de coup critique</th>
+							<th>Durée</th>
 							<th>Nombre de cibles</th>
 						</tr>
 					</thead>
@@ -157,6 +169,9 @@
 								<td>{{ a.damage }}</td>
 								<td>{{ a.heal }}</td>
 								<td>{{ a.mana }}</td>
+								<td>{{ a.energy }}</td>
+								<td>{{ a.critical }} %</td>
+								<td>{{ a.duration }}</td>
 								<td>{{ a.target }}</td>
 							</tr>
 						{% empty %}

@@ -3,7 +3,7 @@
 # @Author: cnicolas
 # @Date:   2015-11-19 16:37:40
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-25 16:50:56
+# @Last Modified time: 2015-11-26 10:34:59
 
 import logging
 
@@ -22,6 +22,7 @@ class ArmorPieceDto:
 		self.defense = armor.defense
 		self.health = armor.health
 		self.mana = armor.mana
+		self.energy = armor.energy
 		self.strength = armor.strength
 		self.intellect = armor.intellect
 		self.agility = armor.agility
@@ -51,6 +52,7 @@ class PlayerDto:
 		self.experience = player.experience
 		self.health = player.health
 		self.mana = player.mana
+		self.energy = player.energy
 		self.strength = player.strength
 		self.agility = player.agility
 		self.intellect = player.intellect
@@ -71,6 +73,22 @@ class PlayerDto:
 		self.armor_neck = self.find_armor_by_place("neck")
 		self.armor_feet = self.find_armor_by_place("feet")
 		self.weapon = self.find_armor_by_place("weapon")
+
+		self.health_bonus = sum(a.health for a in self.armors) + self.classe.health
+		self.mana_bonus = sum(a.mana for a in self.armors)
+		self.energy_bonus = sum(a.energy for a in self.armors)
+		self.strength_bonus = sum(a.strength for a in self.armors)
+		self.agility_bonus = sum(a.agility for a in self.armors)
+		self.intellect_bonus = sum(a.intellect for a in self.armors)
+		self.spirit_bonus = sum(a.spirit for a in self.armors)
+
+		self.full_health = self.health + self.health_bonus
+		self.full_mana = self.mana + self.mana_bonus
+		self.full_energy = self.energy + self.energy_bonus
+		self.full_strength = self.strength + self.strength_bonus
+		self.full_agility = self.agility + self.agility_bonus
+		self.full_intellect = self.intellect + self.intellect_bonus
+		self.full_spirit = self.spirit + self.spirit_bonus		
 
 	def find_armor_by_place(self, place):
 		for a in self.armors:

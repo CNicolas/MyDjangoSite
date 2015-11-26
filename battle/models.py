@@ -78,7 +78,7 @@ class Player(models.Model):
 	objects = PlayerManager()
 
 	def __str__(self):
-		return "{0}, {1} {2}".format(self.pseudo, self.level, self.classe)
+		return "{0}, {1} {2}. health={3}, mana={4}, energy={5}".format(self.pseudo, self.level, self.classe, self.health, self.mana, self.energy)
 
 class PlayerArmor(models.Model):
 	player = models.ForeignKey(Player)
