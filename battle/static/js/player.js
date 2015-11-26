@@ -2,13 +2,13 @@
 * @Author: Aku
 * @Date:   2015-11-20 15:04:11
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-25 10:14:24
+* @Last Modified time: 2015-11-26 12:07:16
 */
 
 'use strict';
 
 $(document).ready(function() {
-	$("div.armor-piece").click(function(event) {
+	$("div.armor-piece").hover(function(event) {
 		var datas = $(this).data()
 		var stats = $("ul.armor-statistics");
 
