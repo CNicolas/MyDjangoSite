@@ -3,17 +3,18 @@
 # @Author: cnicolas
 # @Date:   2015-11-10 16:55:44
 # @Last Modified by:   cnicolas
-# @Last Modified time: 2015-11-26 11:00:03
+# @Last Modified time: 2015-11-26 13:38:08
 
 from django.conf.urls import url
 
-from battle import views, player, database
+from battle import views, player, fight, database
 
 urlpatterns = [
 	url(r'^$', views.IndexView.as_view(), name='battleindex'),
 
 	url(r'^player/(?P<player_pseudo>\w{0,50})/$', player.player_view, name='player'),
 	url(r'^shop/$', player.shop, name='shop'),
+	url(r'^fight/$', fight.fight, name='fight'),
 
 	url(r'^armor/(?P<piece_id>\d{0,50})/$', database.armor, name='armor'),
 	url(r'^fillDb/$', database.fillDb, name='fillDb'),

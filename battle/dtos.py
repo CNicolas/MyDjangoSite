@@ -30,7 +30,7 @@ class AttackDto:
 		else:
 			self.player_stat = 1
 
-		self.full_damage = int(self.damage * self.player_stat)			
+		self.full_damage = int(self.damage * self.player_stat)
 
 	def toDictionnary(self):
 		res = {}
@@ -128,7 +128,7 @@ class PlayerDto:
 		self.full_intellect = self.intellect + self.intellect_bonus
 		self.full_spirit = self.spirit + self.spirit_bonus
 		# END
-		 
+
 		# ATTACKS
 		abc = AttackByClasse.objects.filter(classe=self.classe)
 		self.attacks = [AttackDto(a.attack, self) for a in abc]

@@ -36,11 +36,6 @@ def test(request):
 	return redirect('show')
 
 def show(request):
-	# return HttpResponse(Classe.objects.all())
-	# heavy_torso = ArmorCategory.objects.filter(place="torso", weight=3)[0]
-	# god_armor = ArmorPiece.objects.filter(name="Cuirasse des Dieux")[0]
-	# aku_warrior = Player.objects.filter(pseudo="Aku_Guerrier")[0]
-
 	context = {
 		'pagetitle': 'Show',
 		'classes': Classe.objects.all(),
