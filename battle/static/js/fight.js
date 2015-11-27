@@ -64,6 +64,15 @@ function playerAttackUsed(player, attack) {
     player.find('.energy').next().find('.determinate').css("width", energyPercent + '%' );
 
     var playerAttacks = player.find('div.attacks .row button');
+    playerAttacks.each(function(index, el) {
+        var jEl = $(el);
+        if (Number(jEl.attr('data-energy')) > newEnergy) {
+            jEl.addClass('disabled');
+        }
+        if (Number(jEl.attr('data-mana')) > newMana) {
+            jEl.addClass('disabled');
+        }
+    });
 }
 
 function playerAttackUndergone(player, attack) {
