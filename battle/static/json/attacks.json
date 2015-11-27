@@ -14,7 +14,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "intellect",
-					"symbol": "ra ra-fire-symbol"
+					"symbol": "ra ra-fire-symbol",
+					"acronym": "FEU"
 				},
 				{
 					"name": "Extra Feu",
@@ -27,7 +28,8 @@
 					"target": 2,
 					"cooldown": 1,
 					"stat": "intellect",
-					"symbol": "small-fire"
+					"symbol": "small-fire",
+					"acronym": "FEU +"
 				},
 				{
 					"name": "Méga Feu",
@@ -40,7 +42,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "intellect",
-					"symbol": "fire"
+					"symbol": "fire",
+					"acronym": "FEU X"
 				},
 				{
 					"name": "Foudre",
@@ -53,7 +56,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "intellect",
-					"symbol": "ra ra-lightning-storm"
+					"symbol": "ra ra-lightning-storm",
+					"acronym": "FOUDRE"
 				}
 			]
 		},
@@ -71,7 +75,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "intellect",
-					"symbol": "ra ra-montains"
+					"symbol": "ra ra-montains",
+					"acronym": "TERRE"
 				},
 				{
 					"name": "Soin",
@@ -84,7 +89,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "spirit",
-					"symbol": "ra ra-health"
+					"symbol": "ra ra-health",
+					"acronym": "SOIN"
 				},
 				{
 					"name": "Méga Soin",
@@ -97,7 +103,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "spirit",
-					"symbol": "ra ra-gamepad-cross"
+					"symbol": "ra ra-gamepad-cross",
+					"acronym": "SOIN X"
 				},
 				{
 					"name": "Récupération",
@@ -110,7 +117,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "spirit",
-					"symbol": "ra ra-health-increase"
+					"symbol": "ra ra-health-increase",
+					"acronym": "RECUP"
 				}
 			]
 		}
@@ -130,7 +138,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "strength",
-					"symbol": "ra ra-bowie-knife"
+					"symbol": "ra ra-bowie-knife",
+					"acronym": "CAC"
 				},
 				{
 					"name": "Kunais",
@@ -143,7 +152,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-kunai"
+					"symbol": "ra ra-kunai",
+					"acronym": "KUNAI"
 				},
 				{
 					"name": "Grenade",
@@ -156,7 +166,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-bomb-explosion"
+					"symbol": "ra ra-bomb-explosion",
+					"acronym": "BOMBE"
 				},
 				{
 					"name": "Chute mortelle",
@@ -169,7 +180,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-death-skull"
+					"symbol": "ra ra-death-skull",
+					"acronym": "CHUTE"
 				}
 			]
 		},
@@ -187,7 +199,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-death-skull"
+					"symbol": "ra ra-death-skull",
+					"acronym": "FLECHE"
 				},
 				{
 					"name": "Flèche Critique",
@@ -200,7 +213,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-supersonic-arrow"
+					"symbol": "ra ra-supersonic-arrow",
+					"acronym": "FLECHE +"
 				},
 				{
 					"name": "Tir Rapide",
@@ -213,7 +227,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-rrow-flights"
+					"symbol": "ra ra-rrow-flights",
+					"acronym": "TIR RAP"
 				},
 				{
 					"name": "Flèche Explosive",
@@ -226,7 +241,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "agility",
-					"symbol": "ra ra-chemical-arrow"
+					"symbol": "ra ra-chemical-arrow",
+					"acronym": "FLECHE X"
 				}
 			]
 		}
@@ -246,7 +262,8 @@
 					"target": 1,
 					"cooldown": 1,
 					"stat": "strength",
-					"symbol": "ra ra-sword"
+					"symbol": "ra ra-sword",
+					"acronym": "CAC"
 				},
 				{
 					"name": "Ruée",
@@ -259,7 +276,8 @@
 					"target": 2,
 					"cooldown": 1,
 					"stat": "strength",
-					"symbol": "ra ra-blast"
+					"symbol": "ra ra-blast",
+					"acronym": "RUSH"
 				},
 				{
 					"name": "Swing",
@@ -272,7 +290,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "strength",
-					"symbol": "ra ra-axe-swing"
+					"symbol": "ra ra-axe-swing",
+					"acronym": "SWING"
 				}
 			]
 		},
@@ -290,7 +309,8 @@
 					"target": 3,
 					"cooldown": 1,
 					"stat": "strength",
-					"symbol": "ra ra-decapitation"
+					"symbol": "ra ra-decapitation",
+					"acronym": "FUCK"
 				}
 			]
 		}

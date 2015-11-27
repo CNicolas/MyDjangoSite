@@ -167,6 +167,7 @@
 							<th class="center">Durée</th>
 							<th class="center">Délai de relance</th>
 							<th class="center">Nombre de cibles</th>
+							<th class="center">Acronyme</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -184,6 +185,7 @@
 								<td class="center">{{ a.duration }}</td>
 								<td class="center">{{ a.cooldown }}</td>
 								<td class="center">{{ a.target }}</td>
+								<td class="center">{{ a.acronym }}</td>
 							</tr>
 						{% empty %}
 							<tr>Pas d'attaques</tr>

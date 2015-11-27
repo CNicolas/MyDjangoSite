@@ -43,7 +43,7 @@ def fillDb(request):
 				classe_content = data[weight][classname]
 				c = Classe.objects.create_classe(classname, weight, classe_content['health'])
 				for attack in classe_content['attacks']:
-					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['cooldown'], attack['stat'], attack['symbol'])
+					a = Attack.objects.create_attack(attack['name'], attack['damage'], attack['heal'], attack['mana'], attack['energy'], attack['critical'], attack['duration'], attack['target'], attack['cooldown'], attack['stat'], attack['symbol'], attack['acronym'])
 					AttackByClasse.objects.create_attack_by_classe(c, a)
 
 	with open(ennemies_file, 'r', encoding='utf-8') as f:
@@ -51,7 +51,7 @@ def fillDb(request):
 		for e in data:
 			ennemy = Ennemy.objects.create_ennemy(e['name'], e['level'], e['health'])
 			for a in e['attacks']:
-				attack = EnnemyAttack.objects.create_ennemy_attack(a['name'], a['damage'], a['heal'], a['critical'], a['duration'], a['cooldown'], a['target'], ennemy)
+				attack = EnnemyAttack.objects.create_ennemy_attack(a['name'], a['damage'], a['heal'], a['critical'], a['duration'], a['cooldown'], a['target'], a['symbol'], a['acronym'], ennemy)
 
 	return HttpResponse()
 
@@ -62,6 +62,8 @@ def emptyDb(request):
 	ArmorPiece.objects.all().delete()
 	Player.objects.all().delete()
 	PlayerArmor.objects.all().delete()
+	Ennemy.objects.all().delete()
+	EnnemyAttack.objects.all().delete()
 	return HttpResponse("Everything has been deleted")
 
 def reinitDb(request):

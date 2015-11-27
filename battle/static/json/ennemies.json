@@ -11,7 +11,9 @@
                 "critical": 0,
                 "duration": 1,
                 "cooldown": 1,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-snail",
+                "acronym": "BAVE"
             }
         ]
     },
@@ -27,7 +29,9 @@
                 "critical": 10,
                 "duration": 1,
                 "cooldown": 1,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-bird-claw",
+                "acronym": "GRIFFE"
             }
         ]
     },
@@ -43,7 +47,9 @@
                 "critical": 10,
                 "duration": 1,
                 "cooldown": 1,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-bird-claw",
+                "acronym": "GRIFFE"
             },
             {
                 "name": "Aspiration",
@@ -52,7 +58,9 @@
                 "critical": 20,
                 "duration": 1,
                 "cooldown": 3,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-burst-blob",
+                "acronym": "ASPIRE"
             }
         ]
     },
@@ -68,7 +76,9 @@
                 "critical": 10,
                 "duration": 1,
                 "cooldown": 2,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-spear-head",
+                "acronym": "ESTOC"
             },
             {
                 "name": "Taillades",
@@ -77,16 +87,20 @@
                 "critical": 10,
                 "duration": 3,
                 "cooldown": 2,
-                "target": 1
+                "target": 1,
+                "symbol": "ra ra-dripping-sword",
+                "acronym": "TAILLE"
             },
             {
-                "name": "Matière noire",
+                "name": "Antimatière",
                 "damage": 60,
                 "heal": 0,
                 "critical": 10,
                 "duration": 1,
                 "cooldown": 5,
-                "target": 3
+                "target": 3,
+                "symbol": "ra ra-crystal-cluster",
+                "acronym": "OBSCUR"
             }
         ]
     }

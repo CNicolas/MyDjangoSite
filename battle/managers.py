@@ -35,12 +35,12 @@ class ClasseManager(models.Manager):
 		return manager_to_string(self)
 
 class AttackManager(models.Manager):
-	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, cooldown, stat, symbol):
-		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol)
+	def create_attack(self, name, damage, heal, mana, energy, critical, duration, target, cooldown, stat, symbol, acronym):
+		check = self.filter(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol, acronym=acronym)
 		if len(check) > 0:
 			return check[0]
 		else:
-			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol)
+			attack = self.create(name=name, damage=damage, heal=heal, mana=mana, energy=energy, critical=critical, duration=duration, target=target, cooldown=cooldown, stat=stat, symbol=symbol, acronym=acronym)
 			return attack
 
 	def __str__(self):
@@ -107,12 +107,12 @@ class EnnemyManager(models.Manager):
 		return manager_to_string(self)
 
 class EnnemyAttackManager(models.Manager):
-	def create_ennemy_attack(self, name, damage, heal, critical, duration, cooldown, target, ennemy):
-		check = self.filter(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, ennemy=ennemy)
+	def create_ennemy_attack(self, name, damage, heal, critical, duration, cooldown, target, symbol, acronym, ennemy):
+		check = self.filter(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, symbol=symbol, acronym=acronym, ennemy=ennemy)
 		if len(check) > 0:
 			return check[0]
 		else:
-			ennemy_attack = self.create(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, ennemy=ennemy)
+			ennemy_attack = self.create(name=name, damage=damage, heal=heal, critical=critical, duration=duration, cooldown=cooldown, target=target, symbol=symbol, acronym=acronym, ennemy=ennemy)
 			return ennemy_attack
 
 	def __str__(self):
