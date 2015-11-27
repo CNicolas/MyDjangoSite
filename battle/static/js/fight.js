@@ -8,7 +8,7 @@
 'use strict';
 
 function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min +1)) + min;
+    return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
 function damageResolved(damage, critical, targetDefense) {
@@ -19,36 +19,37 @@ function damageResolved(damage, critical, targetDefense) {
         res = Math.ceil(res * 1.5);
     }
     res -= res * (Number(targetDefense) / 100);
-
-    console.log(damage, critical, targetDefense, isCritical, targetDefense / 100, res)
-
     return res;
 }
 
-function updateEnnemyAttackUsed(ennemy, attack) {
-    var newHealth = ennemy.attr('data-health') + attack.attr('data-health');
+function ennemyAttackUsed(ennemy, attack) {
+    var newHealth = Number(ennemy.attr('data-health')) + Number(attack.attr('data-heal'));
+
+    var healthPercent = (newHealth * 100) / Number(ennemy.data('fullhealth'));
 
     ennemy.attr('data-health', newHealth);
 
     ennemy.find('.health').text(newHealth);
+
+    ennemy.find('.health').next().find('.determinate').css("width", healthPercent + '%' );
 }
 
-function updateEnnemyAttackUndergone(ennemy, attack) {
+function ennemyAttackUndergone(ennemy, attack) {
     var newHealth = ennemy.attr('data-health') - damageResolved(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
 
-    // console.log(ennemy.attr('data-health'), ennemy.find('.health').text(), newHealth);
-
     ennemy.attr('data-health', newHealth);
 
     ennemy.find('.health').text(newHealth);
 }
 
-function updatePlayerAttackUsed(player, attack) {
+function playerAttackUsed(player, attack) {
     var newHealth = Number(player.attr('data-health')) + Number(attack.attr('data-heal'));
     var newMana = Number(player.attr('data-mana')) - Number(attack.attr('data-mana'));
     var newEnergy = Number(player.attr('data-energy')) - Number(attack.attr('data-energy'));
 
-    // console.log(player.attr('data-health'), player.find('.health').text(), newHealth);
+    var healthPercent = (newHealth * 100) / Number(player.data('fullhealth'));
+    var manaPercent = (newMana * 100) / Number(player.data('fullmana'));
+    var energyPercent = (newEnergy * 100) / Number(player.data('fullenergy'));
 
     player.attr('data-health', newHealth);
     player.attr('data-mana', newMana);
@@ -57,12 +58,16 @@ function updatePlayerAttackUsed(player, attack) {
     player.find('.health').text(newHealth);
     player.find('.mana').text(newMana);
     player.find('.energy').text(newEnergy);
+
+    player.find('.health').next().find('.determinate').css("width", healthPercent + '%' );
+    player.find('.mana').next().find('.determinate').css("width", manaPercent + '%' );
+    player.find('.energy').next().find('.determinate').css("width", energyPercent + '%' );
+
+    var playerAttacks = player.find('div.attacks .row button');
 }
 
-function updatePlayerAttackUndergone(player, attack) {
+function playerAttackUndergone(player, attack) {
     var newHealth = player.attr('data-health') - damageResolved(attack.attr('data-damage'), attack.attr('data-critical'), player.attr('data-defense'));
-
-    // console.log(player.attr('data-health'), player.find('.health').text(), newHealth);
 
     player.attr('data-health', newHealth);
 
@@ -84,21 +89,22 @@ $(document).ready(function() {
         player = button.parents("div.player");
         playerAttack = button;
 
-        $("div.ennemy").unbind('click');
-        $("div.ennemy").click(function(event) {
-            var ennemy = $(this);
+        $("div.ennemy button").click(function(event) {
+            var ennemy = $(this).parent();
 
-            updateEnnemyAttackUndergone(ennemy, playerAttack);
+            ennemyAttackUndergone(ennemy, playerAttack);
 
-            updatePlayerAttackUsed(player, playerAttack);
+            playerAttackUsed(player, playerAttack);
+
+            var ennemyAttacks = ennemy.find('div.attacks .row button');
+            var alea = getRandomIntInclusive(0, ennemyAttacks.length - 1);
+            playerAttackUndergone(player, ennemyAttacks.eq(alea))
+
+            ennemyAttackUsed(ennemy, ennemyAttacks.eq(alea));
 
             playerAttack = {};
             player = {};
             $(this).unbind('click');
-
-            var ennemyAttacks = ennemy.find('div.attacks .row button');
-            var alea = getRandomIntInclusive(1, ennemyAttacks.length);
-            updatePlayerAttackUndergone(player, ennemyAttacks[alea])
         });
     });
 });

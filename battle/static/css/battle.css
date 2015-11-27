@@ -43,58 +43,70 @@ main {
 }
 
 .color-price {
-	background-color: #ffc107;
+	background-color: #ffc107 !important;
 }
 .color-price-text {
-	color: #ffc107;
+	color: #ffc107 !important;
 }
 .color-defense {
-	background-color: #9e9e9e;
+	background-color: #9e9e9e !important;
 }
 .color-defense-text {
-	color: #9e9e9e;
+	color: #9e9e9e !important;
 }
 .color-health {
-	background-color: #f44336;
+	background-color: #f44336 !important;
 }
 .color-health-text {
-	color: #f44336;
+	color: #f44336 !important;
 }
 .color-mana {
-	background-color: #2196f3;
+	background-color: #2196f3 !important;
 }
 .color-mana-text {
-	color: #2196f3;
+	color: #2196f3 !important;
 }
 .color-energy {
-	background-color: #cddc39;
+	background-color: #cddc39 !important;
 }
 .color-energy-text {
-	color: #cddc39;
+	color: #cddc39 !important;
 }
 .color-strength {
-	background-color: #795548;
+	background-color: #795548 !important;
 }
 .color-strength-text {
-	color: #795548;
+	color: #795548 !important;
 }
 .color-agility {
-	background-color: #4caf50 ;
+	background-color: #4caf50 !important;
 }
 .color-agility-text {
-	color: #4caf50 ;
+	color: #4caf50 !important;
 }
 .color-intellect {
-	background-color: #ff9800;
+	background-color: #ff9800 !important;
 }
 .color-intellect-text {
-	color: #ff9800;
+	color: #ff9800 !important;
 }
 .color-spirit {
-	background-color: #607d8b;
+	background-color: #607d8b !important;
 }
 .color-spirit-text {
-	color: #607d8b;
+	color: #607d8b !important;
+}
+
+.health, .mana, .energy {
+	font-weight:bold;
+}
+
+td.td-icon {
+	display: inline-block;
+}
+td.td-value {
+	display: inline-block;
+	width: 60%;
 }
 /* END */
 
@@ -159,7 +171,10 @@ div.armor-piece.feet.weight3 {
 
 /* FIGHT */
 div.ennemies, div.players {
-	min-height: 35vh;
+	min-height: 30vh;
+}
+div.targets {
+	min-height: 9vh;
 }
 /* END */
 

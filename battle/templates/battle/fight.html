@@ -9,13 +9,18 @@
         <div class="container">
             <div class="row ennemies">
                 {% for ennemy in ennemies %}
-                    <div class="ennemy col s3 row" data-id="{{ ennemy.id }}" data-health="{{ ennemy.health }}">
+                    <div class="ennemy col s3 row" data-id="{{ ennemy.id }}" data-fullhealth="{{ ennemy.health }}" data-health="{{ ennemy.health }}">
                         <table class="col s5 table bordered">
                             <caption class="center">{{ ennemy.name }}<button class="left btn-floating disabled">{{ ennemy.level }}</span></caption>
                             <tbody>
                                 <tr class="color-health-text">
-                                    <td><i class="ra ra-hearts ra-2x"></i></td>
-                                    <td class="health">{{ ennemy.health }}</td>
+                                    <td class="td-icon"><i class="ra ra-hearts ra-2x"></i></td>
+                                    <td class="td-value center">
+                                        <span class="health">{{ ennemy.health }}</span>
+                                        <div class="progress">
+                                            <div class="determinate color-health" style="width: 100%"></div>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -30,32 +35,54 @@
                                 </div>
                             {% endfor %}
                         </div>
+
+                        <button class="col s12 btn">{{ ennemy.name }}</button>
                     </div>
 
                     <div class="col s1">&nbsp;</div>
                 {% endfor %}
             </div>
+
+            <div class="row targets">
+
+            </div>
+
             <div class="row players">
                 {% for p in players %}
-                    <div class="player col s3 row" data-id="{{ p.id }}" data-pseudo="{{ p.pseudo }}" data-health="{{ p.full_health }}" data-mana="{{ p.full_mana }}" data-energy="{{ p.full_energy }}" data-defense="{{ p.full_defense }}" data-strength="{{ p.full_strength }}" data-agility="{{ p.full_agility }}" data-intellect="{{ p.full_intellect }}" data-spirit="{{ p.full_spirit }}">
+                    <div class="player col s3 row" data-id="{{ p.id }}" data-pseudo="{{ p.pseudo }}" data-fullhealth="{{ p.full_health }}" data-health="{{ p.full_health }}" data-fullmana="{{ p.full_mana }}" data-mana="{{ p.full_mana }}" data-fullenergy="{{ p.full_energy }}" data-energy="{{ p.full_energy }}" data-defense="{{ p.full_defense }}" data-strength="{{ p.full_strength }}" data-agility="{{ p.full_agility }}" data-intellect="{{ p.full_intellect }}" data-spirit="{{ p.full_spirit }}">
                         <table class="col s6 table bordered">
                             <caption class="center">{{ p.pseudo }}<button class="left btn-floating disabled">{{ p.level }}</span></caption>
                             <tbody>
                                 <tr class="color-health-text">
-                                    <td><i class="ra ra-hearts ra-2x"></i></td>
-                                    <td class="health">{{ p.full_health }}</td>
+                                    <td class="td-icon"><i class="ra ra-hearts ra-2x"></i></td>
+                                    <td class="td-value center">
+                                        <span class="health">{{ p.full_health }}</span>
+                                        <div class="progress">
+                                            <div class="determinate color-health" style="width: 100%"></div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr class="color-mana-text">
-                                    <td><i class="ra ra-crystals ra-2x"></i></td>
-                                    <td class="mana">{{ p.full_mana }}</td>
+                                    <td class="td-icon"><i class="ra ra-crystals ra-2x"></i></td>
+                                    <td class="td-value center">
+                                        <span class="mana">{{ p.full_mana }}</span>
+                                        <div class="progress">
+                                            <div class="determinate color-mana" style="width: 100%"></div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr class="color-energy-text">
-                                    <td><i class="ra ra-lightning-bolt ra-2x"></i></td>
-                                    <td class="energy">{{ p.full_energy }}</td>
+                                    <td class="td-icon"><i class="ra ra-lightning-bolt ra-2x"></i></td>
+                                    <td class="td-value center">
+                                        <span class="energy">{{ p.full_energy }}</span>
+                                        <div class="progress">
+                                            <div class="determinate color-energy" style="width: 100%"></div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr class="color-defense-text">
-                                    <td><i class="ra ra-shield ra-2x"></i></td>
-                                    <td class="defense">{{ p.full_defense }}</td>
+                                    <td class="td-icon"><i class="ra ra-shield ra-2x"></i></td>
+                                    <td class="td-value defense">{{ p.full_defense }}</td>
                                 </tr>
                             </tbody>
                         </table>
