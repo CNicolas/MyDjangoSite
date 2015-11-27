@@ -11,14 +11,30 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function damageResolved(damage, critical, targetDefense) {
+function damageResolution(damage, critical, targetDefense) {
     var isCritical = Math.random() <= (Number(critical) / 100);
     var dmg = Number(damage);
-    var res = getRandomIntInclusive(dmg - 5, dmg + 5);
+    var alea = getRandomIntInclusive(dmg - 5, dmg + 5);
+    var res = alea;
     if (isCritical) {
         res = Math.ceil(res * 1.5);
     }
-    res -= res * (Number(targetDefense) / 100);
+    var defenseReduction = Math.floor(res * (Number(targetDefense) / 100));
+    res -= defenseReduction;
+
+    console.log(dmg + ' -> ' + alea + ' ' + isCritical + ' ' + defenseReduction + ' = ' + res);
+    return res;
+}
+
+function healResolution(heal, critical) {
+    var isCritical = Math.random() <= (Number(critical) / 100);
+    var hl = Number(heal);
+    var alea = getRandomIntInclusive(hl - 5, hl + 5);
+    var res = alea
+    if (isCritical) {
+        res = Math.ceil(res * 1.5);
+    }
+    console.log(hl + ' -> ' + alea + ' ' + isCritical + ' = ' + res);
     return res;
 }
 
@@ -32,10 +48,20 @@ function ennemyAttackUsed(ennemy, attack) {
     ennemy.find('.health').text(newHealth);
 
     ennemy.find('.health').next().find('.determinate').css("width", healthPercent + '%' );
+
+    console.log(ennemy.data(), attack.data());
 }
 
 function ennemyAttackUndergone(ennemy, attack) {
-    var newHealth = ennemy.attr('data-health') - damageResolved(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
+    if (attack.data('fulldamage') != 0) {
+        
+    } else {
+
+    }
+
+
+    var newHealth = Number(ennemy.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
+    newHealth = newHealth + Number(attack.attr('data-heal'));
 
     ennemy.attr('data-health', newHealth);
 
@@ -73,14 +99,60 @@ function playerAttackUsed(player, attack) {
             jEl.addClass('disabled');
         }
     });
+
+    console.log(player.data(), attack.data());
 }
 
 function playerAttackUndergone(player, attack) {
-    var newHealth = player.attr('data-health') - damageResolved(attack.attr('data-damage'), attack.attr('data-critical'), player.attr('data-defense'));
+    if (attack.data('fulldamage') != 0) {
+        var newHealth = Number(player.attr('data-health')) - damageResolution(attack.attr('data-damage'), attack.attr('data-critical'), player.attr('data-defense'));
+    } else {
+        var newHealth = Number(player.attr('data-health')) + healResolution(attack.attr('data-fullheal'), attack.attr('data-critical'));
+    }
+
+    var healthPercent = (newHealth * 100) / Number(player.data('fullhealth'));
 
     player.attr('data-health', newHealth);
 
     player.find('.health').text(newHealth);
+
+    player.find('.health').next().find('.determinate').css("width", healthPercent + '%' );
+}
+
+function ennemiesTurn() {
+    $('.ennemy').each(function(index, el) {
+        var ennemy = $(el);
+        var ennemyAttacks = ennemy.find('div.attacks .row button');
+        var alea = getRandomIntInclusive(0, ennemyAttacks.length - 1);
+        var attack = ennemyAttacks.eq(alea);
+
+        var players = $(".player");
+        if (players.length === 1) {
+            playerAttackUndergone(players.eq(0), attack)
+        } else if (players.length === 2) {
+            if (attack.data('target') === 1) {
+                alea = getRandomIntInclusive(0, 1);
+                playerAttackUndergone(players.eq(alea), attack)
+            } else {
+                playerAttackUndergone(players.eq(0), attack)
+                playerAttackUndergone(players.eq(1), attack)
+            }
+        } else {
+            if (attack.data('target') === 1) {
+                alea = getRandomIntInclusive(0, players.length - 1);
+                playerAttackUndergone(players.eq(alea), attack)
+            } else if (attack.data('target') == 2) {
+                alea = getRandomIntInclusive(0, 1);
+                if (alea === 0) {
+                    playerAttackUndergone(players.eq(0), attack)
+                } else {
+                    playerAttackUndergone(players.eq(2), attack)
+                }
+                playerAttackUndergone(players.eq(1), attack)
+            }
+        }
+        ennemyAttackUsed(ennemy, attack);
+    });
 }
 
 $(document).ready(function() {
@@ -93,23 +165,33 @@ $(document).ready(function() {
 
     var playerAttack = {};
     var player = {};
-    $("button.attack").click(function(event) {
+    $("div.player button.attack").click(function(event) {
         var button = $(this);
         player = button.parents("div.player");
         playerAttack = button;
 
-        $("div.ennemy button").click(function(event) {
+        $("div.ennemy>button").click(function(event) {
             var ennemy = $(this).parent();
 
             ennemyAttackUndergone(ennemy, playerAttack);
 
             playerAttackUsed(player, playerAttack);
 
-            var ennemyAttacks = ennemy.find('div.attacks .row button');
-            var alea = getRandomIntInclusive(0, ennemyAttacks.length - 1);
-            playerAttackUndergone(player, ennemyAttacks.eq(alea))
+            ennemiesTurn();
 
-            ennemyAttackUsed(ennemy, ennemyAttacks.eq(alea));
+            playerAttack = {};
+            player = {};
+            $(this).unbind('click');
+        });
+
+        $("div.player>button").click(function(event) {
+            var target = $(this).parent();
+
+            playerAttackUndergone(target, playerAttack);
+
+            playerAttackUsed(player, playerAttack);
+
+            ennemiesTurn();
 
             playerAttack = {};
             player = {};

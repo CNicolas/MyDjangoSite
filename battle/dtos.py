@@ -34,6 +34,9 @@ class AttackDto:
 			self.player_stat = 1
 
 		self.full_damage = int(self.damage * self.player_stat)
+		self.full_heal = self.heal
+		if self.full_damage == 0:
+			self.full_heal = int(self.heal * self.player_stat)
 
 	def toDictionnary(self):
 		res = {}

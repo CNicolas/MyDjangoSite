@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row ennemies">
                 {% for ennemy in ennemies %}
-                    <div class="ennemy col s3 row" data-id="{{ ennemy.id }}" data-fullhealth="{{ ennemy.health }}" data-health="{{ ennemy.health }}">
+                    <div class="ennemy col s3 row" data-name="{{ ennemy.name }}" data-id="{{ ennemy.id }}" data-fullhealth="{{ ennemy.health }}" data-health="{{ ennemy.health }}">
                         <table class="col s5 table bordered">
                             <caption class="center">{{ ennemy.name }}<button class="left btn-floating disabled">{{ ennemy.level }}</span></caption>
                             <tbody>
@@ -28,7 +28,7 @@
                         <div class="col s7 attacks">
                             {% for a in ennemy.attacks %}
                                 <div class="row">
-                                    <button class="attack col s10 btn disabled color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-heal="{{ a.heal }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}">{{ a.name }}</button>
+                                    <button id="attack-{{ a.id }}-{{ ennemy.id }}" class="attack col s10 btn disabled color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-heal="{{ a.heal }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}">{{ a.name }}</button>
                                     <div class="col s2">
                                         <a href="#modal-{{ a.id }}-{{ ennemy.id }}" class="modal-trigger black-text"><i class="material-icons left waves-effect waves-light">help</i></a>
                                     </div>
@@ -90,13 +90,15 @@
                         <div class="col s6 attacks">
                             {% for a in p.attacks %}
                                 <div class="row">
-                                    <button class="attack col s10 btn color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-fulldamage="{{ a.full_damage}}" data-heal="{{ a.heal }}" data-mana="{{ a.mana }}" data-energy="{{ a.energy }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}" data-symbol="{{ a.symbol }}" data-acronym="{{ a.acronym }}">{{ a.name }}</button>
+                                    <button id="attack-{{ a.id }}-{{ p.id }}" class="attack col s10 btn color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-fulldamage="{{ a.full_damage}}" data-heal="{{ a.heal }}" data-fullheal="{{ a.full_heal }}" data-mana="{{ a.mana }}" data-energy="{{ a.energy }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}" data-symbol="{{ a.symbol }}" data-acronym="{{ a.acronym }}">{{ a.name }}</button>
                                     <div class="col s2">
                                         <a href="#modal-{{ a.id }}-{{ p.id }}" class="modal-trigger black-text"><i class="material-icons">help</i></a>
                                     </div>
                                 </div>
                             {% endfor %}
                         </div>
+
+                        <button class="col s12 btn">{{ p.pseudo }}</button>
                     </div>
 
                     <div class="col s1">&nbsp;</div>
@@ -167,7 +169,7 @@
 						<tr>
                             <td class="center"><i class="{{ attack.symbol }} ra-3x"></i></td>
 							<td class="center color-{{ attack.stat }}-text">{{ attack.full_damage }}</td>
-                            <td class="center color-health-text">{{ attack.heal }}</td>
+                            <td class="center color-health-text">{{ attack.full_heal }}</td>
                             <td class="center color-mana-text">{{ attack.mana }}</td>
                             <td class="center color-energy-text">{{ attack.energy }}</td>
 							<td class="center">{{ attack.critical }} %</td>

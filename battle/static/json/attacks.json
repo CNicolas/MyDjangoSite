@@ -4,6 +4,20 @@
 			"health": 0,
 			"attacks": [
 				{
+					"name": "Corps à Corps",
+					"damage": 10,
+					"heal": 0,
+					"mana": 0,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1,
+					"cooldown": 1,
+					"stat": "strength",
+					"symbol": "ra ra-sword",
+					"acronym": "CAC"
+				},
+				{
 					"name": "Feu",
 					"damage": 20,
 					"heal": 0,
@@ -64,6 +78,20 @@
 		"Prêtre": {
 			"health": 25,
 			"attacks": [
+				{
+					"name": "Corps à Corps",
+					"damage": 10,
+					"heal": 0,
+					"mana": 0,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1,
+					"cooldown": 1,
+					"stat": "strength",
+					"symbol": "ra ra-sword",
+					"acronym": "CAC"
+				},
 				{
 					"name": "Terre",
 					"damage": 10,
@@ -129,6 +157,20 @@
 			"attacks": [
 				{
 					"name": "Corps à Corps",
+					"damage": 10,
+					"heal": 0,
+					"mana": 0,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1,
+					"cooldown": 1,
+					"stat": "strength",
+					"symbol": "ra ra-sword",
+					"acronym": "CAC"
+				},
+				{
+					"name": "Coup de poignard",
 					"damage": 20,
 					"heal": 0,
 					"mana": 0,
@@ -139,7 +181,7 @@
 					"cooldown": 1,
 					"stat": "strength",
 					"symbol": "ra ra-bowie-knife",
-					"acronym": "CAC"
+					"acronym": "POIGNARD"
 				},
 				{
 					"name": "Kunais",
@@ -188,6 +230,20 @@
 		"Archer": {
 			"health": 10,
 			"attacks": [
+				{
+					"name": "Corps à Corps",
+					"damage": 10,
+					"heal": 0,
+					"mana": 0,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1,
+					"cooldown": 1,
+					"stat": "strength",
+					"symbol": "ra ra-sword",
+					"acronym": "CAC"
+				},
 				{
 					"name": "Flèche",
 					"damage": 15,
@@ -253,10 +309,10 @@
 			"attacks": [
 				{
 					"name": "Corps à Corps",
-					"damage": 15,
+					"damage": 10,
 					"heal": 0,
 					"mana": 0,
-					"energy": 10,
+					"energy": 0,
 					"critical": 10,
 					"duration": 1,
 					"target": 1,
@@ -264,6 +320,20 @@
 					"stat": "strength",
 					"symbol": "ra ra-sword",
 					"acronym": "CAC"
+				},
+				{
+					"name": "Soin",
+					"damage": 0,
+					"heal": 10,
+					"mana": 10,
+					"energy": 0,
+					"critical": 10,
+					"duration": 1,
+					"target": 1,
+					"cooldown": 1,
+					"stat": "spirit",
+					"symbol": "ra ra-health",
+					"acronym": "SOIN"
 				},
 				{
 					"name": "Ruée",

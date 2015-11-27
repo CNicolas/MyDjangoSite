@@ -178,7 +178,9 @@
 								<td class="center color-{{ a.stat }}-text">{{ a.full_damage }}
 									<span class="grey-text text-lighten-2">{{ a.damage }} x {{ a.player_stat }}</span>
 								</td>
-								<td class="center color-health-text">{{ a.heal }}</td>
+								<td class="center color-{{ a.stat }}-text">{{ a.full_heal }}
+									<span class="red-text text-lighten-2">{{ a.heal }} x {{ a.player_stat }}</span>
+								</td>
 								<td class="center color-mana-text">{{ a.mana }}</td>
 								<td class="center color-energy-text">{{ a.energy }}</td>
 								<td class="center">{{ a.critical }} %</td>
