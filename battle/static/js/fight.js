@@ -19,10 +19,11 @@ function damageResolution(damage, critical, targetDefense) {
     if (isCritical) {
         res = Math.ceil(res * 1.5);
     }
+    var resCrit = res;
     var defenseReduction = Math.floor(res * (Number(targetDefense) / 100));
     res -= defenseReduction;
 
-    console.log(dmg + ' -> ' + alea + ' ' + isCritical + ' ' + defenseReduction + ' = ' + res);
+    console.log('DAMAGE : ' + dmg + ' -> ' + alea + ' -> ' + resCrit  + ' - ' + defenseReduction + ' = ' + res);
     return res;
 }
 
@@ -34,11 +35,15 @@ function healResolution(heal, critical) {
     if (isCritical) {
         res = Math.ceil(res * 1.5);
     }
-    console.log(hl + ' -> ' + alea + ' ' + isCritical + ' = ' + res);
+    var resCrit = res;
+    
+    console.log('HEAL : ' + hl + ' -> ' + alea + ' -> ' + resCrit + ' = ' + res);
     return res;
 }
 
 function ennemyAttackUsed(ennemy, attack) {
+    console.log(ennemy.data('name') + ' used ' + attack.data('name'));
+
     var newHealth = Number(ennemy.attr('data-health')) + Number(attack.attr('data-heal'));
 
     var healthPercent = (newHealth * 100) / Number(ennemy.data('fullhealth'));
@@ -48,20 +53,16 @@ function ennemyAttackUsed(ennemy, attack) {
     ennemy.find('.health').text(newHealth);
 
     ennemy.find('.health').next().find('.determinate').css("width", healthPercent + '%' );
-
-    console.log(ennemy.data(), attack.data());
 }
 
 function ennemyAttackUndergone(ennemy, attack) {
+    console.log(attack.data('name') + ' on ' + ennemy.data('name'));
+
     if (attack.data('fulldamage') != 0) {
-        
+        var newHealth = Number(ennemy.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
     } else {
-
+        var newHealth = Number(ennemy.attr('data-health')) + healResolution(attack.attr('data-fullheal'), attack.attr('data-critical'));
     }
-
-
-    var newHealth = Number(ennemy.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
-    newHealth = newHealth + Number(attack.attr('data-heal'));
 
     ennemy.attr('data-health', newHealth);
 
@@ -69,7 +70,13 @@ function ennemyAttackUndergone(ennemy, attack) {
 }
 
 function playerAttackUsed(player, attack) {
-    var newHealth = Number(player.attr('data-health')) + Number(attack.attr('data-heal'));
+    console.log(player.data('pseudo') + ' used ' + attack.data('name'));
+
+    if (attack.data('fulldamage') != 0) {
+        var newHealth = Number(player.attr('data-health')) + Number(attack.attr('data-heal'));
+    } else {
+        var newHealth = player.attr('data-health');
+    }
     var newMana = Number(player.attr('data-mana')) - Number(attack.attr('data-mana'));
     var newEnergy = Number(player.attr('data-energy')) - Number(attack.attr('data-energy'));
 
@@ -100,12 +107,18 @@ function playerAttackUsed(player, attack) {
         }
     });
 
-    console.log(player.data(), attack.data());
+    // console.log(player.data(), attack.data());
 }
 
 function playerAttackUndergone(player, attack) {
+    console.log(attack.data('name') + ' on ' + player.data('pseudo'));
+
     if (attack.data('fulldamage') != 0) {
-        var newHealth = Number(player.attr('data-health')) - damageResolution(attack.attr('data-damage'), attack.attr('data-critical'), player.attr('data-defense'));
+        if (attack.parents('.player').length > 0) {
+            var newHealth = Number(player.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), player.attr('data-defense'));
+        } else {
+            var newHealth = Number(player.attr('data-health')) - damageResolution(attack.attr('data-damage'), attack.attr('data-critical'), player.attr('data-defense'));
+        }
     } else {
         var newHealth = Number(player.attr('data-health')) + healResolution(attack.attr('data-fullheal'), attack.attr('data-critical'));
     }
