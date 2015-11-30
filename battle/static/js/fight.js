@@ -2,7 +2,7 @@
 * @Author: Aku
 * @Date:   2015-11-27 10:09:01
 * @Last Modified by:   cnicolas
-* @Last Modified time: 2015-11-27 12:07:11
+* @Last Modified time: 2015-11-30 16:04:46
 */
 
 'use strict';
@@ -36,17 +36,17 @@ function healResolution(heal, critical) {
         res = Math.ceil(res * 1.5);
     }
     var resCrit = res;
-    
+
     console.log('HEAL : ' + hl + ' -> ' + alea + ' -> ' + resCrit + ' = ' + res);
     return res;
 }
 
 function ennemyAttackUsed(ennemy, attack) {
-    console.log(ennemy.data('name') + ' used ' + attack.data('name'));
+    console.log(ennemy.attr('data-name') + ' used ' + attack.attr('data-name'));
 
     var newHealth = Number(ennemy.attr('data-health')) + Number(attack.attr('data-heal'));
 
-    var healthPercent = (newHealth * 100) / Number(ennemy.data('fullhealth'));
+    var healthPercent = (newHealth * 100) / Number(ennemy.attr('data-fullhealth'));
 
     ennemy.attr('data-health', newHealth);
 
@@ -56,9 +56,7 @@ function ennemyAttackUsed(ennemy, attack) {
 }
 
 function ennemyAttackUndergone(ennemy, attack) {
-    console.log(attack.data('name') + ' on ' + ennemy.data('name'));
-
-    if (attack.data('fulldamage') != 0) {
+    if (attack.attr('data-fulldamage') != 0) {
         var newHealth = Number(ennemy.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), 0);
     } else {
         var newHealth = Number(ennemy.attr('data-health')) + healResolution(attack.attr('data-fullheal'), attack.attr('data-critical'));
@@ -67,12 +65,14 @@ function ennemyAttackUndergone(ennemy, attack) {
     ennemy.attr('data-health', newHealth);
 
     ennemy.find('.health').text(newHealth);
+
+    console.log(attack.attr('data-name') + ' on ' + ennemy.attr('data-name') + '. New health : ' + ennemy.attr('data-health'));
 }
 
 function playerAttackUsed(player, attack) {
-    console.log(player.data('pseudo') + ' used ' + attack.data('name'));
+    console.log(player.attr('data-pseudo') + ' used ' + attack.attr('data-name'));
 
-    if (attack.data('fulldamage') != 0) {
+    if (attack.attr('data-fulldamage') != 0) {
         var newHealth = Number(player.attr('data-health')) + Number(attack.attr('data-heal'));
     } else {
         var newHealth = player.attr('data-health');
@@ -80,9 +80,9 @@ function playerAttackUsed(player, attack) {
     var newMana = Number(player.attr('data-mana')) - Number(attack.attr('data-mana'));
     var newEnergy = Number(player.attr('data-energy')) - Number(attack.attr('data-energy'));
 
-    var healthPercent = (newHealth * 100) / Number(player.data('fullhealth'));
-    var manaPercent = (newMana * 100) / Number(player.data('fullmana'));
-    var energyPercent = (newEnergy * 100) / Number(player.data('fullenergy'));
+    var healthPercent = (newHealth * 100) / Number(player.attr('data-fullhealth'));
+    var manaPercent = (newMana * 100) / Number(player.attr('data-fullmana'));
+    var energyPercent = (newEnergy * 100) / Number(player.attr('data-fullenergy'));
 
     player.attr('data-health', newHealth);
     player.attr('data-mana', newMana);
@@ -106,14 +106,12 @@ function playerAttackUsed(player, attack) {
             jEl.addClass('disabled');
         }
     });
-
-    // console.log(player.data(), attack.data());
 }
 
 function playerAttackUndergone(player, attack) {
-    console.log(attack.data('name') + ' on ' + player.data('pseudo'));
+    console.log(attack.attr('data-name') + ' on ' + player.attr('data-pseudo'));
 
-    if (attack.data('fulldamage') != 0) {
+    if (attack.attr('data-fulldamage') != 0) {
         if (attack.parents('.player').length > 0) {
             var newHealth = Number(player.attr('data-health')) - damageResolution(attack.attr('data-fulldamage'), attack.attr('data-critical'), player.attr('data-defense'));
         } else {
@@ -123,7 +121,7 @@ function playerAttackUndergone(player, attack) {
         var newHealth = Number(player.attr('data-health')) + healResolution(attack.attr('data-fullheal'), attack.attr('data-critical'));
     }
 
-    var healthPercent = (newHealth * 100) / Number(player.data('fullhealth'));
+    var healthPercent = (newHealth * 100) / Number(player.attr('data-fullhealth'));
 
     player.attr('data-health', newHealth);
 
@@ -143,7 +141,7 @@ function ennemiesTurn() {
         if (players.length === 1) {
             playerAttackUndergone(players.eq(0), attack)
         } else if (players.length === 2) {
-            if (attack.data('target') === 1) {
+            if (attack.attr('data-target') === 1) {
                 alea = getRandomIntInclusive(0, 1);
                 playerAttackUndergone(players.eq(alea), attack)
             } else {
@@ -151,10 +149,10 @@ function ennemiesTurn() {
                 playerAttackUndergone(players.eq(1), attack)
             }
         } else {
-            if (attack.data('target') === 1) {
+            if (attack.attr('data-target') === 1) {
                 alea = getRandomIntInclusive(0, players.length - 1);
                 playerAttackUndergone(players.eq(alea), attack)
-            } else if (attack.data('target') == 2) {
+            } else if (attack.attr('data-target') == 2) {
                 alea = getRandomIntInclusive(0, 1);
                 if (alea === 0) {
                     playerAttackUndergone(players.eq(0), attack)
@@ -168,11 +166,57 @@ function ennemiesTurn() {
     });
 }
 
+function checkFightEnd() {
+    var ennemies = $('.ennemy');
+    var nbEnnemies = ennemies.length;
+    var players = $('.player');
+    var nbPlayers = players.length;
+
+    var res = 0
+    for (var i = 0; i < ennemies.length; i++) {
+        var ennemy = ennemies.eq(i);
+        console.log(Number(ennemy.attr('data-health')));
+        if (Number(ennemy.attr('data-health')) > 0) {
+            break;
+        } else {
+            ennemy.attr('data-health', 0);
+            ennemy.find('.health').text(0);
+            res++;
+            console.log(ennemy.attr('data-name') + ' is dead !', res);
+        }
+    }
+
+    if (res === nbEnnemies) {
+        alert("Bravo, vous avez gagné !");
+        return true;
+    }
+
+    res = 0;
+    for (var i = 0; i < players.length; i++) {
+        var player = players.eq(i);
+        if (Number(player.attr('data-health')) > 0) {
+            break;
+        } else {
+            player.attr('data-health', 0);
+            player.find('.health').text(0);
+            res++;
+        }
+    }
+
+    if (res === nbPlayers) {
+        alert("Vous avez été vaincu !");
+        return true;
+    }
+
+    return false;
+}
+
 $(document).ready(function() {
+    $('#attack-271-10').attr("data-fulldamage", 2000);
     $("button.attack").each(function(index, el) {
         var jEl = $(el);
-        if (jEl.data('name').length > 11) {
-            jEl.text(jEl.data('acronym'));
+        if (jEl.attr('data-name').length > 7) {
+            jEl.find('span.attack-name').text(jEl.attr('data-acronym'));
         }
     });
 
@@ -183,32 +227,36 @@ $(document).ready(function() {
         player = button.parents("div.player");
         playerAttack = button;
 
-        $("div.ennemy>button").click(function(event) {
+        $("div.ennemy > button").click(function(event) {
             var ennemy = $(this).parent();
 
             ennemyAttackUndergone(ennemy, playerAttack);
-
             playerAttackUsed(player, playerAttack);
-
             ennemiesTurn();
 
-            playerAttack = {};
-            player = {};
-            $(this).unbind('click');
+            if (checkFightEnd()) {
+                document.location.href = "http://127.0.0.1:8000/battle/";
+            } else {
+                playerAttack = {};
+                player = {};
+                $(this).unbind('click');
+            }
         });
 
-        $("div.player>button").click(function(event) {
+        $("div.player > button").click(function(event) {
             var target = $(this).parent();
 
             playerAttackUndergone(target, playerAttack);
-
             playerAttackUsed(player, playerAttack);
-
             ennemiesTurn();
 
-            playerAttack = {};
-            player = {};
-            $(this).unbind('click');
+            if (checkFightEnd()) {
+                document.location.href = "http://127.0.0.1:8000/battle/";
+            } else {
+                playerAttack = {};
+                player = {};
+                $(this).unbind('click');
+            }
         });
     });
 });

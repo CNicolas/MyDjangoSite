@@ -173,9 +173,6 @@ div.armor-piece.feet.weight3 {
 div.ennemies, div.players {
 	min-height: 30vh;
 }
-div.targets {
-	min-height: 9vh;
-}
 /* END */
 
 

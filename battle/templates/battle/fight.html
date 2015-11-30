@@ -6,12 +6,15 @@
 
 <main>
     <section class="section">
-        <div class="container">
-            <div class="row ennemies">
-                {% for ennemy in ennemies %}
-                    <div class="ennemy col s3 row" data-name="{{ ennemy.name }}" data-id="{{ ennemy.id }}" data-fullhealth="{{ ennemy.health }}" data-health="{{ ennemy.health }}">
+        <div class="row">
+            <div class="col s10">
+                <div class="row ennemies">
+                    {% for ennemy in ennemies %}
+                    <div id="ennemy-{{ ennemy.id }}" class="ennemy col s3 row" data-name="{{ ennemy.name }}" data-id="{{ ennemy.id }}" data-fullhealth="{{ ennemy.health }}" data-health="{{ ennemy.health }}">
                         <table class="col s5 table bordered">
-                            <caption class="center">{{ ennemy.name }}<button class="left btn-floating disabled">{{ ennemy.level }}</span></caption>
+                            <caption class="center">{{ ennemy.name }}
+                                <button class="left btn-floating disabled">{{ ennemy.level }}</button>
+                            </caption>
                             <tbody>
                                 <tr class="color-health-text">
                                     <td class="td-icon"><i class="ra ra-hearts ra-2x"></i></td>
@@ -27,12 +30,17 @@
 
                         <div class="col s7 attacks">
                             {% for a in ennemy.attacks %}
-                                <div class="row">
-                                    <button id="attack-{{ a.id }}-{{ ennemy.id }}" class="attack col s10 btn disabled color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-heal="{{ a.heal }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}">{{ a.name }}</button>
-                                    <div class="col s2">
-                                        <a href="#modal-{{ a.id }}-{{ ennemy.id }}" class="modal-trigger black-text"><i class="material-icons left waves-effect waves-light">help</i></a>
-                                    </div>
+                            <div class="row">
+                                <button id="attack-{{ a.id }}-{{ ennemy.id }}" class="attack col s10 btn disabled color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-heal="{{ a.heal }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}" data-acronym="{{ a.acronym }}">
+                                    <i class="{{ a.symbol }} ra-fw left"></i>
+                                    <span class="attack-name">{{ a.name }}</span>
+                                </button>
+                                <div class="col s2">
+                                    <a href="#modal-{{ a.id }}-{{ ennemy.id }}" class="modal-trigger black-text">
+                                        <i class="material-icons left waves-effect waves-light">help</i>
+                                    </a>
                                 </div>
+                            </div>
                             {% endfor %}
                         </div>
 
@@ -40,18 +48,20 @@
                     </div>
 
                     <div class="col s1">&nbsp;</div>
-                {% endfor %}
-            </div>
+                    {% endfor %}
+                </div>
 
-            <div class="row targets">
+                <div class="row players">
+                    {% for p in players %}
+                    <div id="player-{{ p.id }}" class="player col s3 row" data-id="{{ p.id }}" data-pseudo="{{ p.pseudo }}" data-fullhealth="{{ p.full_health }}" data-health="{{ p.full_health }}" data-fullmana="{{ p.full_mana }}" data-mana="{{ p.full_mana }}" data-fullenergy="{{ p.full_energy }}" data-energy="{{ p.full_energy }}" data-defense="{{ p.full_defense }}" data-strength="{{ p.full_strength }}" data-agility="{{ p.full_agility }}" data-intellect="{{ p.full_intellect }}" data-spirit="{{ p.full_spirit }}">
+                        <button class="col s12 btn">{{ p.pseudo }}</button>
 
-            </div>
+                        <div class="row"></div>
 
-            <div class="row players">
-                {% for p in players %}
-                    <div class="player col s3 row" data-id="{{ p.id }}" data-pseudo="{{ p.pseudo }}" data-fullhealth="{{ p.full_health }}" data-health="{{ p.full_health }}" data-fullmana="{{ p.full_mana }}" data-mana="{{ p.full_mana }}" data-fullenergy="{{ p.full_energy }}" data-energy="{{ p.full_energy }}" data-defense="{{ p.full_defense }}" data-strength="{{ p.full_strength }}" data-agility="{{ p.full_agility }}" data-intellect="{{ p.full_intellect }}" data-spirit="{{ p.full_spirit }}">
                         <table class="col s6 table bordered">
-                            <caption class="center">{{ p.pseudo }}<button class="left btn-floating disabled">{{ p.level }}</span></caption>
+                            <caption class="center">{{ p.pseudo }}
+                                <button class="left btn-floating disabled">{{ p.level }}</button>
+                            </caption>
                             <tbody>
                                 <tr class="color-health-text">
                                     <td class="td-icon"><i class="ra ra-hearts ra-2x"></i></td>
@@ -89,103 +99,112 @@
 
                         <div class="col s6 attacks">
                             {% for a in p.attacks %}
-                                <div class="row">
-                                    <button id="attack-{{ a.id }}-{{ p.id }}" class="attack col s10 btn color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-fulldamage="{{ a.full_damage}}" data-heal="{{ a.heal }}" data-fullheal="{{ a.full_heal }}" data-mana="{{ a.mana }}" data-energy="{{ a.energy }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}" data-symbol="{{ a.symbol }}" data-acronym="{{ a.acronym }}">{{ a.name }}</button>
-                                    <div class="col s2">
-                                        <a href="#modal-{{ a.id }}-{{ p.id }}" class="modal-trigger black-text"><i class="material-icons">help</i></a>
-                                    </div>
+                            <div class="row">
+                                <button id="attack-{{ a.id }}-{{ p.id }}" class="attack col s10 btn color-{{ a.stat }}" data-name="{{ a.name }}" data-damage="{{ a.damage }}" data-fulldamage="{{ a.full_damage}}" data-heal="{{ a.heal }}" data-fullheal="{{ a.full_heal }}" data-mana="{{ a.mana }}" data-energy="{{ a.energy }}" data-critical="{{ a.critical }}" data-cooldown="{{ a.cooldown }}" data-target="{{ a.target }}" data-symbol="{{ a.symbol }}" data-acronym="{{ a.acronym }}">
+                                    <i class="{{ a.symbol }} ra-fw left"></i>
+                                    <span class="attack-name">{{ a.name }}</span>
+                                </button>
+                                <div class="col s2">
+                                    <a href="#modal-{{ a.id }}-{{ p.id }}" class="modal-trigger black-text">
+                                        <i class="material-icons">help</i>
+                                    </a>
                                 </div>
+                            </div>
                             {% endfor %}
                         </div>
 
-                        <button class="col s12 btn">{{ p.pseudo }}</button>
+                        <div class="col s1">&nbsp;</div>
+                        {% endfor %}
                     </div>
+                </div>
+            </div>
 
-                    <div class="col s1">&nbsp;</div>
-                {% endfor %}
+            <div id="report" class="col s2">
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </main>
 
 {% for ennemy in ennemies %}
-    {% for attack in ennemy.attacks %}
-        <div id="modal-{{ attack.id }}-{{ ennemy.id }}" class="modal">
-            <div class="modal-content">
-                <h5 class="center">{{ attack.name }}</h5>
-                <table class="table bordered">
-					<thead>
-						<tr>
-                            <th class="center">Symbole</th>
-							<th class="center">Dégâts</th>
-							<th class="center">Soins</th>
-							<th class="center">Taux de coup critique</th>
-							<th class="center">Durée</th>
-							<th class="center">Délai de relance</th>
-							<th class="center">Nombre de cibles</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-                            <td class="center"><i class="{{ attack.symbol }} ra-3x"></i></td>
-							<td class="center color-{{ attack.stat }}-text">{{ attack.damage }}</td>
-                            <td class="center color-health-text">{{ attack.heal }}</td>
-							<td class="center">{{ attack.critical }} %</td>
-							<td class="center">{{ attack.duration }}</td>
-							<td class="center">{{ attack.cooldown }}</td>
-							<td class="center">{{ attack.target }}</td>
-						</tr>
-					</tbody>
-				</table>
-            </div>
-            <div class="center row">
-                <button class="btn modal-action modal-close waves-effect red">Fermer</button>
-            </div>
-        </div>
-    {% endfor %}
+{% for attack in ennemy.attacks %}
+<div id="modal-{{ attack.id }}-{{ ennemy.id }}" class="modal">
+    <div class="modal-content">
+        <h5 class="center">{{ attack.name }}</h5>
+        <table class="table bordered">
+            <thead>
+                <tr>
+                    <th class="center">Symbole</th>
+                    <th class="center">Dégâts</th>
+                    <th class="center">Soins</th>
+                    <th class="center">Taux de coup critique</th>
+                    <th class="center">Durée</th>
+                    <th class="center">Délai de relance</th>
+                    <th class="center">Nombre de cibles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center"><i class="{{ attack.symbol }} ra-3x"></i></td>
+                    <td class="center color-{{ attack.stat }}-text">{{ attack.damage }}</td>
+                    <td class="center color-health-text">{{ attack.heal }}</td>
+                    <td class="center">{{ attack.critical }} %</td>
+                    <td class="center">{{ attack.duration }}</td>
+                    <td class="center">{{ attack.cooldown }}</td>
+                    <td class="center">{{ attack.target }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center row">
+        <button class="btn modal-action modal-close waves-effect red">Fermer</button>
+    </div>
+</div>
+{% endfor %}
 {% endfor %}
 
 {% for player in players %}
-    {% for attack in player.attacks %}
-        <div id="modal-{{ attack.id }}-{{ player.id }}" class="modal">
-            <div class="modal-content">
-                <h5 class="center">{{ attack.name }}</h5>
-                <table class="table bordered">
-					<thead>
-						<tr>
-                            <th class="center">Symbole</th>
-							<th class="center">Dégâts</th>
-							<th class="center">Soins</th>
-							<th class="center">Coût en mana</th>
-							<th class="center">Coût en energie</th>
-							<th class="center">Taux de coup critique</th>
-							<th class="center">Durée</th>
-							<th class="center">Délai de relance</th>
-							<th class="center">Nombre de cibles</th>
-                            <th class="center">Acronyme</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-                            <td class="center"><i class="{{ attack.symbol }} ra-3x"></i></td>
-							<td class="center color-{{ attack.stat }}-text">{{ attack.full_damage }}</td>
-                            <td class="center color-health-text">{{ attack.full_heal }}</td>
-                            <td class="center color-mana-text">{{ attack.mana }}</td>
-                            <td class="center color-energy-text">{{ attack.energy }}</td>
-							<td class="center">{{ attack.critical }} %</td>
-							<td class="center">{{ attack.duration }}</td>
-							<td class="center">{{ attack.cooldown }}</td>
-							<td class="center">{{ attack.target }}</td>
-                            <td class="center">{{ attack.acronym }}</td>
-						</tr>
-					</tbody>
-				</table>
-            </div>
-            <div class="center row">
-                <button class="btn modal-action modal-close waves-effect red">Fermer</button>
-            </div>
-        </div>
-    {% endfor %}
+{% for attack in player.attacks %}
+<div id="modal-{{ attack.id }}-{{ player.id }}" class="modal">
+    <div class="modal-content">
+        <h5 class="center">{{ attack.name }}</h5>
+        <table class="table bordered">
+            <thead>
+                <tr>
+                    <th class="center">Symbole</th>
+                    <th class="center">Dégâts</th>
+                    <th class="center">Soins</th>
+                    <th class="center">Coût en mana</th>
+                    <th class="center">Coût en energie</th>
+                    <th class="center">Taux de coup critique</th>
+                    <th class="center">Durée</th>
+                    <th class="center">Délai de relance</th>
+                    <th class="center">Nombre de cibles</th>
+                    <th class="center">Acronyme</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center"><i class="{{ attack.symbol }} ra-3x"></i></td>
+                    <td class="center color-{{ attack.stat }}-text">{{ attack.full_damage }}</td>
+                    <td class="center color-health-text">{{ attack.full_heal }}</td>
+                    <td class="center color-mana-text">{{ attack.mana }}</td>
+                    <td class="center color-energy-text">{{ attack.energy }}</td>
+                    <td class="center">{{ attack.critical }} %</td>
+                    <td class="center">{{ attack.duration }}</td>
+                    <td class="center">{{ attack.cooldown }}</td>
+                    <td class="center">{{ attack.target }}</td>
+                    <td class="center">{{ attack.acronym }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center row">
+        <button class="btn modal-action modal-close waves-effect red">Fermer</button>
+    </div>
+</div>
+{% endfor %}
 {% endfor %}
 
 {% endblock content %}

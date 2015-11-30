@@ -15,8 +15,9 @@ def fight(request):
     player1 = Player.objects.get(pseudo='Aku_Guerrier')
     ennemy1 = Ennemy.objects.get(name='Sephiroth')
 
-    # players = [PlayerDto(player1), PlayerDto(player1), PlayerDto(player1)]
     players = [PlayerDto(player1)]
+    # players = [PlayerDto(player1), PlayerDto(player1), PlayerDto(player1)]
     ennemies = [EnnemyDto(ennemy1)]
+    # ennemies = [EnnemyDto(ennemy1), EnnemyDto(ennemy1), EnnemyDto(ennemy1)]
     context = {'pagetitle': 'Combat', 'players': players, 'ennemies': ennemies}
     return myRender(request, 'fight.html', context)
